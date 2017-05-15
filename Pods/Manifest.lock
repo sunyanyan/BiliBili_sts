@@ -1,0 +1,15 @@
+PODS:
+  - GDPerformanceView-Swift (1.2.0)
+  - PageMenu (2.0.0)
+
+DEPENDENCIES:
+  - GDPerformanceView-Swift (~> 1.2.0)
+  - PageMenu (~> 2.0.0)
+
+SPEC CHECKSUMS:
+  GDPerformanceView-Swift: 5f12f13dcdca4cb87f91ef91ba6b50981421c57f
+  PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
+
+PODFILE CHECKSUM: 501bbd3a00501e41aa8b4413f2061cfde4019602
+
+COCOAPODS: 1.2.0
