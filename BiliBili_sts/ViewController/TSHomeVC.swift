@@ -28,7 +28,7 @@ class TSHomeVC:UIViewController{
         item1.title = "直播"
         vcs.append(item1)
         
-        let item2 = UIViewController()
+        let item2 = TSRecommendVC()
         item2.view.backgroundColor = UIColor.blue
         item2.title = "推荐"
         vcs.append(item2)
@@ -59,8 +59,8 @@ class TSHomeVC:UIViewController{
             
         ]
         let rect = CGRect.init(x: 0, y: tsStatusBarHeight, width: tsScreenWidth, height: h)
-        let pm = CAPSPageMenu.init(viewControllers: self.controllers, frame: rect, pageMenuOptions: params)
-        
+        let pm:CAPSPageMenu = CAPSPageMenu.init(viewControllers: self.controllers, frame: rect, pageMenuOptions: params)
+        pm.moveToPage(1)
         return pm
     }()
     

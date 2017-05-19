@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		142501BE76450E8652BB1D3D /* Pods_BiliBili_sts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0B006D83B1148C1222A0F4 /* Pods_BiliBili_sts.framework */; };
+		385484881ECD863C00993E94 /* TSDingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385484871ECD863C00993E94 /* TSDingCell.swift */; };
 		38706F2F1EC937AB008C6499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38706F2E1EC937AB008C6499 /* AppDelegate.swift */; };
 		38706F341EC937AB008C6499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38706F321EC937AB008C6499 /* Main.storyboard */; };
 		38706F361EC937AB008C6499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38706F351EC937AB008C6499 /* Assets.xcassets */; };
@@ -19,9 +20,15 @@
 		38706F4F1EC9383F008C6499 /* TSHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38706F481EC9383F008C6499 /* TSHomeVC.swift */; };
 		38706F501EC9383F008C6499 /* TSLaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38706F491EC9383F008C6499 /* TSLaunchVC.swift */; };
 		38706F511EC9383F008C6499 /* TSMainTabarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38706F4A1EC9383F008C6499 /* TSMainTabarVC.swift */; };
+		388C2FE91ECAB33B000766D6 /* readme in Resources */ = {isa = PBXBuildFile; fileRef = 388C2FE81ECAB33B000766D6 /* readme */; };
+		388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C2FEB1ECAB9CE000766D6 /* TSWebClient.swift */; };
+		388C2FF01ECABD45000766D6 /* TSRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C2FEF1ECABD45000766D6 /* TSRecommendVC.swift */; };
+		38AC97E21ECC02630051436E /* TSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC97E11ECC02630051436E /* TSLog.swift */; };
+		38AC97E41ECC0E000051436E /* TSPreloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC97E31ECC0E000051436E /* TSPreloadModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		385484871ECD863C00993E94 /* TSDingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDingCell.swift; sourceTree = "<group>"; };
 		38706F2B1EC937AB008C6499 /* BiliBili_sts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiliBili_sts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38706F2E1EC937AB008C6499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38706F331EC937AB008C6499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,6 +42,11 @@
 		38706F481EC9383F008C6499 /* TSHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSHomeVC.swift; sourceTree = "<group>"; };
 		38706F491EC9383F008C6499 /* TSLaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLaunchVC.swift; sourceTree = "<group>"; };
 		38706F4A1EC9383F008C6499 /* TSMainTabarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSMainTabarVC.swift; sourceTree = "<group>"; };
+		388C2FE81ECAB33B000766D6 /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
+		388C2FEB1ECAB9CE000766D6 /* TSWebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebClient.swift; sourceTree = "<group>"; };
+		388C2FEF1ECABD45000766D6 /* TSRecommendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendVC.swift; sourceTree = "<group>"; };
+		38AC97E11ECC02630051436E /* TSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLog.swift; sourceTree = "<group>"; };
+		38AC97E31ECC0E000051436E /* TSPreloadModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPreloadModel.swift; sourceTree = "<group>"; };
 		3CEC01E06CA9D0D7897D4BC2 /* Pods-BiliBili_sts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiliBili_sts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiliBili_sts/Pods-BiliBili_sts.debug.xcconfig"; sourceTree = "<group>"; };
 		4C0C57D564EA96A4AEF03B6E /* Pods-BiliBili_sts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiliBili_sts.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiliBili_sts/Pods-BiliBili_sts.release.xcconfig"; sourceTree = "<group>"; };
 		5B0B006D83B1148C1222A0F4 /* Pods_BiliBili_sts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiliBili_sts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,9 +64,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		385484861ECD85F500993E94 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				385484871ECD863C00993E94 /* TSDingCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		38706F221EC937AB008C6499 = {
 			isa = PBXGroup;
 			children = (
+				388C2FE81ECAB33B000766D6 /* readme */,
 				38706F2D1EC937AB008C6499 /* BiliBili_sts */,
 				38706F2C1EC937AB008C6499 /* Products */,
 				5284D387006077370AB893CF /* Pods */,
@@ -87,6 +108,7 @@
 		38706F401EC9383F008C6499 /* STL */ = {
 			isa = PBXGroup;
 			children = (
+				388C2FEA1ECAB9A4000766D6 /* Network */,
 				38706F411EC9383F008C6499 /* Extension */,
 				38706F441EC9383F008C6499 /* Util */,
 			);
@@ -106,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				38706F451EC9383F008C6499 /* Constant.swift */,
+				38AC97E11ECC02630051436E /* TSLog.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -113,12 +136,47 @@
 		38706F461EC9383F008C6499 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				38AC97E51ECC2EA20051436E /* 启动 */,
+				388C2FED1ECABC78000766D6 /* 首页 */,
 				38706F471EC9383F008C6499 /* TSHomeNC.swift */,
-				38706F481EC9383F008C6499 /* TSHomeVC.swift */,
-				38706F491EC9383F008C6499 /* TSLaunchVC.swift */,
 				38706F4A1EC9383F008C6499 /* TSMainTabarVC.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		388C2FEA1ECAB9A4000766D6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				388C2FEB1ECAB9CE000766D6 /* TSWebClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		388C2FED1ECABC78000766D6 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				388C2FEE1ECABC92000766D6 /* 推荐 */,
+				38706F481EC9383F008C6499 /* TSHomeVC.swift */,
+			);
+			name = "首页";
+			sourceTree = "<group>";
+		};
+		388C2FEE1ECABC92000766D6 /* 推荐 */ = {
+			isa = PBXGroup;
+			children = (
+				385484861ECD85F500993E94 /* View */,
+				388C2FEF1ECABD45000766D6 /* TSRecommendVC.swift */,
+			);
+			name = "推荐";
+			sourceTree = "<group>";
+		};
+		38AC97E51ECC2EA20051436E /* 启动 */ = {
+			isa = PBXGroup;
+			children = (
+				38706F491EC9383F008C6499 /* TSLaunchVC.swift */,
+				38AC97E31ECC0E000051436E /* TSPreloadModel.swift */,
+			);
+			name = "启动";
 			sourceTree = "<group>";
 		};
 		5284D387006077370AB893CF /* Pods */ = {
@@ -200,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388C2FE91ECAB33B000766D6 /* readme in Resources */,
 				38706F391EC937AB008C6499 /* LaunchScreen.storyboard in Resources */,
 				38706F361EC937AB008C6499 /* Assets.xcassets in Resources */,
 				38706F341EC937AB008C6499 /* Main.storyboard in Resources */,
@@ -263,11 +322,16 @@
 			files = (
 				38706F501EC9383F008C6499 /* TSLaunchVC.swift in Sources */,
 				38706F4C1EC9383F008C6499 /* UIView+tsFrame.swift in Sources */,
+				38AC97E41ECC0E000051436E /* TSPreloadModel.swift in Sources */,
+				388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */,
 				38706F4B1EC9383F008C6499 /* UIColor+tsExtension.swift in Sources */,
+				388C2FF01ECABD45000766D6 /* TSRecommendVC.swift in Sources */,
 				38706F4E1EC9383F008C6499 /* TSHomeNC.swift in Sources */,
 				38706F2F1EC937AB008C6499 /* AppDelegate.swift in Sources */,
 				38706F511EC9383F008C6499 /* TSMainTabarVC.swift in Sources */,
 				38706F4F1EC9383F008C6499 /* TSHomeVC.swift in Sources */,
+				38AC97E21ECC02630051436E /* TSLog.swift in Sources */,
+				385484881ECD863C00993E94 /* TSDingCell.swift in Sources */,
 				38706F4D1EC9383F008C6499 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BiliBili_sts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sts.iOSTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -406,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BiliBili_sts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sts.iOSTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

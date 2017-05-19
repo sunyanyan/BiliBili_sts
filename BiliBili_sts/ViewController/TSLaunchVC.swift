@@ -10,23 +10,26 @@ import UIKit
 
 class TSLaunchVC: UIViewController{
     
-    lazy var bg:UIImageView = {
-        let rect = self.view.bounds
-        let iv = UIImageView.init(frame: rect)
-        iv.image = #imageLiteral(resourceName: "splash_bg")
-        return iv
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(bg)
-        
-        splashAnimate {
-            self.presentMainTabVC()
+
+        loadData {
+            splashAnimate {
+                self.presentMainTabVC()
+            }
         }
+        
     }
     
     //MARK: - private method
+
+    private func loadData(completionHandler:@escaping ()->()){
+        preloadViewModel.requestData {
+            completionHandler()
+        }
+    }
+    
     private func splashAnimate(completionHandler:@escaping ()->()){
         let splashView:UIImageView = {
             let iv = UIImageView()
@@ -38,7 +41,7 @@ class TSLaunchVC: UIViewController{
             return iv
         }()
         bg.addSubview(splashView)
-        UIView.animate(withDuration: 1, animations: { 
+        UIView.animate(withDuration: 1, animations: {
             splashView.transform = CGAffineTransform.identity
         }) { (true) in
             let deadline = DispatchTime.now() + 0.5
@@ -51,8 +54,20 @@ class TSLaunchVC: UIViewController{
     
     private func presentMainTabVC(){
         //切换根控制器
-//        UIApplication.shared.keyWindow?.rootViewController = TSMainTabbarVC()
-//        UIApplication.shared.keyWindow?.sendSubview(toBack: (UIApplication.shared.keyWindow?.rootViewController?.view)!)
-        present(TSMainTabbarVC(), animated: true, completion: nil)
+        DispatchQueue.main.async {
+            UIApplication.shared.keyWindow?.rootViewController = TSMainTabbarVC()
+            UIApplication.shared.keyWindow?.sendSubview(toBack: (UIApplication.shared.keyWindow?.rootViewController?.view)!)
+        };
     }
+    
+    //MARK: - PROPERTY
+    lazy var preloadViewModel: TSPreloadViewModel = {
+        return TSPreloadViewModel()
+    }()
+    lazy var bg:UIImageView = {
+        let rect = self.view.bounds
+        let iv = UIImageView.init(frame: rect)
+        iv.image = #imageLiteral(resourceName: "splash_bg")
+        return iv
+    }()
 }
