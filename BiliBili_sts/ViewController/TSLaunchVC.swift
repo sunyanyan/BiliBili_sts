@@ -15,7 +15,7 @@ class TSLaunchVC: UIViewController{
         view.addSubview(bg)
 
         loadData {
-            splashAnimate {
+            self.splashAnimate {
                 self.presentMainTabVC()
             }
         }

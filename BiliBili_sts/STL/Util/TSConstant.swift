@@ -11,9 +11,13 @@ import UIKit
 
 //MARK: - FRAME
 let tsScreenWidth = Double.init(UIScreen.main.bounds.width)
+let tsScreenWidthCgfloat = UIScreen.main.bounds.width
 let tsScreenHeight = Double.init(UIScreen.main.bounds.height)
 let tsTabbarHeight = 49.0
 let tsStatusBarHeight = 20.0
+
+let tsCollectionViewItemSpace:CGFloat = 15.0
+let tsCollectionViewLineSpace:CGFloat = 0.0
 
 //MARK: - COLOR
 let tsNavTintColor = UIColor.hexString(hex: "ff6699")
@@ -28,7 +32,8 @@ let tsHeaders: [String : String] = [
     "User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1"
 ]
 let tsIndexUrl = tsBilibiliHost + "/index.html"
+let tsDingUrl = tsBilibiliHost + "/index/ding.html"
 
 //MARK: - UserDefaults
-let tsUserDefaults:UserDefaults = UserDefaults.standard
+let TSUserDefaults:UserDefaults = UserDefaults.standard
 let tsLocalPreloadModelKey:String = "localPreloadModelKey"

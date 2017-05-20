@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TSPreloadModel:NSObject{
+class TSPreloadModel:TSBaseModel{
     
     /// 滚动视图的接口
     var webShowUrl :String?
@@ -16,6 +16,10 @@ class TSPreloadModel:NSObject{
     var dingUrl :String?
     /// 热门推荐
     var rankUrl :String?
+    
+    required init() {
+        super.init()
+    }
     
     init(data:Data) {
         let responseString = String.init(data: data, encoding: .utf8)
@@ -58,7 +62,6 @@ class TSPreloadModel:NSObject{
 class TSPreloadViewModel:NSObject{
     
    
-
     //MARK: - private method
     /// 请求数据
     func requestData(block: @escaping ()->()){
@@ -68,9 +71,7 @@ class TSPreloadViewModel:NSObject{
             
             let model = TSPreloadModel.init(data: Data)
             
-            if(model != nil) {
-                tsUserDefaults.setValue(model, forKey: tsLocalPreloadModelKey)
-            }
+            TSUserDefaults.setValue(model.jsonString(), forKey: tsLocalPreloadModelKey)
             
             self.preloadModel = model
             block()
@@ -83,9 +84,16 @@ class TSPreloadViewModel:NSObject{
     //MARK: - PROPERTY
     var preloadModel:TSPreloadModel?
     
-    class func localPreloadModel() -> TSPreloadModel{
-        let model:TSPreloadModel = tsUserDefaults.object(forKey: tsLocalPreloadModelKey) as! TSPreloadModel
-        return model
+    class func localPreloadModel() -> TSPreloadModel?{
+        
+        let jsonString:String? = TSUserDefaults.object(forKey: tsLocalPreloadModelKey) as? String
+        
+        guard jsonString != nil else {
+            let model:TSPreloadModel = TSPreloadModel.model(jsonString: jsonString!) as! TSPreloadModel
+            return model
+        }
+        
+        return nil
     }
 }
 

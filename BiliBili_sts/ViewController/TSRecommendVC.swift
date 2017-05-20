@@ -16,6 +16,14 @@ class TSRecommendVC: UIViewController {
         super.viewDidLoad()
         
         _ = TSPreloadViewModel.localPreloadModel()
+        self.view.addSubview(mainCollectionView)
+        
+        TSDingViewModel().requestData(finishCallBack: { 
+            
+        }, failueCallBack: {
+            
+            
+        })
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,9 +45,9 @@ class TSRecommendVC: UIViewController {
     
     lazy var mainCollectionView: UICollectionView = {
         
-        let flowLayout:UICollectionViewLayout = UICollectionViewLayout()
-        flowLayout.minimumInteritemSpacing=15// 横排单元格最小间隔
-        flowLayout.minimumLineSpacing=0// 单元格最小行间距
+        let flowLayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = tsCollectionViewItemSpace// 横排单元格最小间隔
+        flowLayout.minimumLineSpacing = tsCollectionViewLineSpace // 单元格最小行间距
         
         let cv:UICollectionView = UICollectionView.init(frame: self.view.bounds, collectionViewLayout: flowLayout)
         cv.delegate = self
@@ -47,6 +55,7 @@ class TSRecommendVC: UIViewController {
         cv.showsVerticalScrollIndicator = false
         cv.showsHorizontalScrollIndicator = false
         
+        cv.register(TSDingCell.self, forCellWithReuseIdentifier: "TSDingCellKey")
         
         return cv
     }()
@@ -64,6 +73,15 @@ extension TSRecommendVC:UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TSDingCellKey", for: indexPath) as! TSDingCell
+        return cell
+        
     }
+    
+}
+
+//MARK:- UICollectionViewDelegate
+extension TSRecommendVC:UICollectionViewDelegate{
+
 }

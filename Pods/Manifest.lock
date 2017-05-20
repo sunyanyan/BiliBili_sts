@@ -1,18 +1,24 @@
 PODS:
   - Alamofire (4.4.0)
   - GDPerformanceView-Swift (1.2.0)
+  - HandyJSON (1.7.1)
   - PageMenu (2.0.0)
+  - SnapKit (3.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - GDPerformanceView-Swift (~> 1.2.0)
+  - HandyJSON (~> 1.7.1)
   - PageMenu (~> 2.0.0)
+  - SnapKit (~> 3.2.0)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   GDPerformanceView-Swift: 5f12f13dcdca4cb87f91ef91ba6b50981421c57f
+  HandyJSON: 54b6ce942795f7b2e61b82fe73cf25d9f139d125
   PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 5dd20c70bfccf2ea4bf477100bfd93a9c1a9c3ea
+PODFILE CHECKSUM: 6c7a11e0f0f368053bb99470bdaa24740f4c32f8
 
 COCOAPODS: 1.2.0
