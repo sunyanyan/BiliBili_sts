@@ -8,6 +8,7 @@
 
 import UIKit
 import GDPerformanceView_Swift
+import SDWebImage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

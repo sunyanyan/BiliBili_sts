@@ -50,4 +50,34 @@ class TSDingModel : TSBaseModel {
     var technology:[TSDingContentModel]?
     var game:[TSDingContentModel]?
     var ent:[TSDingContentModel]?
+    
+    lazy var itemTypes:NSArray = ["guochuang","douga","music","dance",
+                      "game","technology","life","kichiku",
+                      "fashion","ent","teleplay","movie",
+                      "ad"]
+    lazy var itemNames:NSArray = ["国创","动画","音乐","舞蹈",
+                      "游戏","科技","生活","鬼畜",
+                      "时尚","娱乐","电视剧","电影",
+                      "广告"]
+    func name(item:String) -> String{
+        
+        if itemTypes.contains(item) {
+            let index = itemTypes.index(of: item)
+            return itemNames[index] as! String
+        }
+        
+        return "其他"
+    }
+    
+    func contentModelsAt(indexPath:IndexPath) ->[TSDingContentModel]?{
+        let section = indexPath.section
+        
+        guard section >= 0 && section < itemTypes.count else {
+            return nil
+        }
+        let itemType:String = itemTypes[section] as! String
+        let obj = self.value(forKey: itemType)
+        return obj as? [TSDingContentModel]
+        
+    }
 }

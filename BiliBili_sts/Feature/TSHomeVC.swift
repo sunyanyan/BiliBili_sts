@@ -44,7 +44,7 @@ class TSHomeVC:UIViewController{
     //MARK: - UI
     
     lazy var statusBarView:UIView = {
-        let v = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: tsStatusBarHeight))
+        let v = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: tsStatusBarHeight))    
         v.backgroundColor = tsNavTintColor
         return v
     }()
@@ -55,7 +55,7 @@ class TSHomeVC:UIViewController{
             .scrollMenuBackgroundColor(tsNavTintColor),
             .menuItemWidth(40),
             .centerMenuItems(true),
-            .menuHeight(30),
+            .menuHeight(tsPageMenuHeight),
             
         ]
         let rect = CGRect.init(x: 0, y: tsStatusBarHeight, width: tsScreenWidth, height: h)

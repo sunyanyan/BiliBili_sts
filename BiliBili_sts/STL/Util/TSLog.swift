@@ -13,5 +13,8 @@ func TSLog<T>(message: T,
               method: String = #function,
               line: Int = #line)
 {
-    print("file: \((file as NSString).lastPathComponent) line:[\(line)], method:\(method) msg:\(message)")
+    
+    let string = "\n\nfile: \((file as NSString).lastPathComponent) \n  line:[\(line)], \n  method:\(method) \n  msg:\(message)"
+    print(string)
+    
 }

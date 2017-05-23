@@ -10,17 +10,20 @@ import Foundation
 import UIKit
 
 //MARK: - FRAME
-let tsScreenWidth = Double.init(UIScreen.main.bounds.width)
-let tsScreenWidthCgfloat = UIScreen.main.bounds.width
-let tsScreenHeight = Double.init(UIScreen.main.bounds.height)
-let tsTabbarHeight = 49.0
-let tsStatusBarHeight = 20.0
+let tsScreenWidth = UIScreen.main.bounds.width
+let tsScreenHeight = UIScreen.main.bounds.height
+let tsTabbarHeight:CGFloat = 49.0
+let tsStatusBarHeight:CGFloat = 20.0
+let tsNavBarHeight:CGFloat = 44.0
 
-let tsCollectionViewItemSpace:CGFloat = 15.0
+let tsPageMenuHeight:CGFloat = 30.0
+
+let tsCollectionViewItemSpace:CGFloat = 12.0
 let tsCollectionViewLineSpace:CGFloat = 0.0
 
 //MARK: - COLOR
 let tsNavTintColor = UIColor.hexString(hex: "ff6699")
+let tsBackgroundGreyColor = UIColor.hexString(hex: "f4f4f4")
 
 //MARK: - NETWORK
 let tshttp = "http:"
@@ -33,6 +36,7 @@ let tsHeaders: [String : String] = [
 ]
 let tsIndexUrl = tsBilibiliHost + "/index.html"
 let tsDingUrl = tsBilibiliHost + "/index/ding.html"
+let tsWebShowUrl = tsBilibiliHost + "/x/web-show/res/loc?jsonp=jsonp&pf=7&id=1695"
 
 //MARK: - UserDefaults
 let TSUserDefaults:UserDefaults = UserDefaults.standard

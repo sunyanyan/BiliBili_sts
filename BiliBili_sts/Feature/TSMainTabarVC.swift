@@ -12,7 +12,7 @@ class TSMainTabbarVC: UITabBarController,UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.tintColor = UIColor.white
+        self.tabBar.barTintColor = UIColor.white
         
         for (index,vc) in controllers.enumerated() {
             let item = tabbarItems[index]

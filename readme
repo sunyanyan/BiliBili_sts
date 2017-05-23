@@ -28,3 +28,5 @@
 * [GDPerformanceView](https://github.com/dani-gavrilov/GDPerformanceView-Swift) 显示fps
 * [SnapKit](https://github.com/SnapKit/SnapKit) autolayout
 * [HandyJSON](https://github.com/alibaba/HandyJSON) json序列化
+* [SDWebImage](https://github.com/rs/SDWebImage) image downloader with cache support
+* [Refresher](https://github.com/jcavar/refresher) 一个可以简单自定义刷新视图的下拉刷新组件

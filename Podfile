@@ -9,4 +9,7 @@ target 'BiliBili_sts’ do
   pod 'Alamofire', '~> 4.4'
   pod 'SnapKit', '~> 3.2.0'
   pod 'HandyJSON', '~> 1.7.1'
+  pod 'SDWebImage', '~>3.8'
+#  pod 'Gifu', '~>2.0'
+  pod 'Refresher', '~>0.6.1'
 end

@@ -9,9 +9,9 @@
 import Foundation
 import HandyJSON
 
-class TSBaseModel: HandyJSON {
+class TSBaseModel: NSObject,HandyJSON {
     
-    required init() {}
+    required override init() {}
         
     class func model(jsonString:String) -> TSBaseModel? {
         let obj = TSBaseModel.deserialize(from: jsonString)
