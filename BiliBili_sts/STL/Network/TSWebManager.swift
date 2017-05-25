@@ -23,9 +23,10 @@ class TSWebManager {
         let url = tsDingUrl
         _ = TSWebClient.get(urlString: url, params: nil, finishedBlock: { (Data) in
             let jsonString = String.init(data: Data, encoding: .utf8)
-            let dingModel = TSDingModel.deserialize(from: jsonString)
+            let dingModel = TSDingModel.tsDeserialize(from: jsonString)
             resultDic["dingModel"] =  dingModel
             group.leave()
+            
         }) { (Error) in
             
             group.leave()
@@ -35,19 +36,50 @@ class TSWebManager {
         let url2 = tsWebShowUrl
         _ = TSWebClient.get(urlString: url2, params: nil, finishedBlock: { (Data) in
             let jsonString = String.init(data: Data, encoding: .utf8)
-            let webShowModel = TSWebShowModel.deserialize(from: jsonString)
+            let webShowModel = TSWebShowModel.tsDeserialize(from: jsonString)
             resultDic["webShowModel"] =  webShowModel
+            
             group.leave()
         }) { (Error) in
             
             group.leave()
         }
         
-        group.notify(queue: DispatchQueue.main) { 
-            TSLog(message: " 下载完成 ")
+        group.notify(queue: DispatchQueue.main) {
             block(resultDic)
         }
         
+    }
+    
+}
+
+extension TSWebManager{
+    
+    func clientGetWithGroup(group:DispatchGroup,
+                            urlString: String,
+                            params:[String: Any]?,
+                            resultDic: Dictionary<String,Any>,
+                            resultDataModel:String,
+                            modifyResultDicBlock:@escaping (( Dictionary<String,Any>)->())) {
+        group.enter()
+        
+        _ = TSWebClient.get(urlString: urlString, params: params, finishedBlock: { (Data) in
+            
+            let jsonString = String.init(data: Data, encoding: .utf8)
+            if let modelClass:AnyClass = NSClassFromString(resultDataModel).self {
+                if modelClass is TSBaseModel.Type{
+                    if let model = (modelClass as? TSBaseModel.Type)?.tsDeserialize(from:jsonString) {
+                        var rd = resultDic
+                        rd[resultDataModel] = model
+                        modifyResultDicBlock(rd)
+                    }
+                }
+            }
+            
+            group.leave()
+        }) { (error) in
+            group.leave()
+        }
     }
     
 }

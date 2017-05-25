@@ -12,6 +12,7 @@ import SnapKit
 
 class TSDingCell: UICollectionViewCell {
     //MARK: - Property
+    static let tsDingCellKey = "TSDingCellKey"
     
     public lazy var dingCellPresent:TSDingCellPresent = TSDingCellPresent()
     
@@ -27,7 +28,7 @@ class TSDingCell: UICollectionViewCell {
         cv.dataSource = self
         cv.showsVerticalScrollIndicator = false
         cv.showsHorizontalScrollIndicator = false
-        cv.backgroundColor = UIColor.white
+        cv.backgroundColor =  tsBackgroundGreyColor
         
         self.dingCellPresent.registerCellIn(collectionView:cv)
         
@@ -45,6 +46,7 @@ class TSDingCell: UICollectionViewCell {
         super.init(frame: frame)
         
         self.addSubview(mainCollectionView)
+        self.backgroundColor = tsBackgroundGreyColor
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -71,7 +71,7 @@ class TSPreloadViewModel:NSObject{
             
             let model = TSPreloadModel.init(data: Data)
             
-            TSUserDefaults.setValue(model.jsonString(), forKey: tsLocalPreloadModelKey)
+            TSUserDefaults.setValue(model.tsJsonString(), forKey: tsLocalPreloadModelKey)
             
             self.preloadModel = model
             block()
@@ -89,7 +89,7 @@ class TSPreloadViewModel:NSObject{
         let jsonString:String? = TSUserDefaults.object(forKey: tsLocalPreloadModelKey) as? String
         
         guard jsonString != nil else {
-            let model:TSPreloadModel = TSPreloadModel.model(jsonString: jsonString!) as! TSPreloadModel
+            let model:TSPreloadModel = TSPreloadModel.tsDeserialize(from: jsonString!)!
             return model
         }
         

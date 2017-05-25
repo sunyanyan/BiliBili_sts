@@ -19,15 +19,16 @@ let tsNavBarHeight:CGFloat = 44.0
 let tsPageMenuHeight:CGFloat = 30.0
 
 let tsCollectionViewItemSpace:CGFloat = 12.0
-let tsCollectionViewLineSpace:CGFloat = 0.0
+let tsCollectionViewLineSpace:CGFloat = 8.0
 
 //MARK: - COLOR
-let tsNavTintColor = UIColor.hexString(hex: "ff6699")
+let tsNavTintColor = UIColor.hexString(hex: "ff6699")//粉色
 let tsBackgroundGreyColor = UIColor.hexString(hex: "f4f4f4")
 
 //MARK: - NETWORK
 let tshttp = "http:"
 let tsBilibiliHost = "http://m.bilibili.com"
+let tsBilibiliApiHost = "http://api.bilibili.com"
 let tsHeaders: [String : String] = [
     "Accept-Encoding":"gzip, deflate, sdch",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
@@ -36,7 +37,7 @@ let tsHeaders: [String : String] = [
 ]
 let tsIndexUrl = tsBilibiliHost + "/index.html"
 let tsDingUrl = tsBilibiliHost + "/index/ding.html"
-let tsWebShowUrl = tsBilibiliHost + "/x/web-show/res/loc?jsonp=jsonp&pf=7&id=1695"
+let tsWebShowUrl = tsBilibiliApiHost + "/x/web-show/res/loc?jsonp=jsonp&pf=7&id=1695"
 
 //MARK: - UserDefaults
 let TSUserDefaults:UserDefaults = UserDefaults.standard

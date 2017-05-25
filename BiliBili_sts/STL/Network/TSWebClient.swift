@@ -16,6 +16,8 @@ class TSWebClient{
                    finishedBlock: @escaping (_ resultData: Data)->(),
                    errorBlock: @escaping (_ error: Error)->()) -> DataRequest{
         
+        NSLog(" url is \(urlString) ")
+        
         let header = tsHeaders
         
         let request = Alamofire.request(urlString, method: .get, parameters: params, encoding: URLEncoding.default, headers: header)

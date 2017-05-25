@@ -16,31 +16,29 @@ class TSRecommendVC: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(mainCollectionView)
-        //演示下拉刷新
+        
+        //下拉刷新
         mainCollectionView.tsAddPullToRefreshWithAction {
-            
-            OperationQueue().addOperation {
-                sleep(2)
-                OperationQueue.main.addOperation {
-                    self.mainCollectionView.tsStopPullToRefresh()
-                }
-            }
-            
+            self.reload()
         }
         
-        recommendPresent.requestData { 
+        mainCollectionView.tsStartPullToRefresh()
+    }
+    
+    func reload(){
+        recommendPresent.requestData {
             DispatchQueue.main.async {
                 self.mainCollectionView.reloadData()
+                self.mainCollectionView.tsStopPullToRefresh()
             }
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        mainCollectionView.tsStartPullToRefresh()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -93,6 +91,7 @@ extension TSRecommendVC:UICollectionViewDataSource{
         return recommendPresent.cellForItemAt(collectionView:collectionView ,indexPath: indexPath)
         
     }
+
     
 }
 
@@ -103,10 +102,15 @@ extension TSRecommendVC:UICollectionViewDelegate{
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension TSRecommendVC:UICollectionViewDelegateFlowLayout{
+    // 每个item的大小
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return recommendPresent.itemSize()
+        
+        return recommendPresent.itemSize(indexPath:indexPath)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return recommendPresent.itemInset()
+        
+        return recommendPresent.itemInset(section: section)
     }
+
 }

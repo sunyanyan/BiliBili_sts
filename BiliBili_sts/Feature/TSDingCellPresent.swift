@@ -9,14 +9,12 @@
 import Foundation
 import UIKit
 
-let tsDingContentCellKey = "TSDingContentCellKey"
-
 class TSDingCellPresent {
     weak open var recommendPresent: TSRecommendPresent?
     var contentModels:[TSDingContentModel] = []
     
     func registerCellIn(collectionView:UICollectionView) {
-        collectionView.register(TSDingContentCell.self, forCellWithReuseIdentifier: tsDingContentCellKey)
+        collectionView.register(TSDingContentCell.self, forCellWithReuseIdentifier: TSDingContentCell.tsDingContentCellKey)
     }
 }
 
@@ -35,7 +33,7 @@ extension TSDingCellPresent{
     
     func cellForItemAt(collectionView: UICollectionView , indexPath:IndexPath) -> UICollectionViewCell{
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tsDingContentCellKey, for: indexPath) as! TSDingContentCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSDingContentCell.tsDingContentCellKey, for: indexPath) as! TSDingContentCell
         
         let row = indexPath.row
         if row >= 0 && row < contentModels.count {
@@ -52,12 +50,13 @@ extension TSDingCellPresent{
 extension TSDingCellPresent{
     
     func itemSize() -> CGSize {
-        let width:CGFloat = (recommendPresent!.itemSize().width - 3 * tsCollectionViewItemSpace)/2
-        let height:CGFloat = recommendPresent!.itemSize().height / 2
-        return CGSize.init(width: width, height: height)
+//        let width:CGFloat = (recommendPresent!.itemSize(section: 1).width - 3 * tsCollectionViewItemSpace)/2
+//        let height:CGFloat = (recommendPresent!.itemSize(section: 1).height - 3 * tsCollectionViewItemSpace)/2
+//        return CGSize.init(width: width, height: height)
+        return CGSize.zero
     }
     
     func itemInset() -> UIEdgeInsets{
-        return UIEdgeInsetsMake(0, tsCollectionViewItemSpace, 0, tsCollectionViewItemSpace)
+        return UIEdgeInsetsMake(tsCollectionViewItemSpace, tsCollectionViewItemSpace, tsCollectionViewItemSpace, tsCollectionViewItemSpace)
     }
 }

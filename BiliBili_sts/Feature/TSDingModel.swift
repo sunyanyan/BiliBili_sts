@@ -29,6 +29,21 @@ class TSDingContentModel: TSBaseModel {
     var title:String?
     var duration:Int64?
     var stat:TSDingContentStatModel?
+    var tags:[String]?
+    
+    func formedTagStr () -> String? {
+        if let tagStrings = tags{
+            if tagStrings.count <= 2{
+                let nsArray = NSArray.init(array: tagStrings)
+                return nsArray.componentsJoined(by: " · ")
+            }
+            else{
+                let nsArray = NSArray.init(objects: tagStrings[0],tagStrings[1])
+                return nsArray.componentsJoined(by: " · ")
+            }
+        }
+        return nil
+    }
 }
 
 class TSDingModel : TSBaseModel {
@@ -69,8 +84,8 @@ class TSDingModel : TSBaseModel {
         return "其他"
     }
     
-    func contentModelsAt(indexPath:IndexPath) ->[TSDingContentModel]?{
-        let section = indexPath.section
+    func contentModelsAt(index:Int) ->[TSDingContentModel]?{
+        let section = index
         
         guard section >= 0 && section < itemTypes.count else {
             return nil
@@ -79,5 +94,25 @@ class TSDingModel : TSBaseModel {
         let obj = self.value(forKey: itemType)
         return obj as? [TSDingContentModel]
         
+    }
+    
+    /// 从每个区数据中取出随机四个
+    ///
+    /// - Returns: <#return value description#>
+    func random4ContentModels() -> [TSDingContentModel]{
+        
+        var models = [TSDingContentModel]()
+        
+        for type in itemTypes {
+            if let obj:[TSDingContentModel] = self.value(forKey: type as! String) as? [TSDingContentModel]{
+                let count = obj.count
+                let indexs = TSCommon.random4ToIndex(index: count - 1)
+                for index in indexs{
+                    models.append(obj[index])
+                }
+            }
+        }
+        
+        return models
     }
 }

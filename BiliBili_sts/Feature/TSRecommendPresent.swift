@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-let tsDingCellKey = "TSDingCellKey"
-
 /// TSRecommendPresent - property
 class TSRecommendPresent {
     
@@ -19,11 +17,17 @@ class TSRecommendPresent {
     /// 滚动推荐数据
     var webShowModel:TSWebShowModel = TSWebShowModel()
     
-    var itemSizeArray = [CGSize]()
+    /// 包含 TSWebShowModel / TSDingContentModel
+    var models:[TSBaseModel] = [TSBaseModel]()
     
+    var itemSizeArray = [CGSize]()
+//    var itemInsetArray =  [UIEdgeInsets]()
     
     func registerCellIn(collectionView:UICollectionView) {
-        collectionView.register(TSDingCell.self, forCellWithReuseIdentifier: tsDingCellKey)
+        collectionView.register(TSDingCell.self, forCellWithReuseIdentifier: TSDingCell.tsDingCellKey)
+        collectionView.register(TSDingContentCell.self, forCellWithReuseIdentifier: TSDingContentCell.tsDingContentCellKey)
+        collectionView.register(TSWebShowCell.self, forCellWithReuseIdentifier: TSWebShowCell.TSWebShowCellKey)
+
     }
     
 
@@ -35,15 +39,17 @@ extension TSRecommendPresent{
     func requestData(finishCallBack:@escaping ()->()) {
         
         TSWebManager.requestRecommandData { (resultDic) in
-            let dingModel:TSDingModel? = resultDic["dingModel"] as? TSDingModel
-            if dingModel != nil {
-                self.dingModel = dingModel!
+            if let dingModel:TSDingModel =  resultDic["dingModel"] as? TSDingModel{
+                self.dingModel = dingModel
+                for model in dingModel.random4ContentModels(){
+                    self.models.append(model)
+                }
             }
-            let webShowModel:TSWebShowModel? = resultDic["webShowModel"] as? TSWebShowModel
-            if webShowModel != nil {
-                self.dingModel = dingModel!
+            if let webShowModel:TSWebShowModel = resultDic["webShowModel"] as? TSWebShowModel{
+                self.webShowModel = webShowModel
+                self.models.append(webShowModel)
             }
-            
+            self.initSizeArray()
             finishCallBack()
         }
     }
@@ -53,19 +59,48 @@ extension TSRecommendPresent{
 extension TSRecommendPresent{
 
     func numOfSection() -> Int{
-        return dingModel.itemTypes.count
+        return 1
     }
     
     func numOfItemsInSection(section:Int) -> Int{
-        return 1
+        return models.count
     }
     
     func cellForItemAt(collectionView: UICollectionView , indexPath:IndexPath) -> UICollectionViewCell{
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tsDingCellKey, for: indexPath) as! TSDingCell
-        cell.contentModels = dingModel.contentModelsAt(indexPath: indexPath)
-        cell.dingCellPresent.recommendPresent = self
-        return cell
+//        let section = indexPath.section
+        let row = indexPath.row
+        let model = models[row]
+        if model is TSWebShowModel {
+            //TSWebShowCell 包含一个轮播图
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSWebShowCell.TSWebShowCellKey, for: indexPath) as! TSWebShowCell
+            cell.contentModels = (model as! TSWebShowModel).data
+            return cell
+        }
+        else if model is TSDingContentModel{
+            //TSDingCell 包含一个 UICollectionView展示各个区的具体数据
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSDingContentCell.tsDingContentCellKey, for: indexPath) as! TSDingContentCell
+            cell.contentModel = model as? TSDingContentModel
+            return cell
+        }
+        else{
+            fatalError(" model 类型异常 ")
+        }
+//        
+//        if section == 0 {
+//            //TSWebShowCell 包含一个轮播图
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSWebShowCell.TSWebShowCellKey, for: indexPath) as! TSWebShowCell
+//            cell.contentModels = webShowModel.data
+//            return cell
+//        }
+//        else{
+//            //TSDingCell 包含一个 UICollectionView展示各个区的具体数据
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSDingCell.tsDingCellKey, for: indexPath) as! TSDingCell
+//            cell.contentModels = dingModel.contentModelsAt(index: indexPath.row)
+//            cell.dingCellPresent.recommendPresent = self
+//            return cell
+//            
+//        }
     }
 }
 
@@ -73,24 +108,37 @@ extension TSRecommendPresent{
 // MARK: - TSRecommendPresent FlowLayoutDelegate
 extension TSRecommendPresent{
 
-    func itemSize() -> CGSize {
-        let width:CGFloat = tsScreenWidth
-        let height:CGFloat = tsScreenWidth * 352 / 320
-        return CGSize.init(width: width, height: height)
+    func itemSize(indexPath:IndexPath) -> CGSize {        
+        let row = indexPath.row
+        return self.itemSizeArray[row]
     }
     
-    func itemInset() -> UIEdgeInsets{
-        return UIEdgeInsetsMake(tsCollectionViewItemSpace, 0, 0, 0)
+    func itemInset(section: Int) -> UIEdgeInsets{
+//        let row = indexPath.row
+//        return self.itemInsetArray[row]
+        return UIEdgeInsetsMake(tsCollectionViewLineSpace, tsCollectionViewItemSpace, 0, tsCollectionViewItemSpace)
     }
     
-    
-//    func itemContentSize() -> CGSize {
-//        let width:CGFloat = (itemSize().width - 3 * tsCollectionViewItemSpace)/2
-//        let height:CGFloat = itemSize().height / 2
-//        return CGSize.init(width: width, height: height)
-//    }
-//    
-//    func itemContentInset() -> UIEdgeInsets{
-//        return UIEdgeInsetsMake(0, tsCollectionViewItemSpace, 0, tsCollectionViewItemSpace)
-//    }
+    func initSizeArray(){
+        for model in models {
+            if model is TSWebShowModel {
+                let width:CGFloat = tsScreenWidth
+                let height:CGFloat = tsScreenWidth * 100 / 320
+                self.itemSizeArray.append( CGSize.init(width: width, height: height))
+                
+//                self.itemInsetArray.append(UIEdgeInsetsMake(tsCollectionViewLineSpace, 0, 0, 0))
+            }
+            else if model is TSDingContentModel{
+                let width:CGFloat = (tsScreenWidth - 3 * tsCollectionViewItemSpace)/2
+                let height:CGFloat = (tsScreenWidth * 352 / 320 - 3 * tsCollectionViewItemSpace)/2
+                self.itemSizeArray.append( CGSize.init(width: width, height: height))
+//                
+//                self.itemInsetArray.append(UIEdgeInsetsMake(tsCollectionViewLineSpace, tsCollectionViewItemSpace, 0, tsCollectionViewItemSpace))
+            }
+            else{
+                fatalError(" model 类型异常 ")
+            }
+            
+        }
+    }
 }
