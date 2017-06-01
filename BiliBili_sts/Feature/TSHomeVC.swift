@@ -14,8 +14,8 @@ class TSHomeVC:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(statusBarView)
-        view.addSubview(pageMenu.view)
+        
+        setupUI()
         
     }
     
@@ -41,7 +41,7 @@ class TSHomeVC:UIViewController{
         return vcs
     }()
     
-    //MARK: - UI
+    //MARK: - property
     
     lazy var statusBarView:UIView = {
         let v = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: tsStatusBarHeight))    
@@ -55,7 +55,7 @@ class TSHomeVC:UIViewController{
             .scrollMenuBackgroundColor(tsNavTintColor),
             .menuItemWidth(40),
             .centerMenuItems(true),
-            .menuHeight(tsPageMenuHeight),
+            .menuHeight(tsNavBarHeight),
             
         ]
         let rect = CGRect.init(x: 0, y: tsStatusBarHeight, width: tsScreenWidth, height: h)
@@ -66,3 +66,13 @@ class TSHomeVC:UIViewController{
     
     
 }
+
+// MARK: - Event
+extension TSHomeVC{
+    func setupUI(){
+        view.addSubview(statusBarView)
+        view.addSubview(pageMenu.view)
+    }
+}
+
+

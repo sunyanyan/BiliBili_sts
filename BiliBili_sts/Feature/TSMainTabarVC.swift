@@ -12,15 +12,7 @@ class TSMainTabbarVC: UITabBarController,UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.barTintColor = UIColor.white
-        
-        for (index,vc) in controllers.enumerated() {
-            let item = tabbarItems[index]
-            vc.tabBarItem.image = item.image.withRenderingMode(.alwaysOriginal)
-            vc.tabBarItem.selectedImage = item.selectedImage.withRenderingMode(.alwaysOriginal)
-            vc.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0)
-            self.addChildViewController(vc)
-        }
+        setupUI()
     }
     
     //MARK:- property
@@ -68,4 +60,20 @@ class TSMainTabbarVC: UITabBarController,UITabBarControllerDelegate {
     }
 
     
+}
+
+// MARK: - Event
+extension TSMainTabbarVC{
+
+    func setupUI(){
+        self.tabBar.barTintColor = UIColor.white
+        
+        for (index,vc) in controllers.enumerated() {
+            let item = tabbarItems[index]
+            vc.tabBarItem.image = item.image.withRenderingMode(.alwaysOriginal)
+            vc.tabBarItem.selectedImage = item.selectedImage.withRenderingMode(.alwaysOriginal)
+            vc.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0)
+            self.addChildViewController(vc)
+        }
+    }
 }

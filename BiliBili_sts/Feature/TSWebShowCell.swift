@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+@objc protocol TSWebShowCellDelegate {
+    @objc optional func didSelectAtIndex(index:Int ,model:TSWebShowContentModel, imgUrl:String?)
+}
+
 class TSWebShowCell: UICollectionViewCell {
     
     static let TSWebShowCellKey = "TSWebShowCell"
@@ -20,14 +24,31 @@ class TSWebShowCell: UICollectionViewCell {
     }
     
     lazy var carouselView: TSCarouselView = {
-        let v = TSCarouselView.init(frame: self.bounds)
+    
+        let v = TSCarouselView.init(frame: self.bounds, imageUrlStrs: [String](), selectedAction: { (index, imgUrl) in
+            if let delegate = self.delegate {
+                if let method = delegate.didSelectAtIndex {
+                    if let model = self.contentModels?[index] {
+                        method(index,model,imgUrl)
+                    }
+                    
+                }
+            }
+        })
         return v
     }()
     
+    weak var delegate:TSWebShowCellDelegate?
     //MARK: - override
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(carouselView)
+        
+        layer.cornerRadius = 5
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize.init(width: 1, height: 1)
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 1
 
     }
     

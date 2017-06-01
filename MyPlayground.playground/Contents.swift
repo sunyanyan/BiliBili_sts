@@ -2,6 +2,19 @@ import UIKit
 import PlaygroundSupport
 
 
+//let tmps = ["A","B","C","D","E"]
+//var models = [String]()
+//
+//for str in tmps {
+//    models.append(str)
+//}
+//
+//for str in tmps {
+//    models.insert(str, at: 0)
+//}
+//
+//print(models)
+
 //func randomInRange(range: Range<Int>) -> Int {
 //    let count = UInt32(range.upperBound - range.lowerBound)
 //    return  Int(arc4random_uniform(count)) + range.lowerBound
@@ -59,4 +72,8 @@ import PlaygroundSupport
 //    }
 //}
 //let someVC = vc()
+
+
 //PlaygroundPage.current.liveView = someVC
+
+

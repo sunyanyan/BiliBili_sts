@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
+//MARK: - 随机数
 class TSCommon {
     
-    //MARK: - 随机数
+    
     
     class func randomInRange(range: Range<Int>) -> Int {
         let count = UInt32(range.upperBound - range.lowerBound)
@@ -42,4 +44,113 @@ class TSCommon {
         return random4InRange(range: range)
     }
     
+    
+    
+
+    
+}
+//MARK: - DataSource IndexPath
+extension TSCommon {
+    class func isVaild(indexPath:IndexPath , models:[[Any]])->Bool{
+        
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        if section >= 0 && section < models.count {
+            let sectionModels = models[section]
+            if row >= 0 && row < sectionModels.count {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    class func isVaild(section:Int , models:[[Any]])->Bool{
+        
+        if section >= 0 && section < models.count {
+            return true
+        }
+        
+        return false
+    }
+    
+    class func modelAt(indexPath:IndexPath, models:[[Any]]) ->Any?{
+        
+        if isVaild(indexPath: indexPath, models: models){
+            return models[indexPath.section][indexPath.row]
+        }
+        
+        return nil
+    }
+}
+
+// MARK: - UIViewContrller
+extension TSCommon {
+    
+    class func stack()->[Any]{
+        
+        var stack:[Any] = [Any]()
+        
+        let keyWin = UIApplication.shared.keyWindow
+        guard var win = keyWin else { return stack }
+        
+        stack.append(win)
+        
+        if win.windowLevel != UIWindowLevelNormal {
+            for aWin in UIApplication.shared.windows {
+                if aWin.windowLevel == UIWindowLevelNormal {
+                    win = aWin
+                    stack.append(win)
+                    break
+                }
+            }
+        }
+        
+        let fontView = win.subviews.first
+        var topVC:UIViewController?
+        if let vc = fontView?.next?.isKind(of: UIViewController.self) as? UIViewController {
+            topVC = vc
+        }
+        else{
+            topVC = win.rootViewController
+        }
+        
+        guard let rootVC = topVC else { return stack }
+        stack.append(rootVC)
+        
+        
+        
+        return stack
+    }
+    
+    class func vcInStackWithClassName(className:String) -> UIViewController? {
+        
+        let keyWin = UIApplication.shared.keyWindow
+        guard var win = keyWin else { return nil }
+        
+        if win.windowLevel != UIWindowLevelNormal {
+            for aWin in UIApplication.shared.windows {
+                if aWin.windowLevel == UIWindowLevelNormal {
+                    win = aWin
+                    break
+                }
+            }
+        }
+        
+        
+        
+        return nil
+    }
+
+}
+
+// MARK: - UIView
+extension TSCommon{
+    
+    class func statusBarView() -> UIView {
+        let v = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: tsStatusBarHeight))
+        v.backgroundColor = tsNavTintColor
+        return v
+    }
 }

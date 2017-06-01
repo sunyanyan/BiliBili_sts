@@ -71,7 +71,7 @@ class TSCarouselView :UIView{
     fileprivate var repeatTimer: Timer?
     
     /// 选中的action
-    var selectedBlock:((_ index: Int , _ imgUrl:String?)->())?
+    public var selectedBlock:((_ index: Int , _ imgUrl:String?)->())?
     
     lazy var placeHolderImage: UIImage = {
         let image = #imageLiteral(resourceName: "default")

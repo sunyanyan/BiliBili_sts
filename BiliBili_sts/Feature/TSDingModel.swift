@@ -107,6 +107,7 @@ class TSDingModel : TSBaseModel {
             if let obj:[TSDingContentModel] = self.value(forKey: type as! String) as? [TSDingContentModel]{
                 let count = obj.count
                 let indexs = TSCommon.random4ToIndex(index: count - 1)
+//                TSLog(message: "indexs:\(indexs)")
                 for index in indexs{
                     models.append(obj[index])
                 }

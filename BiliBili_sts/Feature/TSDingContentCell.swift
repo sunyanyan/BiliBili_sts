@@ -31,7 +31,7 @@ class TSDingContentCell: UICollectionViewCell {
     
     lazy var contentImage: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = UIColor.red
+        iv.backgroundColor = UIColor.white
         return iv
     }()
     
@@ -141,7 +141,7 @@ class TSDingContentCell: UICollectionViewCell {
     func setupModel(){
         if let urlString = contentModel?.pic{
             let url = URL.init(string: urlString)
-            contentImage.sd_setImage(with: url)
+            contentImage.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "default"))
         }
         if let title = contentModel?.title{
             let str = "\(title)\n\n\n"
