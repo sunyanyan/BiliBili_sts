@@ -67,7 +67,7 @@ extension TSRecommendPresent{
     }
 }
 
-// MARK: - TSRecommendPresent Delegate
+// MARK: - TSRecommendPresent UICollectionViewDelegate
 extension TSRecommendPresent{
     func didSelectAt(indexPath:IndexPath,viewcontroller:UIViewController){
         
@@ -76,7 +76,7 @@ extension TSRecommendPresent{
         }
         
         if model is TSWebShowModel {
-            //点击轮播图
+            
         }
         else if model is TSDingContentModel{
             
@@ -87,7 +87,7 @@ extension TSRecommendPresent{
     }
 }
 
-// MARK: - TSRecommendPresent DataSource
+// MARK: - TSRecommendPresent UICollectionViewDataSource
 extension TSRecommendPresent{
 
     func numOfSection() -> Int{
@@ -135,7 +135,7 @@ extension TSRecommendPresent{
     
     }
     
-    //MARK: - 对models的处理
+    //MARK:  对models的处理
     fileprivate func modelsSectionCount()->Int{
         
         return self.models.count
@@ -156,7 +156,7 @@ extension TSRecommendPresent{
         }
         return nil
     }
-    //MARK: - 注册cell、view
+    //MARK:  注册cell、view
     func registerCellIn(collectionView:UICollectionView) {
         collectionView.register(TSDingCell.self, forCellWithReuseIdentifier: TSDingCell.tsDingCellKey)
         collectionView.register(TSDingContentCell.self, forCellWithReuseIdentifier: TSDingContentCell.tsDingContentCellKey)
@@ -228,34 +228,13 @@ extension TSRecommendPresent : TSWebShowCellDelegate{
         
 
         let url:String? = model.url
-        let homeVc:UIViewController? = weakRecommendVC?.parent?.view.superview?.next as? UIViewController
+        let homeVc:TSHomeVC? = weakRecommendVC?.parent?.view.superview?.next as? TSHomeVC
         
         if (url != nil) && (homeVc != nil) {
             
-            let webvc = TSWebVC()
-            webvc.webUrlStr = url
-            let nav = UINavigationController.init(rootViewController: webvc)
-            
-            let transitionDelegate = SwipeTransitionDelegate()
-            transitionDelegate.targetEdge = .right
-            
-            nav.transitioningDelegate  = transitionDelegate
-            nav.modalPresentationStyle = .fullScreen
-            webvc.presentedViewControllerDelegate = self
-            
-            homeVc?.present(nav, animated: true, completion: nil)
+            homeVc?.presentWebVC(url: url!)
             
         }
     }
 }
 
-// MARK: - TSPresentedViewControllerDelegate
-extension TSRecommendPresent:TSPresentedViewControllerDelegate {
-    
-    func presentedViewControllerDidClickedDismissButton(presentedViewController: UIViewController) {
-        if let  vc  = presentedViewController.navigationController {
-    
-            vc.dismiss(animated: true, completion: nil)
-        }
-    }
-}

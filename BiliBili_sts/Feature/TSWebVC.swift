@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 import WebKit
 
-@objc protocol TSPresentedViewControllerDelegate{
-    @objc optional func presentedViewControllerDidClickedDismissButton(presentedViewController:UIViewController)
-}
+//@objc protocol TSPresentedViewControllerDelegate{
+//    @objc optional func presentedViewControllerDidClickedDismissButton(presentedViewController:UIViewController)
+//}
 
 //TODO: 点击网页中链接
 
@@ -77,7 +77,7 @@ class TSWebVC :UIViewController{
     
     
     public var webUrlStr:String?
-    public var presentedViewControllerDelegate:TSPresentedViewControllerDelegate?
+//    public var presentedViewControllerDelegate:TSPresentedViewControllerDelegate?
     
 }
 
@@ -124,12 +124,12 @@ extension TSWebVC{
     
     func backBtnClick(){
         
-        if let delegate = presentedViewControllerDelegate {
-            if let method = delegate.presentedViewControllerDidClickedDismissButton {
-                method(self)
-            }
-        }
-
+//        if let delegate = presentedViewControllerDelegate {
+//            if let method = delegate.presentedViewControllerDidClickedDismissButton {
+//                method(self)
+//            }
+//        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     func moreBtnClick(){

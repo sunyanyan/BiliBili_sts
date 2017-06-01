@@ -40,10 +40,9 @@
 		3896966F1ED7CE57001AA026 /* TSRecommendHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896966E1ED7CE57001AA026 /* TSRecommendHeadView.swift */; };
 		38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A57B781ED91D9F0096FD51 /* TSWebVC.swift */; };
 		38AC97E21ECC02630051436E /* TSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC97E11ECC02630051436E /* TSLog.swift */; };
-		38BF265F1EDEC15700E2225D /* SwipeTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF265C1EDEC15700E2225D /* SwipeTransitionDelegate.swift */; };
-		38BF26611EDEC1D400E2225D /* SwipeTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF26601EDEC1D400E2225D /* SwipeTransitionAnimator.swift */; };
-		38BF26631EDEC20C00E2225D /* SwipePercentTransitionInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF26621EDEC20C00E2225D /* SwipePercentTransitionInteractionController.swift */; };
 		38BF26651EDEE0EC00E2225D /* TSCustomNavc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF26641EDEE0EC00E2225D /* TSCustomNavc.swift */; };
+		38BF26681EDFBC9400E2225D /* TSRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF26671EDFBC9400E2225D /* TSRoute.swift */; };
+		38BF266A1EE0344800E2225D /* TSTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF26691EE0344800E2225D /* TSTransitionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,10 +81,9 @@
 		3896966E1ED7CE57001AA026 /* TSRecommendHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendHeadView.swift; sourceTree = "<group>"; };
 		38A57B781ED91D9F0096FD51 /* TSWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebVC.swift; sourceTree = "<group>"; };
 		38AC97E11ECC02630051436E /* TSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLog.swift; sourceTree = "<group>"; };
-		38BF265C1EDEC15700E2225D /* SwipeTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTransitionDelegate.swift; sourceTree = "<group>"; };
-		38BF26601EDEC1D400E2225D /* SwipeTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTransitionAnimator.swift; sourceTree = "<group>"; };
-		38BF26621EDEC20C00E2225D /* SwipePercentTransitionInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipePercentTransitionInteractionController.swift; sourceTree = "<group>"; };
 		38BF26641EDEE0EC00E2225D /* TSCustomNavc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCustomNavc.swift; sourceTree = "<group>"; };
+		38BF26671EDFBC9400E2225D /* TSRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRoute.swift; sourceTree = "<group>"; };
+		38BF26691EE0344800E2225D /* TSTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSTransitionDelegate.swift; sourceTree = "<group>"; };
 		3CEC01E06CA9D0D7897D4BC2 /* Pods-BiliBili_sts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiliBili_sts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiliBili_sts/Pods-BiliBili_sts.debug.xcconfig"; sourceTree = "<group>"; };
 		4C0C57D564EA96A4AEF03B6E /* Pods-BiliBili_sts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiliBili_sts.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiliBili_sts/Pods-BiliBili_sts.release.xcconfig"; sourceTree = "<group>"; };
 		5B0B006D83B1148C1222A0F4 /* Pods_BiliBili_sts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiliBili_sts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,7 +253,7 @@
 		38706F401EC9383F008C6499 /* STL */ = {
 			isa = PBXGroup;
 			children = (
-				38BF26591EDEC15700E2225D /* Transition */,
+				38BF26661EDFBC8700E2225D /* Route */,
 				3868D5151ECFFAA2006CB40A /* Libs */,
 				388C2FEA1ECAB9A4000766D6 /* Network */,
 				38706F411EC9383F008C6499 /* Extension */,
@@ -300,14 +298,13 @@
 			name = webView;
 			sourceTree = "<group>";
 		};
-		38BF26591EDEC15700E2225D /* Transition */ = {
+		38BF26661EDFBC8700E2225D /* Route */ = {
 			isa = PBXGroup;
 			children = (
-				38BF26621EDEC20C00E2225D /* SwipePercentTransitionInteractionController.swift */,
-				38BF26601EDEC1D400E2225D /* SwipeTransitionAnimator.swift */,
-				38BF265C1EDEC15700E2225D /* SwipeTransitionDelegate.swift */,
+				38BF26671EDFBC9400E2225D /* TSRoute.swift */,
+				38BF26691EE0344800E2225D /* TSTransitionDelegate.swift */,
 			);
-			path = Transition;
+			path = Route;
 			sourceTree = "<group>";
 		};
 		5284D387006077370AB893CF /* Pods */ = {
@@ -463,12 +460,10 @@
 				3874227B1ED421620031326C /* TSWebManager.swift in Sources */,
 				385985941ED2DF710048B8B1 /* TSBaseViewController.swift in Sources */,
 				388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */,
-				38BF26631EDEC20C00E2225D /* SwipePercentTransitionInteractionController.swift in Sources */,
 				3859858F1ED2DF1D0048B8B1 /* TSLaunchVC.swift in Sources */,
 				38706F4B1EC9383F008C6499 /* UIColor+tsExtension.swift in Sources */,
 				3859858B1ED2DF1D0048B8B1 /* TSDingModel.swift in Sources */,
-				38BF265F1EDEC15700E2225D /* SwipeTransitionDelegate.swift in Sources */,
-				38BF26611EDEC1D400E2225D /* SwipeTransitionAnimator.swift in Sources */,
+				38BF266A1EE0344800E2225D /* TSTransitionDelegate.swift in Sources */,
 				3869DC2E1ED57463007ECA81 /* TSWebShowCell.swift in Sources */,
 				38474F901ED6E3470040F4E4 /* TSCommon.swift in Sources */,
 				3859859F1ED300280048B8B1 /* TSDingCellPresent.swift in Sources */,
@@ -479,6 +474,7 @@
 				385985911ED2DF1D0048B8B1 /* TSPreloadModel.swift in Sources */,
 				38706F2F1EC937AB008C6499 /* AppDelegate.swift in Sources */,
 				38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */,
+				38BF26681EDFBC9400E2225D /* TSRoute.swift in Sources */,
 				385985901ED2DF1D0048B8B1 /* TSMainTabarVC.swift in Sources */,
 				387422791ED416070031326C /* UIImageView+tsExtension.swift in Sources */,
 				38AC97E21ECC02630051436E /* TSLog.swift in Sources */,

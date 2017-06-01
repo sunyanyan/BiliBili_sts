@@ -108,13 +108,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiliBili_sts/STL/Transition/SwipeTransitionDelegate.swift"
-            timestampString = "517915811.638967"
+            timestampString = "517977520.189191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "animationController(forPresented:presenting:source:)"
-            landmarkType = "7">
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "SwipeTransitionDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -124,45 +124,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiliBili_sts/STL/Transition/SwipeTransitionDelegate.swift"
-            timestampString = "517915812.660925"
+            timestampString = "517977520.189191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "animationController(forDismissed:)"
-            landmarkType = "7">
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "SwipeTransitionDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiliBili_sts/STL/Transition/SwipeTransitionDelegate.swift"
-            timestampString = "517915814.739515"
+            timestampString = "517979581.929641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "interactionControllerForPresentation(using:)"
-            landmarkType = "7">
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "SwipeTransitionDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiliBili_sts/STL/Transition/SwipeTransitionDelegate.swift"
-            timestampString = "517915815.674127"
+            timestampString = "517979581.929641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "interactionControllerForDismissal(using:)"
-            landmarkType = "7">
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "SwipeTransitionDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -179,54 +179,6 @@
             endingLineNumber = "125"
             landmarkName = "backBtnClick()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BiliBili_sts/Feature/TSRecommendPresent.swift"
-            timestampString = "517923737.622301"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "presentedViewControllerDidClickedDismissButton(presentedViewController:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BiliBili_sts.TSRecommendPresent.presentedViewControllerDidClickedDismissButton (presentedViewController : __ObjC.UIViewController) -&gt; ()"
-                  moduleName = "BiliBili_sts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sts/Desktop/github/BiliBili_sts/BiliBili_sts/Feature/TSRecommendPresent.swift"
-                  timestampString = "517925708.648442"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "256"
-                  endingLineNumber = "256"
-                  offsetFromSymbolStart = "19">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BiliBili_sts.TSRecommendPresent.presentedViewControllerDidClickedDismissButton (presentedViewController : __ObjC.UIViewController) -&gt; ()"
-                  moduleName = "BiliBili_sts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sts/Desktop/github/BiliBili_sts/BiliBili_sts/Feature/TSRecommendPresent.swift"
-                  timestampString = "517925708.65055"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "256"
-                  endingLineNumber = "256"
-                  offsetFromSymbolStart = "712">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
