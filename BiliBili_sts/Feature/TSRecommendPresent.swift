@@ -31,6 +31,7 @@ class TSRecommendPresent {
 // MARK: - TSRecommendPresent Network 
 extension TSRecommendPresent{
 
+    /// 刷新数据
     func requestData(finishCallBack:@escaping ()->()) {
         
         TSWebManager.requestRecommandData { (resultDic) in
@@ -51,6 +52,7 @@ extension TSRecommendPresent{
                     }
                 }
                 else{//获取数据往后插入
+                    //网页中的各个区的数据不会变……随机取四十个假装在刷新吧= =
                     for model in dingModel.random4ContentModels(){
                         sectionModels.insert(model, at: 0)
                     }
@@ -69,6 +71,7 @@ extension TSRecommendPresent{
 
 // MARK: - TSRecommendPresent UICollectionViewDelegate
 extension TSRecommendPresent{
+    ///点击cell 展示视频播放
     func didSelectAt(indexPath:IndexPath,viewcontroller:UIViewController){
         
         guard let model = modelAt(indexPath: indexPath) else {
@@ -112,7 +115,7 @@ extension TSRecommendPresent{
             return cell
         }
         else if model is TSDingContentModel{
-            //TSDingCell 包含一个 UICollectionView展示各个区的具体数据
+            //TSDingContentCell 包含一个 UICollectionView展示各个区的具体数据
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSDingContentCell.tsDingContentCellKey, for: indexPath) as! TSDingContentCell
             cell.contentModel = model as? TSDingContentModel
             return cell
@@ -158,7 +161,7 @@ extension TSRecommendPresent{
     }
     //MARK:  注册cell、view
     func registerCellIn(collectionView:UICollectionView) {
-        collectionView.register(TSDingCell.self, forCellWithReuseIdentifier: TSDingCell.tsDingCellKey)
+//        collectionView.register(TSDingCell.self, forCellWithReuseIdentifier: TSDingCell.tsDingCellKey)
         collectionView.register(TSDingContentCell.self, forCellWithReuseIdentifier: TSDingContentCell.tsDingContentCellKey)
         collectionView.register(TSWebShowCell.self, forCellWithReuseIdentifier: TSWebShowCell.TSWebShowCellKey)
         
