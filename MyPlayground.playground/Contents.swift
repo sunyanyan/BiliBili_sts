@@ -1,6 +1,21 @@
 import UIKit
 import PlaygroundSupport
 
+let start = Date.init()
+
+let format = DateFormatter.init()
+format.dateFormat = "YYYY-MM-dd hh:mm:ss:SSS"
+
+var DateStr = format.string(from: start)
+
+sleep(2)
+
+let end = Date.init()
+DateStr = format.string(from: end)
+
+let span:Double = end.timeIntervalSince(start)
+//let spanInt = span.in
+
 
 //let tmps = ["A","B","C","D","E"]
 //var models = [String]()

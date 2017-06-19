@@ -38,7 +38,8 @@
 		3896966F1ED7CE57001AA026 /* TSRecommendHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896966E1ED7CE57001AA026 /* TSRecommendHeadView.swift */; };
 		38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A57B781ED91D9F0096FD51 /* TSWebVC.swift */; };
 		38AC97E21ECC02630051436E /* TSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC97E11ECC02630051436E /* TSLog.swift */; };
-		38BF266E1EE037A900E2225D /* TSHomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266C1EE037A900E2225D /* TSHomeRoute.swift */; };
+		38BB09891EF7C92A009264E7 /* quickLook.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38BB09881EF7C92A009264E7 /* quickLook.gif */; };
+		38BF266E1EE037A900E2225D /* TSRecommendRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */; };
 		38BF266F1EE037A900E2225D /* TSSwipeTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */; };
 		38BF26721EE1631900E2225D /* TSPlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF26711EE1631900E2225D /* TSPlayVC.swift */; };
 /* End PBXBuildFile section */
@@ -77,7 +78,8 @@
 		3896966E1ED7CE57001AA026 /* TSRecommendHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendHeadView.swift; sourceTree = "<group>"; };
 		38A57B781ED91D9F0096FD51 /* TSWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebVC.swift; sourceTree = "<group>"; };
 		38AC97E11ECC02630051436E /* TSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLog.swift; sourceTree = "<group>"; };
-		38BF266C1EE037A900E2225D /* TSHomeRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSHomeRoute.swift; sourceTree = "<group>"; };
+		38BB09881EF7C92A009264E7 /* quickLook.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = quickLook.gif; sourceTree = "<group>"; };
+		38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendRoute.swift; sourceTree = "<group>"; };
 		38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSwipeTransitionDelegate.swift; sourceTree = "<group>"; };
 		38BF26711EE1631900E2225D /* TSPlayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayVC.swift; sourceTree = "<group>"; };
 		3CEC01E06CA9D0D7897D4BC2 /* Pods-BiliBili_sts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiliBili_sts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiliBili_sts/Pods-BiliBili_sts.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		3868D5121ECEE3F6006CB40A /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				38BB09881EF7C92A009264E7 /* quickLook.gif */,
 				3868D5131ECEE480006CB40A /* testDing.jpg */,
 			);
 			path = Res;
@@ -287,7 +290,7 @@
 		38BF266B1EE0372E00E2225D /* Route */ = {
 			isa = PBXGroup;
 			children = (
-				38BF266C1EE037A900E2225D /* TSHomeRoute.swift */,
+				38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */,
 				38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */,
 			);
 			name = Route;
@@ -382,6 +385,7 @@
 			files = (
 				38706F391EC937AB008C6499 /* LaunchScreen.storyboard in Resources */,
 				38706F361EC937AB008C6499 /* Assets.xcassets in Resources */,
+				38BB09891EF7C92A009264E7 /* quickLook.gif in Resources */,
 				38706F341EC937AB008C6499 /* Main.storyboard in Resources */,
 				3868D5141ECEE480006CB40A /* testDing.jpg in Resources */,
 			);
@@ -453,7 +457,7 @@
 				3869DC2C1ED56F0C007ECA81 /* readme.md in Sources */,
 				3869DC2A1ED51CD1007ECA81 /* TSCarouselView.swift in Sources */,
 				3874227B1ED421620031326C /* TSWebManager.swift in Sources */,
-				38BF266E1EE037A900E2225D /* TSHomeRoute.swift in Sources */,
+				38BF266E1EE037A900E2225D /* TSRecommendRoute.swift in Sources */,
 				385985941ED2DF710048B8B1 /* TSBaseViewController.swift in Sources */,
 				388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */,
 				3859858F1ED2DF1D0048B8B1 /* TSLaunchVC.swift in Sources */,

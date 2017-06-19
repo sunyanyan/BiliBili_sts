@@ -1,6 +1,8 @@
 #  模仿Bilibili（Bilibili - ( ゜- ゜)つロ 乾杯~）
 > 练习工程 模仿bilibili
 
+![](./BiliBili_sts/Res/quickLook.gif)
+
 ##  接口
 
 >使用 m.bilibili.com中使用的

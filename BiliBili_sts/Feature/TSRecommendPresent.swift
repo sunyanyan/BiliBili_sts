@@ -77,12 +77,8 @@ extension TSRecommendPresent{
         guard let model = modelAt(indexPath: indexPath) else {
             fatalError(" indexPath \(indexPath) 错误 ")
         }
-        
-        if model is TSWebShowModel {
-            
-        }
-        else if model is TSDingContentModel{
-            
+        if model is TSDingContentModel{
+            weakRecommendVC?.presentPlayVC()
         }
         else{
             fatalError(" model 类型异常 ")
@@ -231,12 +227,8 @@ extension TSRecommendPresent : TSWebShowCellDelegate{
         
 
         let url:String? = model.url
-        let homeVc:TSHomeVC? = weakRecommendVC?.parent?.view.superview?.next as? TSHomeVC
-        
-        if (url != nil) && (homeVc != nil) {
-            
-            homeVc?.presentWebVC(url: url!)
-            
+        if (url != nil){
+            weakRecommendVC?.presentWebVC(url: url!)            
         }
     }
 }
