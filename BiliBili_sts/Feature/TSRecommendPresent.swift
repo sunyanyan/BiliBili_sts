@@ -13,7 +13,9 @@ import UIKit
 class TSRecommendPresent {
     
     /// 区置顶数据
-    var dingModel:TSDingModel = TSDingModel()
+//    var dingModel:TSDingModel = TSDingModel()
+    /// 区随机动态刷新数据
+    var webInterfaceModel:TSWebInterfaceModel = TSWebInterfaceModel()
     /// 滚动推荐数据
     var webShowModel:TSWebShowModel = TSWebShowModel()
     
@@ -44,21 +46,35 @@ extension TSRecommendPresent{
                     sectionModels.append(webShowModel)
                 }
             }
-            if let dingModel:TSDingModel =  resultDic["dingModel"] as? TSDingModel{
-                self.dingModel = dingModel
+//            if let dingModel:TSDingModel =  resultDic["dingModel"] as? TSDingModel{
+//                self.dingModel = dingModel
+//                if self.models.count <= 1 {//第一次获取数据往后插入
+//                    for model in dingModel.random4ContentModels(){
+//                        sectionModels.append(model)
+//                    }
+//                }
+//                else{//获取数据往后插入
+//                    //网页中的各个区的数据不会变……随机取四十个假装在刷新吧= =
+//                    for model in dingModel.random4ContentModels(){
+//                        sectionModels.insert(model, at: 0)
+//                    }
+//                }
+//                
+//            }
+            if let webInterfaceModel:TSWebInterfaceModel = resultDic["webInterfaceModel"] as? TSWebInterfaceModel{
+                self.webInterfaceModel = webInterfaceModel
                 if self.models.count <= 1 {//第一次获取数据往后插入
-                    for model in dingModel.random4ContentModels(){
+                    for model in webInterfaceModel.random4ContentModels(){
                         sectionModels.append(model)
                     }
                 }
-                else{//获取数据往后插入
-                    //网页中的各个区的数据不会变……随机取四十个假装在刷新吧= =
-                    for model in dingModel.random4ContentModels(){
+                else{//获取数据往后插入                    
+                    for model in webInterfaceModel.random4ContentModels(){
                         sectionModels.insert(model, at: 0)
                     }
                 }
-                
             }
+            
             if sectionModels.count >= 1 {
                 self.models.insert(sectionModels, at: 0)
             }
@@ -78,7 +94,8 @@ extension TSRecommendPresent{
             fatalError(" indexPath \(indexPath) 错误 ")
         }
         if model is TSDingContentModel{
-            weakRecommendVC?.presentPlayVC()
+            guard let videoId = (model as! TSDingContentModel ).aid else { return }
+            weakRecommendVC?.presentPlayVC(aid:videoId)
         }
         else{
             fatalError(" model 类型异常 ")
@@ -107,7 +124,7 @@ extension TSRecommendPresent{
             //TSWebShowCell 包含一个轮播图
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSWebShowCell.TSWebShowCellKey, for: indexPath) as! TSWebShowCell
             cell.contentModels = (model as! TSWebShowModel).data
-            cell.delegate = self
+            cell.webCellSelectDelegate = self
             return cell
         }
         else if model is TSDingContentModel{

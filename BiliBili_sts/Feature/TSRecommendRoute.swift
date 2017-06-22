@@ -44,7 +44,7 @@ extension TSRecommendVC{
         homeVc!.present(nav, animated: true, completion: nil)
     }
     
-    func presentPlayVC(){
+    func presentPlayVC(aid:String){
         let homeVc:TSHomeVC? = self.parent?.view.superview?.next as? TSHomeVC
         if homeVc == nil {
             TSLog(message: "homeVc is nil  ")
@@ -52,6 +52,7 @@ extension TSRecommendVC{
         }
         
         let playvc = TSPlayVC()
+        playvc.aid = aid
         let nav = UINavigationController.init(rootViewController: playvc)
         let delegate = TSSwipeTransitionDelegate()
         self.homeVCtransitioningDelegate = delegate

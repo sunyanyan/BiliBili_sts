@@ -14,12 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Gifu.xcscheme</key>
+		<key>HandyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>HandyJSON.xcscheme</key>
+		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -49,30 +49,30 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ZFPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>07CF359C93B250DF23A432A2C7364AE2</key>
+		<key>051C2EB6DB12008EF3B0312FB55EFBAD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>23AADFC83DA0EB7D0E52535A029BFBA8</key>
+		<key>1DA4A2B9F1847CA613D9C5ADBD43EA37</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2180DF84AEA7B77AB44280B1AA122D7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2771B241FCE337E606D5617826A23443</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5B9888C33DE4EBFB8177CEA845DEEA74</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6CA48C1F16ACC78F79A3623829AD7804</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D97F460F04979DF65F657A8CC3B16CAC</key>
+		<key>9F1BB9F17BDAE2D927801DEC767726FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB59A6748141F46C87F5CA9965D45C80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D52144DE9D7255DE912490FF5A806573</key>
 		<dict>
 			<key>primary</key>
 			<true/>

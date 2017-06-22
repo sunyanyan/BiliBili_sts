@@ -1,66 +1,12 @@
 import UIKit
 import PlaygroundSupport
 
-let start = Date.init()
+let str = "<meta property=\"og:type\" content=\"video\"/><meta property=\"og:title\" content=\"【王者荣耀】我还是很喜欢你\"/><meta property=\"og:image\" content=\"http://i0.hdslb.com/bfs/archive/8169bf3ce8a695b91a1ac294625afadb83998689.jpg\"/><meta property=\"og:url\" content=\"http://m.bilibili.com/video/av10835406.html\"/>"
 
-let format = DateFormatter.init()
-format.dateFormat = "YYYY-MM-dd hh:mm:ss:SSS"
-
-var DateStr = format.string(from: start)
-
-sleep(2)
-
-let end = Date.init()
-DateStr = format.string(from: end)
-
-let span:Double = end.timeIntervalSince(start)
-//let spanInt = span.in
-
-
-//let tmps = ["A","B","C","D","E"]
-//var models = [String]()
-//
-//for str in tmps {
-//    models.append(str)
-//}
-//
-//for str in tmps {
-//    models.insert(str, at: 0)
-//}
-//
-//print(models)
-
-//func randomInRange(range: Range<Int>) -> Int {
-//    let count = UInt32(range.upperBound - range.lowerBound)
-//    return  Int(arc4random_uniform(count)) + range.lowerBound
-//}
-//
-//func random4InRange(range: Range<Int>) -> [Int] {
-//    
-//    var random4 = [Int]()
-//    
-//    while random4.count < 4 {
-//        let i = randomInRange(range: range)
-//        if !random4.contains(i) {
-//            random4.append(i)
-//        }
-//    }
-//    
-//    return random4
-//}
-//
-//func random4ToIndex(index: Int) -> [Int] {
-//    
-//    let range  = Range.init(uncheckedBounds: (lower: 0, upper: index))
-//    
-//    return random4InRange(range: range)
-//}
-//
-//print(random4ToIndex(index: 12))
-//print(random4InRange(range: 0..<15 ))
-
-
-
+let range1 = str.range(of: "og:image\" content=\"")
+let range2 = str.range(of: "\"/><meta property=\"og:url\"")
+let range = Range<String.Index>.init(uncheckedBounds: (lower: (range1?.upperBound)!, upper: (range2?.lowerBound)!))
+let subStr = str.substring(with: range)
 
 
 //

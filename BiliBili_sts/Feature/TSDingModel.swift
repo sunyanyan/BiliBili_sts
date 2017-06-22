@@ -30,7 +30,8 @@ class TSDingContentModel: TSBaseModel {
     var duration:Int64?
     var stat:TSDingContentStatModel?
     var tags:[String]?
-        
+    var aid:String?
+    
     //转换标签信息
     func formedTagStr () -> String? {
         if let tagStrings = tags{

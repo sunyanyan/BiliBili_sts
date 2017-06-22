@@ -61,7 +61,7 @@ class TSCarouselView :UIView{
     }
     
     //MARK:- property
-    weak var delegate: TSCarouselViewDelegate?
+    weak var carouselSelectdelegate: TSCarouselViewDelegate?
     var imageUrlStrings:[String]?{
         didSet{
             setupUI()
@@ -171,7 +171,7 @@ extension TSCarouselView:UICollectionViewDelegate{
         if let action = selectedBlock {
             action(indexPath.row,urlString)
         }
-        if let delegate = delegate {
+        if let delegate = carouselSelectdelegate {
             if let method = delegate.didSelectAtIndex {
                 method(indexPath.row,urlString)
             }

@@ -1,35 +1,38 @@
 PODS:
-  - Alamofire (4.4.0)
+  - Alamofire (4.5.0)
   - GDPerformanceView-Swift (1.2.0)
-  - Gifu (2.0.0)
   - HandyJSON (1.7.1)
+  - Masonry (1.0.2)
   - PageMenu (2.0.0)
   - Refresher (0.6.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SnapKit (3.2.0)
+  - ZFPlayer (2.1.5):
+    - Masonry
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - GDPerformanceView-Swift (~> 1.2.0)
-  - Gifu (~> 2.0)
   - HandyJSON (~> 1.7.1)
   - PageMenu (~> 2.0.0)
   - Refresher (~> 0.6.1)
   - SDWebImage (~> 3.8)
   - SnapKit (~> 3.2.0)
+  - ZFPlayer
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   GDPerformanceView-Swift: 5f12f13dcdca4cb87f91ef91ba6b50981421c57f
-  Gifu: 56a4d8f1092399159fa32662aa2232158b48d8ac
   HandyJSON: 54b6ce942795f7b2e61b82fe73cf25d9f139d125
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
   Refresher: 7c6f09ef3428aa921cb477611fb26bf29a9e5492
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  ZFPlayer: 8a80bf8eb4638b97fbceaefcd3ca9978e9f17c9d
 
-PODFILE CHECKSUM: c29dfb442ce2f74a87cb5f8f60ef17f4df4e4e31
+PODFILE CHECKSUM: e13f95bca6a662b0c8b1b0aaccf1101f0cd9c115
 
 COCOAPODS: 1.2.0

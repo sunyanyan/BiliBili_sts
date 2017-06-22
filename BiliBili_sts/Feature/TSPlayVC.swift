@@ -8,7 +8,10 @@
 
 import Foundation
 import UIKit
-import SnapKit
+import AVKit
+import AVFoundation
+
+
 
 class TSPlayVC: UIViewController {
     
@@ -16,6 +19,7 @@ class TSPlayVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        reload()        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -40,10 +44,16 @@ class TSPlayVC: UIViewController {
         let btn = UIButton.init(type: UIButtonType.custom)
         btn.setImage(UIImage.init(named:"video_info_back"), for: UIControlState.normal)
         btn.setImage(UIImage.init(named:"video_info_back"), for: UIControlState.highlighted)
-        btn.frame = CGRect.init(x: 8, y: 8, width: 40, height: 40)
+        btn.frame = CGRect.init(x: 8, y: 28, width: 30, height: 30)
+        btn.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
         return btn
     }()
     
+    var aid:String=""
+    lazy var playPresent: TSPlayPresent = {
+        let p = TSPlayPresent.init(aid: self.aid)
+        return p
+    }()
 }
 
 // MARK: - Event
@@ -51,69 +61,37 @@ extension TSPlayVC{
     
     func setupUI() {
         self.navigationController?.navigationBar.isHidden = true
+        view.backgroundColor = UIColor.white
         view.addSubview(playView)
         view.addSubview(backBtn)
-    }
-}
-
-
-class TSPlayerView:UIView{
-    //MARK: - life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
         
-        backgroundColor = UIColor.lightGray
-        addSubview(moreBtn)
-        addSubview(startBtn)
-        addSubview(titleLabel)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        moreBtn.snp.makeConstraints { (make) in
-            make.right.equalTo(self.snp.right).offset(-8)
-            make.top.equalTo(self.snp.top).offset(8)
-            make.width.height.equalTo(40)
-        }
-        
-        startBtn.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self.snp.bottom).offset(8)
-            make.right.equalTo(self.snp.right).offset(-8)
-            make.width.height.equalTo(80)
-        }
-        
-        titleLabel.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.snp.centerX)
-            make.top.equalTo(self.snp.top)
-            make.width.equalTo(self.snp.width).multipliedBy(0.8)
-            make.height.equalTo(40)
+        let deadline = DispatchTime.now() + 3
+        DispatchQueue.main.asyncAfter(deadline: deadline) { 
+            self.test()
         }
     }
-    //MARK: - property
-    lazy var startBtn: UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
-        btn.setImage(UIImage.init(named:"player_start"), for: UIControlState.normal)
-        btn.setImage(UIImage.init(named:"player_start"), for: UIControlState.highlighted)
-        return btn
-    }()
     
-    lazy var moreBtn: UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
-        btn.setImage(UIImage.init(named:"more_light"), for: UIControlState.normal)
-        btn.setImage(UIImage.init(named:"more_light"), for: UIControlState.highlighted)
-        return btn
-    }()
+    func reload(){
+        playPresent.requestData {
+            if let url = self.playPresent.playerThumbnailUrl {
+                self.playView.setupImage(url: url)
+            }
+            self.playView.setupTitle(aid: self.aid)
+        }
+    }
     
-    lazy var titleLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.textAlignment = .center
-        lbl.textColor = UIColor.white
-        lbl.font = .systemFont(ofSize: 12)
-        return lbl
-    }()
+    func backBtnClick(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func test(){
+//        let url = URL.init(string: "http://tx.acgvideo.com/9/36/18756370-1.mp4?txTime=1498032185&platform=html5&txSecret=d81e9c8f27a85e92966ee5ee4bc2579b&oi=3078728740&rate=110000")
+//        let player:AVPlayer = AVPlayer.init(url: url!)
+//        let playerLayer:AVPlayerLayer = AVPlayerLayer.init(player: player)
+//        playerLayer.frame = CGRect.init(x: 0, y: 200, width: 300, height: 200)
+//        self.view.layer.addSublayer(playerLayer)
+//        player.play()
+        
+        
+    }
 }

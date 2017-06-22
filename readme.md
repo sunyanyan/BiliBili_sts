@@ -14,6 +14,7 @@
 * 3天内排行： http://www.bilibili.com/index/ranking-3day.json
 * 番剧更新：http://www.bilibili.com/api_proxy?app=bangumi&action=timeline_v2
 * 科技区/动画区等各个区的排行：http://m.bilibili.com/index/ding.html
+    * 修改为 http://api.bilibili.com/x/web-interface/dynamic/index?jsonp=jsonp
 * 直播推荐: http://api.live.bilibili.com/h5/recommendRooms?callback=jQuery17209296492127193972_1494936264824&_=1494936265374
 
 ####  滚动推荐
@@ -22,6 +23,17 @@
 
 该链接在 m.bilibili.com/index.html 源代码254行产生。
 
+### 播放
+
+比如： http://m.bilibili.com/video/av11413190.html 
+
+* 视频：http://tx.acgvideo.com/9/55/18869362-1.mp4?txTime=1498036248&platform=html5&txSecret=118d82eb2e76a4a3d9f92e7e27d9deb8&oi=3078728740&rate=110000
+    * 视频链接来自于：
+        * http://api.bilibili.com/playurl?callback=callbackfunction&aid=11413190&page=1&platform=html5&quality=1&vtype=mp4&type=jsonp&token=4ad38e0fb723286165c5e492335a21d1
+        * playurl链接由其他js脚本拼接而成，(其中token参数没有也没关系)那么知道aid就可以获得拼接后的链接了。
+* 弹幕: http://comment.bilibili.com/18869362.xml
+    * 18869362 为cid
+    * cid 也由playurl请求中返回
 
 ##  第三方
 

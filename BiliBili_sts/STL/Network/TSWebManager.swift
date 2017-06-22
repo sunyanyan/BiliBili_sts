@@ -19,18 +19,18 @@ class TSWebManager {
         
         let group = DispatchGroup()
         
-        group.enter()
-        let url = tsDingUrl
-        _ = TSWebClient.get(urlString: url, params: nil, finishedBlock: { (Data) in
-            let jsonString = String.init(data: Data, encoding: .utf8)
-            let dingModel = TSDingModel.tsDeserialize(from: jsonString)
-            resultDic["dingModel"] =  dingModel
-            group.leave()
-            
-        }) { (Error) in
-            
-            group.leave()
-        }
+//        group.enter()
+//        let url = tsDingUrl
+//        _ = TSWebClient.get(urlString: url, params: nil, finishedBlock: { (Data) in
+//            let jsonString = String.init(data: Data, encoding: .utf8)
+//            let dingModel = TSDingModel.tsDeserialize(from: jsonString)
+//            resultDic["dingModel"] =  dingModel
+//            group.leave()
+//            
+//        }) { (Error) in
+//            
+//            group.leave()
+//        }
         
         group.enter()
         let url2 = tsWebShowUrl
@@ -44,6 +44,18 @@ class TSWebManager {
             
             group.leave()
         }
+        
+        group.enter()
+        let url3 = tsWebInterfaceDynamicUrl
+        _ = TSWebClient.get(urlString: url3, params: nil, finishedBlock: { (Data) in
+            
+            let webInterfaceModel = TSWebInterfaceModel.init(jsonData: Data)
+            resultDic["webInterfaceModel"] =  webInterfaceModel
+            
+            group.leave()
+        }, errorBlock: { (Error) in
+            group.leave()
+        })
         
         group.notify(queue: DispatchQueue.main) {
             block(resultDic)

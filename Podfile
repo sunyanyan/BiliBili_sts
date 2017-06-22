@@ -12,4 +12,5 @@ target 'BiliBili_sts’ do
   pod 'SDWebImage', '~>3.8'
 #  pod 'Gifu', '~>2.0'
   pod 'Refresher', '~>0.6.1'
+pod 'ZFPlayer' #引入了masonry 不知道会不会和 SnapKit冲突
 end

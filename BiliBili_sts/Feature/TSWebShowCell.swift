@@ -26,7 +26,7 @@ class TSWebShowCell: UICollectionViewCell {
     lazy var carouselView: TSCarouselView = {
     
         let v = TSCarouselView.init(frame: self.bounds, imageUrlStrs: [String](), selectedAction: { (index, imgUrl) in
-            if let delegate = self.delegate {
+            if let delegate = self.webCellSelectDelegate {
                 if let method = delegate.didSelectAtIndex {
                     if let model = self.contentModels?[index] {
                         method(index,model,imgUrl)
@@ -38,7 +38,7 @@ class TSWebShowCell: UICollectionViewCell {
         return v
     }()
     
-    weak var delegate:TSWebShowCellDelegate?
+    weak var webCellSelectDelegate:TSWebShowCellDelegate?
     //MARK: - override
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -14,21 +14,19 @@ class TSLaunchVC: UIViewController{
         super.viewDidLoad()
         view.addSubview(bg)
 
-        loadData {
-            self.splashAnimate {
-                self.presentMainTabVC()
-            }
+        self.splashAnimate {
+            self.presentMainTabVC()
         }
         
     }
     
     //MARK: - private method
 
-    private func loadData(completionHandler:@escaping ()->()){
-        preloadViewModel.requestData {
-            completionHandler()
-        }
-    }
+//    private func loadData(completionHandler:@escaping ()->()){
+//        preloadViewModel.requestData {
+//            completionHandler()
+//        }
+//    }
     
     private func splashAnimate(completionHandler:@escaping ()->()){
         let splashView:UIImageView = {
@@ -61,9 +59,9 @@ class TSLaunchVC: UIViewController{
     }
     
     //MARK: - PROPERTY
-    lazy var preloadViewModel: TSPreloadViewModel = {
-        return TSPreloadViewModel()
-    }()
+//    lazy var preloadViewModel: TSPreloadViewModel = {
+//        return TSPreloadViewModel()
+//    }()
     lazy var bg:UIImageView = {
         let rect = self.view.bounds
         let iv = UIImageView.init(frame: rect)

@@ -32,10 +32,10 @@ class TSRecommendVC: UIViewController {
     }
     
     //MARK: - property
-    lazy var preloadViewModel: TSPreloadViewModel = {
-        let present = TSPreloadViewModel()
-        return present
-    }()
+//    lazy var preloadViewModel: TSPreloadViewModel = {
+//        let present = TSPreloadViewModel()
+//        return present
+//    }()
     
     lazy var mainCollectionView: UICollectionView = {
         

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		142501BE76450E8652BB1D3D /* Pods_BiliBili_sts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0B006D83B1148C1222A0F4 /* Pods_BiliBili_sts.framework */; };
+		382D84461EF8B47800B79555 /* TSWebInterfaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */; };
+		382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84471EF8FC4800B79555 /* TSPlayPresent.swift */; };
+		382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84491EF9015700B79555 /* TSURLConstant.swift */; };
+		382D844C1EF9153300B79555 /* TSPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D844B1EF9153300B79555 /* TSPlayerView.swift */; };
 		38474F8E1ED6B51A0040F4E4 /* TSBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38474F8D1ED6B51A0040F4E4 /* TSBaseModel.swift */; };
 		38474F901ED6E3470040F4E4 /* TSCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38474F8F1ED6E3470040F4E4 /* TSCommon.swift */; };
 		3859858A1ED2DF1D0048B8B1 /* TSDingContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985801ED2DF1D0048B8B1 /* TSDingContentCell.swift */; };
@@ -16,7 +20,6 @@
 		3859858E1ED2DF1D0048B8B1 /* TSHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985841ED2DF1D0048B8B1 /* TSHomeVC.swift */; };
 		3859858F1ED2DF1D0048B8B1 /* TSLaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985851ED2DF1D0048B8B1 /* TSLaunchVC.swift */; };
 		385985901ED2DF1D0048B8B1 /* TSMainTabarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985861ED2DF1D0048B8B1 /* TSMainTabarVC.swift */; };
-		385985911ED2DF1D0048B8B1 /* TSPreloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985871ED2DF1D0048B8B1 /* TSPreloadModel.swift */; };
 		385985921ED2DF1D0048B8B1 /* TSRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985881ED2DF1D0048B8B1 /* TSRecommendVC.swift */; };
 		385985941ED2DF710048B8B1 /* TSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985931ED2DF710048B8B1 /* TSBaseViewController.swift */; };
 		3868D5141ECEE480006CB40A /* testDing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3868D5131ECEE480006CB40A /* testDing.jpg */; };
@@ -45,6 +48,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebInterfaceModel.swift; sourceTree = "<group>"; };
+		382D84471EF8FC4800B79555 /* TSPlayPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayPresent.swift; sourceTree = "<group>"; };
+		382D84491EF9015700B79555 /* TSURLConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSURLConstant.swift; sourceTree = "<group>"; };
+		382D844B1EF9153300B79555 /* TSPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayerView.swift; sourceTree = "<group>"; };
 		38474F8D1ED6B51A0040F4E4 /* TSBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TSBaseModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		38474F8F1ED6E3470040F4E4 /* TSCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCommon.swift; sourceTree = "<group>"; };
 		3859857B1ED2BE280048B8B1 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
@@ -54,7 +61,6 @@
 		385985841ED2DF1D0048B8B1 /* TSHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSHomeVC.swift; sourceTree = "<group>"; };
 		385985851ED2DF1D0048B8B1 /* TSLaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLaunchVC.swift; sourceTree = "<group>"; };
 		385985861ED2DF1D0048B8B1 /* TSMainTabarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSMainTabarVC.swift; sourceTree = "<group>"; };
-		385985871ED2DF1D0048B8B1 /* TSPreloadModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TSPreloadModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		385985881ED2DF1D0048B8B1 /* TSRecommendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendVC.swift; sourceTree = "<group>"; };
 		385985931ED2DF710048B8B1 /* TSBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBaseViewController.swift; sourceTree = "<group>"; };
 		3868D5131ECEE480006CB40A /* testDing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testDing.jpg; sourceTree = "<group>"; };
@@ -115,7 +121,6 @@
 			children = (
 				385985861ED2DF1D0048B8B1 /* TSMainTabarVC.swift */,
 				385985851ED2DF1D0048B8B1 /* TSLaunchVC.swift */,
-				385985871ED2DF1D0048B8B1 /* TSPreloadModel.swift */,
 			);
 			name = "启动";
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			children = (
 				385985811ED2DF1D0048B8B1 /* TSDingModel.swift */,
 				3874227C1ED452AB0031326C /* TSWebShowModel.swift */,
+				382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 			children = (
 				388C2FEB1ECAB9CE000766D6 /* TSWebClient.swift */,
 				3874227A1ED421620031326C /* TSWebManager.swift */,
+				382D84491EF9015700B79555 /* TSURLConstant.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -300,6 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				38BF26711EE1631900E2225D /* TSPlayVC.swift */,
+				382D84471EF8FC4800B79555 /* TSPlayPresent.swift */,
+				382D844B1EF9153300B79555 /* TSPlayerView.swift */,
 			);
 			name = "播放";
 			sourceTree = "<group>";
@@ -457,9 +466,12 @@
 				3869DC2C1ED56F0C007ECA81 /* readme.md in Sources */,
 				3869DC2A1ED51CD1007ECA81 /* TSCarouselView.swift in Sources */,
 				3874227B1ED421620031326C /* TSWebManager.swift in Sources */,
+				382D84461EF8B47800B79555 /* TSWebInterfaceModel.swift in Sources */,
 				38BF266E1EE037A900E2225D /* TSRecommendRoute.swift in Sources */,
 				385985941ED2DF710048B8B1 /* TSBaseViewController.swift in Sources */,
+				382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */,
 				388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */,
+				382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */,
 				3859858F1ED2DF1D0048B8B1 /* TSLaunchVC.swift in Sources */,
 				38706F4B1EC9383F008C6499 /* UIColor+tsExtension.swift in Sources */,
 				3859858B1ED2DF1D0048B8B1 /* TSDingModel.swift in Sources */,
@@ -468,10 +480,10 @@
 				38474F901ED6E3470040F4E4 /* TSCommon.swift in Sources */,
 				38474F8E1ED6B51A0040F4E4 /* TSBaseModel.swift in Sources */,
 				385985921ED2DF1D0048B8B1 /* TSRecommendVC.swift in Sources */,
-				385985911ED2DF1D0048B8B1 /* TSPreloadModel.swift in Sources */,
 				38706F2F1EC937AB008C6499 /* AppDelegate.swift in Sources */,
 				38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */,
 				385985901ED2DF1D0048B8B1 /* TSMainTabarVC.swift in Sources */,
+				382D844C1EF9153300B79555 /* TSPlayerView.swift in Sources */,
 				387422791ED416070031326C /* UIImageView+tsExtension.swift in Sources */,
 				38AC97E21ECC02630051436E /* TSLog.swift in Sources */,
 				38706F4D1EC9383F008C6499 /* TSConstant.swift in Sources */,
