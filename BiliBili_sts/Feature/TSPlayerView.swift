@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 import SnapKit
 import SDWebImage
-import ZFPlayer
+//import ZFPlayer
+import BMPlayer
+
 
 class TSPlayerView:UIView{
     //MARK: - life cycle
@@ -19,7 +21,7 @@ class TSPlayerView:UIView{
         
         backgroundColor = UIColor.lightGray
         
-        addSubview(zfPlayerView)
+        addSubview(bmPlayer)
         addSubview(maskPreView)
         maskPreView.addSubview(thumbnailImageView)
         maskPreView.addSubview(effectView)
@@ -36,7 +38,7 @@ class TSPlayerView:UIView{
     override func layoutSubviews() {
         super.layoutSubviews()
                 
-        zfPlayerView.snp.makeConstraints { (make) in
+        bmPlayer.snp.makeConstraints { (make) in
             make.edges.equalTo(UIEdgeInsets.zero)
         }
         
@@ -107,29 +109,19 @@ class TSPlayerView:UIView{
     }()
     //模糊效果
     lazy var effectView:UIVisualEffectView = {
-        let ev = UIVisualEffectView.init(effect: UIBlurEffect.init(style: UIBlurEffectStyle.dark))
+        let ev = UIVisualEffectView.init(effect: UIBlurEffect.init(style: UIBlurEffectStyle.extraLight))
         ev.alpha = 0.95
         return ev
     }()
     
     //播放器
-    lazy var zfplayerModel: ZFPlayerModel = {
-        let m = ZFPlayerModel()
-        let url = URL.init(string: "http://tx.acgvideo.com/7/b6/18824192-1.mp4?txTime=1498102965&platform=html5&txSecret=1c45a3a39761a804116a1bb5018e6fa8&oi=3078728740&rate=110000")
-        m.videoURL = url
-        m.title = "AV0000001"
-        m.fatherView = self
-        return m
-    }()
-    
-    lazy var zfPlayerViewControlView: ZFPlayerControlView = {
-        let vc = ZFPlayerControlView()
-        return vc
-    }()
-    
-    lazy var zfPlayerView: ZFPlayerView = {
-        let p = ZFPlayerView()
-        p.playerControlView(self.zfPlayerViewControlView, playerModel: self.zfplayerModel)
+    lazy var bmPlayer : BMPlayer = {
+        let p = BMPlayer()
+        
+//        let url = URL.init(string: "http://tx.acgvideo.com/c/60/18950093-1.mp4?txTime=1498121786&platform=html5&txSecret=8a3b5a3efd7d5041fc97b19b3012d0d6&oi=3078728740&rate=110000")
+//        let asset = BMPlayerResource.init(url: url!, name: "AV001234", cover: nil, subtitle: nil)
+//        p.setVideo(resource: asset)
+        
         return p
     }()
     
@@ -151,8 +143,21 @@ extension TSPlayerView{
             self.setNeedsLayout()
         }
     }
+    func setBMPlayerVideo(url:String , aid:String) {
+        if let nsurl = URL.init(string: url){
+            let name = "AV" + aid
+            let asset = BMPlayerResource.init(url: nsurl, name: name, cover: nil, subtitle: nil)
+            bmPlayer.setVideo(resource: asset)
+        }
+    }
     //隐藏遮盖图
     func maskPreViewStartBtnClick(){
         maskPreView.isHidden = true
+    }
+}
+
+class TSCustomBMPlayerControlView:BMPlayerControlView{
+    override func customizeUIComponents() {
+        
     }
 }

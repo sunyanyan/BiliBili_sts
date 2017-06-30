@@ -31,6 +31,7 @@
     * 视频链接来自于：
         * http://api.bilibili.com/playurl?callback=callbackfunction&aid=11413190&page=1&platform=html5&quality=1&vtype=mp4&type=jsonp&token=4ad38e0fb723286165c5e492335a21d1
         * playurl链接由其他js脚本拼接而成，(其中token参数没有也没关系)那么知道aid就可以获得拼接后的链接了。
+        * playurl链接需要cookies
 * 弹幕: http://comment.bilibili.com/18869362.xml
     * 18869362 为cid
     * cid 也由playurl请求中返回

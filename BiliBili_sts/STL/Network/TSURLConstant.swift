@@ -28,3 +28,10 @@ func tsVideoUrl(aid:String) -> String {
     let url = tsVideoUrlPrefix + aid + ".html"
     return url
 }
+
+func tsPlayUrl(aid:String)->String{
+    let tsPlayUrlPrefix = tsBilibiliApiHost + "/playurl?callback=callbackfunction&aid="
+    let tsPlayUrlSuffix = "&page=1&platform=html5&quality=1&vtype=mp4&type=jsonp"
+    let url = tsPlayUrlPrefix + aid + tsPlayUrlSuffix
+    return url
+}

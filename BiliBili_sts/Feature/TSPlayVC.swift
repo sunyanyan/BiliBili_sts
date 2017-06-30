@@ -49,7 +49,9 @@ class TSPlayVC: UIViewController {
         return btn
     }()
     
+    //初始化的时候赋值
     var aid:String=""
+    
     lazy var playPresent: TSPlayPresent = {
         let p = TSPlayPresent.init(aid: self.aid)
         return p
@@ -64,11 +66,6 @@ extension TSPlayVC{
         view.backgroundColor = UIColor.white
         view.addSubview(playView)
         view.addSubview(backBtn)
-        
-        let deadline = DispatchTime.now() + 3
-        DispatchQueue.main.asyncAfter(deadline: deadline) { 
-            self.test()
-        }
     }
     
     func reload(){
@@ -77,21 +74,13 @@ extension TSPlayVC{
                 self.playView.setupImage(url: url)
             }
             self.playView.setupTitle(aid: self.aid)
+            if let videoUrl = self.playPresent.videoUrl{
+                self.playView.setBMPlayerVideo(url: videoUrl, aid: self.aid)
+            }
         }
     }
     
     func backBtnClick(){
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    func test(){
-//        let url = URL.init(string: "http://tx.acgvideo.com/9/36/18756370-1.mp4?txTime=1498032185&platform=html5&txSecret=d81e9c8f27a85e92966ee5ee4bc2579b&oi=3078728740&rate=110000")
-//        let player:AVPlayer = AVPlayer.init(url: url!)
-//        let playerLayer:AVPlayerLayer = AVPlayerLayer.init(player: player)
-//        playerLayer.frame = CGRect.init(x: 0, y: 200, width: 300, height: 200)
-//        self.view.layer.addSublayer(playerLayer)
-//        player.play()
-        
-        
     }
 }

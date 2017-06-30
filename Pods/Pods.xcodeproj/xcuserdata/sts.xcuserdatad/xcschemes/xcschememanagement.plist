@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BMPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GDPerformanceView-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,7 +24,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Masonry.xcscheme</key>
+		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -49,30 +54,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ZFPlayer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>051C2EB6DB12008EF3B0312FB55EFBAD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1DA4A2B9F1847CA613D9C5ADBD43EA37</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2180DF84AEA7B77AB44280B1AA122D7E</key>
+		<key>007E1F352BBDCF79216810967474DAE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2771B241FCE337E606D5617826A23443</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51CFC1461915136228B7B20F5DA3F1C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>70042953A73200A51EB8EC2CF7E3E393</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,22 +87,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9F1BB9F17BDAE2D927801DEC767726FF</key>
+		<key>CF7D5D6C203849F69F787F31045FF721</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB59A6748141F46C87F5CA9965D45C80</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D52144DE9D7255DE912490FF5A806573</key>
+		<key>DEC05651D1F4F24769A11DC2A95A1FF7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>EFAE7C86FD6E80EBB3F47DB74FC97A6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA0AE5AF71E546593291208082A460C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

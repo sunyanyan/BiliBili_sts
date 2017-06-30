@@ -12,13 +12,13 @@ import Alamofire
 class TSWebClient{
 
     class func get(urlString: String,
-                   params:[String: Any]?,
+                   params:[String: Any]?,header:[String : String] = tsHeaders,
                    finishedBlock: @escaping (_ resultData: Data)->(),
                    errorBlock: @escaping (_ error: Error)->()) -> DataRequest{
         
         NSLog(" url is \(urlString) ")
         
-        let header = tsHeaders
+//        let header = tsHeaders
         
         let request = Alamofire.request(urlString, method: .get, parameters: params, encoding: URLEncoding.default, headers: header)
         
