@@ -180,6 +180,7 @@ extension TSPlayerView{
     //隐藏遮盖图
     func maskPreViewStartBtnClick(){
         maskPreView.isHidden = true
+        bmPlayer.play()
     }
     //返回按钮点击
     func backBtnClick(){
@@ -189,15 +190,47 @@ extension TSPlayerView{
     }
 }
 
+/// 修改原有播放器样式
 class TSCustomBMPlayerControlView:BMPlayerControlView{
-    override func customizeUIComponents() {
-        self.backButton.setImage(UIImage.init(named: "video_info_back"), for: .normal)
-        self.backButton.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
-    }
+
+    lazy var bPlayBtn: UIButton = {
+        let btn = UIButton.init(type: UIButtonType.custom)
+        btn.setImage(UIImage.init(named:"player_start"), for: UIControlState.normal)
+        btn.setImage(UIImage.init(named:"player_pause"), for: UIControlState.selected)
+        btn.tag = BMPlayerControlView.ButtonType.play.rawValue
+        btn.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
+        return btn
+    }()
     func backBtnClick(){
         if let block = backBtnClickBlock {
             block()
         }
     }
     public  var backBtnClickBlock:(()->())?
+    
+    //MARK: override
+    override func customizeUIComponents() {
+        //修改backBtn的图片
+        self.backButton.setImage(UIImage.init(named: "video_info_back"), for: .normal)
+        self.backButton.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
+        //添加bilibilli的播放按钮
+        addSubview(bPlayBtn)
+        bPlayBtn.snp.makeConstraints { (make ) in
+            make.right.equalTo(self).offset(-8)
+            make.bottom.equalTo(bottomMaskView.snp.top)
+            make.width.height.equalTo(50)
+        }
+    }
+    override func playStateDidChange(isPlaying: Bool) {
+        super.playStateDidChange(isPlaying: isPlaying)
+        bPlayBtn.isSelected = isPlaying
+    }
+    
+    override func playerStateDidChange(state: BMPlayerState) {
+        super.playerStateDidChange(state: state)
+        
+        if state == BMPlayerState.playedToTheEnd {
+            bPlayBtn.isSelected = false
+        }
+    }
 }
