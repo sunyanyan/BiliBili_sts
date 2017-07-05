@@ -13,6 +13,9 @@ import SDWebImage
 //import ZFPlayer
 import BMPlayer
 
+protocol TSPlayerViewDelegate:NSObjectProtocol {
+    func tsPlayerViewBackBtnClick()
+}
 
 class TSPlayerView:UIView{
     //MARK: - life cycle
@@ -28,7 +31,8 @@ class TSPlayerView:UIView{
         maskPreView.addSubview(moreBtn)
         maskPreView.addSubview(startBtn)
         maskPreView.addSubview(titleLabel)
-
+        maskPreView.addSubview(backBtn)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,7 +41,7 @@ class TSPlayerView:UIView{
     
     override func layoutSubviews() {
         super.layoutSubviews()
-                
+        
         bmPlayer.snp.makeConstraints { (make) in
             make.edges.equalTo(UIEdgeInsets.zero)
         }
@@ -71,8 +75,16 @@ class TSPlayerView:UIView{
             make.width.equalTo(maskPreView.snp.width).multipliedBy(0.8)
             make.height.equalTo(40)
         }
+        backBtn.snp.makeConstraints { (make ) in
+            make.top.equalTo(15)
+            make.width.height.equalTo(50)
+            make.left.equalTo(maskPreView.snp.left)
+        }
     }
     //MARK: - property
+//    public var backBtnClickBlock:(()->())?
+    weak var delegate:TSPlayerViewDelegate?
+    
     lazy var maskPreView: UIView = {
         let v = UIView()
         return v
@@ -84,6 +96,15 @@ class TSPlayerView:UIView{
         btn.setImage(UIImage.init(named:"player_start"), for: UIControlState.normal)
         btn.setImage(UIImage.init(named:"player_start"), for: UIControlState.highlighted)
         btn.addTarget(self , action: #selector(maskPreViewStartBtnClick), for: UIControlEvents.touchUpInside)
+        return btn
+    }()
+    
+    lazy var backBtn: UIButton = {
+        let btn = UIButton.init(type: UIButtonType.custom)
+        btn.setImage(UIImage.init(named:"video_info_back"), for: UIControlState.normal)
+        btn.setImage(UIImage.init(named:"video_info_back"), for: UIControlState.highlighted)
+        btn.frame = CGRect.init(x: 8, y: 28, width: 30, height: 30)
+        btn.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
         return btn
     }()
     
@@ -110,17 +131,22 @@ class TSPlayerView:UIView{
     //模糊效果
     lazy var effectView:UIVisualEffectView = {
         let ev = UIVisualEffectView.init(effect: UIBlurEffect.init(style: UIBlurEffectStyle.extraLight))
-        ev.alpha = 0.95
+        ev.alpha = 0.85
         return ev
     }()
     
     //播放器
     lazy var bmPlayer : BMPlayer = {
-        let p = BMPlayer()
+        let controlView = TSCustomBMPlayerControlView()
+        controlView.backBtnClickBlock = {()->() in
+            self.backBtnClick()
+        }
+        let p = BMPlayer.init(customControlView: controlView)
         
-//        let url = URL.init(string: "http://tx.acgvideo.com/c/60/18950093-1.mp4?txTime=1498121786&platform=html5&txSecret=8a3b5a3efd7d5041fc97b19b3012d0d6&oi=3078728740&rate=110000")
-//        let asset = BMPlayerResource.init(url: url!, name: "AV001234", cover: nil, subtitle: nil)
-//        p.setVideo(resource: asset)
+        
+        //        let url = URL.init(string: "http://tx.acgvideo.com/c/60/18950093-1.mp4?txTime=1498121786&platform=html5&txSecret=8a3b5a3efd7d5041fc97b19b3012d0d6&oi=3078728740&rate=110000")
+        //        let asset = BMPlayerResource.init(url: url!, name: "AV001234", cover: nil, subtitle: nil)
+        //        p.setVideo(resource: asset)
         
         return p
     }()
@@ -148,16 +174,30 @@ extension TSPlayerView{
             let name = "AV" + aid
             let asset = BMPlayerResource.init(url: nsurl, name: name, cover: nil, subtitle: nil)
             bmPlayer.setVideo(resource: asset)
+            bmPlayer.pause()
         }
     }
     //隐藏遮盖图
     func maskPreViewStartBtnClick(){
         maskPreView.isHidden = true
     }
+    //返回按钮点击
+    func backBtnClick(){
+        if let d  = delegate {
+            d.tsPlayerViewBackBtnClick()
+        }
+    }
 }
 
 class TSCustomBMPlayerControlView:BMPlayerControlView{
     override func customizeUIComponents() {
-        
+        self.backButton.setImage(UIImage.init(named: "video_info_back"), for: .normal)
+        self.backButton.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
     }
+    func backBtnClick(){
+        if let block = backBtnClickBlock {
+            block()
+        }
+    }
+    public  var backBtnClickBlock:(()->())?
 }

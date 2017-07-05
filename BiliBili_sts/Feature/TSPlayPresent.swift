@@ -53,7 +53,7 @@ extension TSPlayPresent{
         let subStr = responseString.substring(with: range)
         self.playerThumbnailUrl = subStr
     }
-    
+     
     func handleVideoUrlData(data:Data){
         guard let responseString = String.init(data: data, encoding: .utf8) else { return }
         

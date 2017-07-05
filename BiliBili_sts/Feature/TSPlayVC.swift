@@ -36,18 +36,19 @@ class TSPlayVC: UIViewController {
     //MARK: - property
     lazy var playView: TSPlayerView = {
         let pv = TSPlayerView()
+        pv.delegate = self
         pv.frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: 0.3 * tsScreenHeight)
         return pv
     }()
     
-    lazy var backBtn: UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
-        btn.setImage(UIImage.init(named:"video_info_back"), for: UIControlState.normal)
-        btn.setImage(UIImage.init(named:"video_info_back"), for: UIControlState.highlighted)
-        btn.frame = CGRect.init(x: 8, y: 28, width: 30, height: 30)
-        btn.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
-        return btn
-    }()
+//    lazy var backBtn: UIButton = {
+//        let btn = UIButton.init(type: UIButtonType.custom)
+//        btn.setImage(UIImage.init(named:"video_info_back"), for: UIControlState.normal)
+//        btn.setImage(UIImage.init(named:"video_info_back"), for: UIControlState.highlighted)
+//        btn.frame = CGRect.init(x: 8, y: 28, width: 30, height: 30)
+//        btn.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
+//        return btn
+//    }()
     
     //初始化的时候赋值
     var aid:String=""
@@ -65,7 +66,7 @@ extension TSPlayVC{
         self.navigationController?.navigationBar.isHidden = true
         view.backgroundColor = UIColor.white
         view.addSubview(playView)
-        view.addSubview(backBtn)
+//        view.addSubview(backBtn)
     }
     
     func reload(){
@@ -82,5 +83,12 @@ extension TSPlayVC{
     
     func backBtnClick(){
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - TSPlayerViewDelegate
+extension TSPlayVC:TSPlayerViewDelegate{
+    func tsPlayerViewBackBtnClick() {
+        self.backBtnClick()
     }
 }
