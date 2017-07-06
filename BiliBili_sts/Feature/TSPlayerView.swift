@@ -214,9 +214,10 @@ class TSCustomBMPlayerControlView:BMPlayerControlView{
         self.backButton.setImage(UIImage.init(named: "video_info_back"), for: .normal)
         self.backButton.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
         //添加bilibilli的播放按钮
-        addSubview(bPlayBtn)
+//        addSubview(bPlayBtn)
+        mainMaskView.addSubview(bPlayBtn)
         bPlayBtn.snp.makeConstraints { (make ) in
-            make.right.equalTo(self).offset(-8)
+            make.right.equalTo(mainMaskView).offset(-8)
             make.bottom.equalTo(bottomMaskView.snp.top)
             make.width.height.equalTo(50)
         }
@@ -231,6 +232,14 @@ class TSCustomBMPlayerControlView:BMPlayerControlView{
         
         if state == BMPlayerState.playedToTheEnd {
             bPlayBtn.isSelected = false
+        }
+    }
+    override func controlViewAnimation(isShow: Bool) {
+        super.controlViewAnimation(isShow: isShow)
+        
+        let alpha:CGFloat = isShow ? 1.0: 0.0;
+        UIView.animate(withDuration: 0.3) { 
+            self.bPlayBtn.alpha = alpha;
         }
     }
 }

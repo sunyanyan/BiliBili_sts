@@ -412,11 +412,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiliBili_sts/Feature/TSPlayVC.swift"
-            timestampString = "520832209.190348"
+            timestampString = "521004193.878356"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "reload()"
             landmarkType = "7">
             <Locations>
@@ -530,6 +530,38 @@
             startingLineNumber = "375"
             endingLineNumber = "375"
             landmarkName = "onButtonPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/BMPlayer/Source/BMPlayerControlView.swift"
+            timestampString = "521001606.559195"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
+            landmarkName = "onTapGestureTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/BMPlayer/Source/BMPlayerControlView.swift"
+            timestampString = "521001653.224121"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "controlViewAnimation(isShow:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

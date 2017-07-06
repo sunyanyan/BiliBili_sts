@@ -37,7 +37,6 @@ class TSPlayVC: UIViewController {
     lazy var playView: TSPlayerView = {
         let pv = TSPlayerView()
         pv.delegate = self
-        pv.frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: 0.3 * tsScreenHeight)
         return pv
     }()
     
@@ -65,7 +64,14 @@ extension TSPlayVC{
     func setupUI() {
         self.navigationController?.navigationBar.isHidden = true
         view.backgroundColor = UIColor.white
+        
         view.addSubview(playView)
+        playView.snp.makeConstraints { (make ) in
+            make.left.right.top.equalTo(self.view)
+            make.height.lessThanOrEqualTo(self.view.snp.height)
+            make.height.equalTo(self.view.snp.width).multipliedBy(9.0 / 16.0)
+            
+        }
 //        view.addSubview(backBtn)
     }
     
