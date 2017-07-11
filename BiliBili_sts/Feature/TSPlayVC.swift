@@ -40,14 +40,10 @@ class TSPlayVC: UIViewController {
         return pv
     }()
     
-//    lazy var backBtn: UIButton = {
-//        let btn = UIButton.init(type: UIButtonType.custom)
-//        btn.setImage(UIImage.init(named:"video_info_back"), for: UIControlState.normal)
-//        btn.setImage(UIImage.init(named:"video_info_back"), for: UIControlState.highlighted)
-//        btn.frame = CGRect.init(x: 8, y: 28, width: 30, height: 30)
-//        btn.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
-//        return btn
-//    }()
+    lazy var playExtensionView: TSPlayerExtraInfoView = {
+        let v = TSPlayerExtraInfoView()
+        return v
+    }()
     
     //初始化的时候赋值
     var aid:String=""
@@ -72,7 +68,13 @@ extension TSPlayVC{
             make.height.equalTo(self.view.snp.width).multipliedBy(9.0 / 16.0)
             
         }
-//        view.addSubview(backBtn)
+        view.addSubview(playExtensionView)
+        playExtensionView.snp.makeConstraints { (make ) in
+            make.top.equalTo(playExtensionView.snp.bottom)
+            make.left.right.bottom.equalTo(view)
+            
+        }
+        
     }
     
     func reload(){

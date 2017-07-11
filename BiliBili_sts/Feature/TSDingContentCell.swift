@@ -100,11 +100,14 @@ class TSDingContentCell: UICollectionViewCell {
         }
     }
     
-    //MARK: - override
+    //MARK: - life cycle / init ui
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupUI()
 
-//        addSubview(shadowView)
+    }
+    
+    func setupUI(){
         addSubview(cornerView)
         cornerView.addSubview(contentImage)
         cornerView.addSubview(titleLabel)
@@ -125,22 +128,15 @@ class TSDingContentCell: UICollectionViewCell {
         layer.shadowOffset = CGSize.init(width: 1, height: 1)
         layer.shadowOpacity = 0.5
         layer.shadowRadius = 1
+        
+        addConstraints()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-//        shadowView.snp.makeConstraints { (make) in
-//            make.edges.equalTo(UIEdgeInsets.zero)
-//        }
-//        
+    func addConstraints() {
         cornerView.snp.makeConstraints { (make) in
             make.edges.equalTo(UIEdgeInsets.zero)
         }
-    
+        
         contentImage.snp.makeConstraints { (make) in
             make.left.equalTo(cornerView.snp.left)
             make.right.equalTo(cornerView.snp.right)
@@ -215,11 +211,13 @@ class TSDingContentCell: UICollectionViewCell {
             make.width.equalTo(tagLabel.snp.height)
             
         }
-        
-    
+
     }
     
-    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+ 
     //MARK:- private method
     func setupModel(){
         if let urlString = contentModel?.pic{

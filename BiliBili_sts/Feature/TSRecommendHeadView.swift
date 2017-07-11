@@ -44,20 +44,20 @@ class TSRecommendHeadView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setupUI()
+
+    }
+    
+    func setupUI(){
         addSubview(desLabel)
         addSubview(rankingBtn)
         addSubview(tagBtn)
         addSubview(greyLineView)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
         
+        addConstraints()
+
+    }
+    func addConstraints() {
         desLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.snp.left).offset(tsCollectionViewItemSpace)
             make.top.equalTo(self.snp.top)
@@ -86,5 +86,10 @@ class TSRecommendHeadView: UICollectionReusableView {
             make.height.equalTo(1)
         }
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     
 }

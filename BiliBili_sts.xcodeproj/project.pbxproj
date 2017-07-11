@@ -12,6 +12,7 @@
 		382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84471EF8FC4800B79555 /* TSPlayPresent.swift */; };
 		382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84491EF9015700B79555 /* TSURLConstant.swift */; };
 		382D844C1EF9153300B79555 /* TSPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D844B1EF9153300B79555 /* TSPlayerView.swift */; };
+		38377B851F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38377B841F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift */; };
 		38474F8E1ED6B51A0040F4E4 /* TSBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38474F8D1ED6B51A0040F4E4 /* TSBaseModel.swift */; };
 		38474F901ED6E3470040F4E4 /* TSCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38474F8F1ED6E3470040F4E4 /* TSCommon.swift */; };
 		3859858A1ED2DF1D0048B8B1 /* TSDingContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985801ED2DF1D0048B8B1 /* TSDingContentCell.swift */; };
@@ -39,12 +40,22 @@
 		3874227D1ED452AB0031326C /* TSWebShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3874227C1ED452AB0031326C /* TSWebShowModel.swift */; };
 		388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C2FEB1ECAB9CE000766D6 /* TSWebClient.swift */; };
 		3896966F1ED7CE57001AA026 /* TSRecommendHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896966E1ED7CE57001AA026 /* TSRecommendHeadView.swift */; };
+		389E82C81F147150000501DE /* TSPlayerIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E82C71F147150000501DE /* TSPlayerIntroductionViewController.swift */; };
+		389E82CA1F147172000501DE /* TSPlayerCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E82C91F147172000501DE /* TSPlayerCommentViewController.swift */; };
 		38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A57B781ED91D9F0096FD51 /* TSWebVC.swift */; };
 		38AC97E21ECC02630051436E /* TSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC97E11ECC02630051436E /* TSLog.swift */; };
 		38BB09891EF7C92A009264E7 /* quickLook.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38BB09881EF7C92A009264E7 /* quickLook.gif */; };
 		38BF266E1EE037A900E2225D /* TSRecommendRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */; };
 		38BF266F1EE037A900E2225D /* TSSwipeTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */; };
 		38BF26721EE1631900E2225D /* TSPlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF26711EE1631900E2225D /* TSPlayVC.swift */; };
+		38C32DD41F14F0FB00479743 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38C32DC21F14F0FB00479743 /* Info.plist */; };
+		38C32DD51F14F0FB00479743 /* PaletteColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C32DC71F14F0FB00479743 /* PaletteColorModel.m */; };
+		38C32DD61F14F0FB00479743 /* Palette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C32DC91F14F0FB00479743 /* Palette.m */; };
+		38C32DD71F14F0FB00479743 /* PaletteColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C32DCB1F14F0FB00479743 /* PaletteColorUtils.m */; };
+		38C32DD81F14F0FB00479743 /* PaletteSwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C32DCD1F14F0FB00479743 /* PaletteSwatch.m */; };
+		38C32DD91F14F0FB00479743 /* PaletteTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C32DCF1F14F0FB00479743 /* PaletteTarget.m */; };
+		38C32DDA1F14F0FB00479743 /* PriorityBoxArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C32DD11F14F0FB00479743 /* PriorityBoxArray.m */; };
+		38C32DDB1F14F0FB00479743 /* UIImage+Palette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C32DD31F14F0FB00479743 /* UIImage+Palette.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +63,7 @@
 		382D84471EF8FC4800B79555 /* TSPlayPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayPresent.swift; sourceTree = "<group>"; };
 		382D84491EF9015700B79555 /* TSURLConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSURLConstant.swift; sourceTree = "<group>"; };
 		382D844B1EF9153300B79555 /* TSPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayerView.swift; sourceTree = "<group>"; };
+		38377B841F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayerExtraInfoView.swift; sourceTree = "<group>"; };
 		38474F8D1ED6B51A0040F4E4 /* TSBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TSBaseModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		38474F8F1ED6E3470040F4E4 /* TSCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCommon.swift; sourceTree = "<group>"; };
 		3859857B1ED2BE280048B8B1 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
@@ -82,12 +94,31 @@
 		3874227C1ED452AB0031326C /* TSWebShowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebShowModel.swift; sourceTree = "<group>"; };
 		388C2FEB1ECAB9CE000766D6 /* TSWebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebClient.swift; sourceTree = "<group>"; };
 		3896966E1ED7CE57001AA026 /* TSRecommendHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendHeadView.swift; sourceTree = "<group>"; };
+		389E82C71F147150000501DE /* TSPlayerIntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayerIntroductionViewController.swift; sourceTree = "<group>"; };
+		389E82C91F147172000501DE /* TSPlayerCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayerCommentViewController.swift; sourceTree = "<group>"; };
 		38A57B781ED91D9F0096FD51 /* TSWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebVC.swift; sourceTree = "<group>"; };
 		38AC97E11ECC02630051436E /* TSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLog.swift; sourceTree = "<group>"; };
 		38BB09881EF7C92A009264E7 /* quickLook.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = quickLook.gif; sourceTree = "<group>"; };
 		38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendRoute.swift; sourceTree = "<group>"; };
 		38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSwipeTransitionDelegate.swift; sourceTree = "<group>"; };
 		38BF26711EE1631900E2225D /* TSPlayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayVC.swift; sourceTree = "<group>"; };
+		38C32DC21F14F0FB00479743 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38C32DC31F14F0FB00479743 /* iOSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSPalette.h; sourceTree = "<group>"; };
+		38C32DC61F14F0FB00479743 /* PaletteColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteColorModel.h; sourceTree = "<group>"; };
+		38C32DC71F14F0FB00479743 /* PaletteColorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteColorModel.m; sourceTree = "<group>"; };
+		38C32DC81F14F0FB00479743 /* Palette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Palette.h; sourceTree = "<group>"; };
+		38C32DC91F14F0FB00479743 /* Palette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Palette.m; sourceTree = "<group>"; };
+		38C32DCA1F14F0FB00479743 /* PaletteColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteColorUtils.h; sourceTree = "<group>"; };
+		38C32DCB1F14F0FB00479743 /* PaletteColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteColorUtils.m; sourceTree = "<group>"; };
+		38C32DCC1F14F0FB00479743 /* PaletteSwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteSwatch.h; sourceTree = "<group>"; };
+		38C32DCD1F14F0FB00479743 /* PaletteSwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteSwatch.m; sourceTree = "<group>"; };
+		38C32DCE1F14F0FB00479743 /* PaletteTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteTarget.h; sourceTree = "<group>"; };
+		38C32DCF1F14F0FB00479743 /* PaletteTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteTarget.m; sourceTree = "<group>"; };
+		38C32DD01F14F0FB00479743 /* PriorityBoxArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityBoxArray.h; sourceTree = "<group>"; };
+		38C32DD11F14F0FB00479743 /* PriorityBoxArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriorityBoxArray.m; sourceTree = "<group>"; };
+		38C32DD21F14F0FB00479743 /* UIImage+Palette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Palette.h"; sourceTree = "<group>"; };
+		38C32DD31F14F0FB00479743 /* UIImage+Palette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Palette.m"; sourceTree = "<group>"; };
+		38C32DDF1F14F2FF00479743 /* BiliBili_sts-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BiliBili_sts-Bridging-Header.h"; sourceTree = "<group>"; };
 		3CEC01E06CA9D0D7897D4BC2 /* Pods-BiliBili_sts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiliBili_sts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiliBili_sts/Pods-BiliBili_sts.debug.xcconfig"; sourceTree = "<group>"; };
 		4C0C57D564EA96A4AEF03B6E /* Pods-BiliBili_sts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiliBili_sts.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiliBili_sts/Pods-BiliBili_sts.release.xcconfig"; sourceTree = "<group>"; };
 		5B0B006D83B1148C1222A0F4 /* Pods_BiliBili_sts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiliBili_sts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +237,7 @@
 		3869DC281ED51C45007ECA81 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				38C32DC11F14F0FB00479743 /* iOSPalette */,
 				3869DC291ED51CD1007ECA81 /* TSCarouselView.swift */,
 			);
 			name = libs;
@@ -242,6 +274,7 @@
 				38706F351EC937AB008C6499 /* Assets.xcassets */,
 				38706F371EC937AB008C6499 /* LaunchScreen.storyboard */,
 				38706F3A1EC937AB008C6499 /* Info.plist */,
+				38C32DDF1F14F2FF00479743 /* BiliBili_sts-Bridging-Header.h */,
 			);
 			path = BiliBili_sts;
 			sourceTree = "<group>";
@@ -286,6 +319,24 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		389E82C51F14711A000501DE /* 播放器 */ = {
+			isa = PBXGroup;
+			children = (
+				382D844B1EF9153300B79555 /* TSPlayerView.swift */,
+			);
+			name = "播放器";
+			sourceTree = "<group>";
+		};
+		389E82C61F14712D000501DE /* 播放器额外信息 */ = {
+			isa = PBXGroup;
+			children = (
+				38377B841F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift */,
+				389E82C71F147150000501DE /* TSPlayerIntroductionViewController.swift */,
+				389E82C91F147172000501DE /* TSPlayerCommentViewController.swift */,
+			);
+			name = "播放器额外信息";
+			sourceTree = "<group>";
+		};
 		38A57B771ED91D8C0096FD51 /* 网页 */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,11 +357,51 @@
 		38BF26701EE0385400E2225D /* 播放 */ = {
 			isa = PBXGroup;
 			children = (
+				389E82C61F14712D000501DE /* 播放器额外信息 */,
+				389E82C51F14711A000501DE /* 播放器 */,
 				38BF26711EE1631900E2225D /* TSPlayVC.swift */,
 				382D84471EF8FC4800B79555 /* TSPlayPresent.swift */,
-				382D844B1EF9153300B79555 /* TSPlayerView.swift */,
 			);
 			name = "播放";
+			sourceTree = "<group>";
+		};
+		38C32DC11F14F0FB00479743 /* iOSPalette */ = {
+			isa = PBXGroup;
+			children = (
+				38C32DC21F14F0FB00479743 /* Info.plist */,
+				38C32DC31F14F0FB00479743 /* iOSPalette.h */,
+				38C32DC41F14F0FB00479743 /* Source */,
+			);
+			path = iOSPalette;
+			sourceTree = "<group>";
+		};
+		38C32DC41F14F0FB00479743 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				38C32DC51F14F0FB00479743 /* Model */,
+				38C32DC81F14F0FB00479743 /* Palette.h */,
+				38C32DC91F14F0FB00479743 /* Palette.m */,
+				38C32DCA1F14F0FB00479743 /* PaletteColorUtils.h */,
+				38C32DCB1F14F0FB00479743 /* PaletteColorUtils.m */,
+				38C32DCC1F14F0FB00479743 /* PaletteSwatch.h */,
+				38C32DCD1F14F0FB00479743 /* PaletteSwatch.m */,
+				38C32DCE1F14F0FB00479743 /* PaletteTarget.h */,
+				38C32DCF1F14F0FB00479743 /* PaletteTarget.m */,
+				38C32DD01F14F0FB00479743 /* PriorityBoxArray.h */,
+				38C32DD11F14F0FB00479743 /* PriorityBoxArray.m */,
+				38C32DD21F14F0FB00479743 /* UIImage+Palette.h */,
+				38C32DD31F14F0FB00479743 /* UIImage+Palette.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		38C32DC51F14F0FB00479743 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38C32DC61F14F0FB00479743 /* PaletteColorModel.h */,
+				38C32DC71F14F0FB00479743 /* PaletteColorModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5284D387006077370AB893CF /* Pods */ = {
@@ -394,6 +485,7 @@
 			files = (
 				38706F391EC937AB008C6499 /* LaunchScreen.storyboard in Resources */,
 				38706F361EC937AB008C6499 /* Assets.xcassets in Resources */,
+				38C32DD41F14F0FB00479743 /* Info.plist in Resources */,
 				38BB09891EF7C92A009264E7 /* quickLook.gif in Resources */,
 				38706F341EC937AB008C6499 /* Main.storyboard in Resources */,
 				3868D5141ECEE480006CB40A /* testDing.jpg in Resources */,
@@ -456,6 +548,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3859858E1ED2DF1D0048B8B1 /* TSHomeVC.swift in Sources */,
+				38C32DDB1F14F0FB00479743 /* UIImage+Palette.m in Sources */,
+				38C32DDA1F14F0FB00479743 /* PriorityBoxArray.m in Sources */,
+				38C32DD51F14F0FB00479743 /* PaletteColorModel.m in Sources */,
+				389E82CA1F147172000501DE /* TSPlayerCommentViewController.swift in Sources */,
+				38C32DD71F14F0FB00479743 /* PaletteColorUtils.m in Sources */,
 				38BF26721EE1631900E2225D /* TSPlayVC.swift in Sources */,
 				38706F4C1EC9383F008C6499 /* UIView+tsFrame.swift in Sources */,
 				3896966F1ED7CE57001AA026 /* TSRecommendHeadView.swift in Sources */,
@@ -464,6 +561,7 @@
 				387422771ED3DD060031326C /* TSRefresh.swift in Sources */,
 				3859858A1ED2DF1D0048B8B1 /* TSDingContentCell.swift in Sources */,
 				3869DC2C1ED56F0C007ECA81 /* readme.md in Sources */,
+				38377B851F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift in Sources */,
 				3869DC2A1ED51CD1007ECA81 /* TSCarouselView.swift in Sources */,
 				3874227B1ED421620031326C /* TSWebManager.swift in Sources */,
 				382D84461EF8B47800B79555 /* TSWebInterfaceModel.swift in Sources */,
@@ -474,14 +572,18 @@
 				382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */,
 				3859858F1ED2DF1D0048B8B1 /* TSLaunchVC.swift in Sources */,
 				38706F4B1EC9383F008C6499 /* UIColor+tsExtension.swift in Sources */,
+				38C32DD61F14F0FB00479743 /* Palette.m in Sources */,
+				38C32DD91F14F0FB00479743 /* PaletteTarget.m in Sources */,
 				3859858B1ED2DF1D0048B8B1 /* TSDingModel.swift in Sources */,
 				38BF266F1EE037A900E2225D /* TSSwipeTransitionDelegate.swift in Sources */,
 				3869DC2E1ED57463007ECA81 /* TSWebShowCell.swift in Sources */,
 				38474F901ED6E3470040F4E4 /* TSCommon.swift in Sources */,
 				38474F8E1ED6B51A0040F4E4 /* TSBaseModel.swift in Sources */,
+				38C32DD81F14F0FB00479743 /* PaletteSwatch.m in Sources */,
 				385985921ED2DF1D0048B8B1 /* TSRecommendVC.swift in Sources */,
 				38706F2F1EC937AB008C6499 /* AppDelegate.swift in Sources */,
 				38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */,
+				389E82C81F147150000501DE /* TSPlayerIntroductionViewController.swift in Sources */,
 				385985901ED2DF1D0048B8B1 /* TSMainTabarVC.swift in Sources */,
 				382D844C1EF9153300B79555 /* TSPlayerView.swift in Sources */,
 				387422791ED416070031326C /* UIImageView+tsExtension.swift in Sources */,
@@ -615,6 +717,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sts.iOSTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/BiliBili_sts/BiliBili_sts-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -629,6 +732,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sts.iOSTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/BiliBili_sts/BiliBili_sts-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

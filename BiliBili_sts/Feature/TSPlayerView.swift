@@ -18,10 +18,14 @@ protocol TSPlayerViewDelegate:NSObjectProtocol {
 }
 
 class TSPlayerView:UIView{
-    //MARK: - life cycle
+    //MARK: - life cycle / init UI
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupUI()
         
+    }
+    
+    func setupUI(){
         backgroundColor = UIColor.lightGray
         
         addSubview(bmPlayer)
@@ -33,15 +37,10 @@ class TSPlayerView:UIView{
         maskPreView.addSubview(titleLabel)
         maskPreView.addSubview(backBtn)
         
+        addConstraints()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
+    func addConstraints(){
         bmPlayer.snp.makeConstraints { (make) in
             make.edges.equalTo(UIEdgeInsets.zero)
         }
@@ -81,6 +80,11 @@ class TSPlayerView:UIView{
             make.left.equalTo(maskPreView.snp.left)
         }
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - property
 //    public var backBtnClickBlock:(()->())?
     weak var delegate:TSPlayerViewDelegate?

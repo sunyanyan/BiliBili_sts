@@ -29,22 +29,24 @@ class TSDingContentModel: TSBaseModel {
     var title:String?
     var duration:Int64?
     var stat:TSDingContentStatModel?
-    var tags:[String]?
+    var tags:[String]?//废弃
+    var tname:String?
     var aid:String?
     
     //转换标签信息
     func formedTagStr () -> String? {
-        if let tagStrings = tags{
-            if tagStrings.count <= 2{
-                let nsArray = NSArray.init(array: tagStrings)
-                return nsArray.componentsJoined(by: " · ")
-            }
-            else{
-                let nsArray = NSArray.init(objects: tagStrings[0],tagStrings[1])
-                return nsArray.componentsJoined(by: " · ")
-            }
-        }
-        return nil
+//        if let tagStrings = tags{
+//            if tagStrings.count <= 2{
+//                let nsArray = NSArray.init(array: tagStrings)
+//                return nsArray.componentsJoined(by: " · ")
+//            }
+//            else{
+//                let nsArray = NSArray.init(objects: tagStrings[0],tagStrings[1])
+//                return nsArray.componentsJoined(by: " · ")
+//            }
+//        }
+//        return nil
+        return tname;
     }
 }
 
