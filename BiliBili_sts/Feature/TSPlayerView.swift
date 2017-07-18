@@ -25,62 +25,6 @@ class TSPlayerView:UIView{
         
     }
     
-    func setupUI(){
-        backgroundColor = UIColor.lightGray
-        
-        addSubview(bmPlayer)
-        addSubview(maskPreView)
-        maskPreView.addSubview(thumbnailImageView)
-        maskPreView.addSubview(effectView)
-        maskPreView.addSubview(moreBtn)
-        maskPreView.addSubview(startBtn)
-        maskPreView.addSubview(titleLabel)
-        maskPreView.addSubview(backBtn)
-        
-        addConstraints()
-    }
-    
-    func addConstraints(){
-        bmPlayer.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets.zero)
-        }
-        
-        maskPreView.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets.zero)
-        }
-        thumbnailImageView.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets.zero)
-        }
-        
-        effectView.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets.zero)
-        }
-        
-        moreBtn.snp.makeConstraints { (make) in
-            make.right.equalTo(maskPreView.snp.right).offset(-8)
-            make.top.equalTo(maskPreView.snp.top).offset(8)
-            make.width.height.equalTo(40)
-        }
-        
-        startBtn.snp.makeConstraints { (make) in
-            make.bottom.equalTo(maskPreView.snp.bottom).offset(-15)
-            make.right.equalTo(maskPreView.snp.right).offset(-15)
-            make.width.height.equalTo(50)
-        }
-        
-        titleLabel.snp.makeConstraints { (make) in
-            make.centerX.equalTo(maskPreView.snp.centerX)
-            make.top.equalTo(maskPreView.snp.top).offset(8)
-            make.width.equalTo(maskPreView.snp.width).multipliedBy(0.8)
-            make.height.equalTo(40)
-        }
-        backBtn.snp.makeConstraints { (make ) in
-            make.top.equalTo(15)
-            make.width.height.equalTo(50)
-            make.left.equalTo(maskPreView.snp.left)
-        }
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -156,7 +100,68 @@ class TSPlayerView:UIView{
     }()
     
 }
-//MARK:EVENT
+//MARK:- TSPlayerView setup UI & add Constraints
+extension TSPlayerView{
+    
+    func setupUI(){
+        backgroundColor = UIColor.lightGray
+        
+        addSubview(bmPlayer)
+        addSubview(maskPreView)
+        maskPreView.addSubview(thumbnailImageView)
+        maskPreView.addSubview(effectView)
+        maskPreView.addSubview(moreBtn)
+        maskPreView.addSubview(startBtn)
+        maskPreView.addSubview(titleLabel)
+        maskPreView.addSubview(backBtn)
+        
+        addConstraints()
+    }
+    
+    func addConstraints(){
+        bmPlayer.snp.makeConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsets.zero)
+        }
+        
+        maskPreView.snp.makeConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsets.zero)
+        }
+        thumbnailImageView.snp.makeConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsets.zero)
+        }
+        
+        effectView.snp.makeConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsets.zero)
+        }
+        
+        moreBtn.snp.makeConstraints { (make) in
+            make.right.equalTo(maskPreView.snp.right).offset(-8)
+            make.top.equalTo(maskPreView.snp.top).offset(8)
+            make.width.height.equalTo(40)
+        }
+        
+        startBtn.snp.makeConstraints { (make) in
+            make.bottom.equalTo(maskPreView.snp.bottom).offset(-15)
+            make.right.equalTo(maskPreView.snp.right).offset(-15)
+            make.width.height.equalTo(50)
+        }
+        
+        titleLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(maskPreView.snp.centerX)
+            make.top.equalTo(maskPreView.snp.top).offset(8)
+            make.width.equalTo(maskPreView.snp.width).multipliedBy(0.8)
+            make.height.equalTo(40)
+        }
+        backBtn.snp.makeConstraints { (make ) in
+            make.top.equalTo(15)
+            make.width.height.equalTo(50)
+            make.left.equalTo(maskPreView.snp.left)
+        }
+    }
+    
+}
+
+//MARK:- TSPlayerView event
 extension TSPlayerView{
     func setupTitle(aid:String){
         let title = "av" + aid

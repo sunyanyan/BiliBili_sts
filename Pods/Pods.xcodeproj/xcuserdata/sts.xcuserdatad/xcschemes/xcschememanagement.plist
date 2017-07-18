@@ -29,11 +29,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PageMenu.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-BiliBili_sts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51CFC1461915136228B7B20F5DA3F1C5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>70042953A73200A51EB8EC2CF7E3E393</key>
+		<key>59E31A00B7B37800DC3757FC0DE37DCC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>978A447F57E812AEE5D676FF361F1416</key>
+		<key>B7F3754A046BF54D26A58C0AF0A51FCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA0AE5AF71E546593291208082A460C4</key>
+		<key>F0BA7123A85D83DFB5E569E2E70107B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

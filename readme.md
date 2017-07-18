@@ -39,13 +39,15 @@
 ##  第三方
 
 * [Alamofire](https://github.com/Alamofire/Alamofire) 网络请求
-* [PageMenu](https://github.com/PageMenu/PageMenu) 分页
 * [GDPerformanceView](https://github.com/dani-gavrilov/GDPerformanceView-Swift) 显示fps
 * [SnapKit](https://github.com/SnapKit/SnapKit) autolayout
 * [HandyJSON](https://github.com/alibaba/HandyJSON) json序列化
 * [SDWebImage](https://github.com/rs/SDWebImage) image downloader with cache support
 * [Refresher](https://github.com/jcavar/refresher) 一个可以简单自定义刷新视图的下拉刷新组件
 
+* 弃用
+    * [PageMenu](https://github.com/PageMenu/PageMenu) 分页（自定义麻烦）
+    * [iOSPalette](https://github.com/tangdiforx/iOSPalette)获取图片主色调（有比较大几率获取到不正确的颜色）	
 
 ## 文件模板
 

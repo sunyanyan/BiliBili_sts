@@ -19,6 +19,10 @@ extension UIView {
         return center.y
     }
     
+    public var tsBottomY:CGFloat{
+        return frame.origin.y + tsH
+    }
+    
     public var tsW:CGFloat{
         return frame.size.width
     }

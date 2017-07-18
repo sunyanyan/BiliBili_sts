@@ -8,9 +8,10 @@ PODS:
     - NVActivityIndicatorView (~> 3.5)
     - SnapKit (~> 3.2)
   - GDPerformanceView-Swift (1.2.0)
-  - HandyJSON (1.7.1)
-  - NVActivityIndicatorView (3.6.1)
-  - PageMenu (2.0.0)
+  - HandyJSON (1.7.2)
+  - NVActivityIndicatorView (3.7.0):
+    - NVActivityIndicatorView/Presenter (= 3.7.0)
+  - NVActivityIndicatorView/Presenter (3.7.0)
   - Refresher (0.6.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -22,7 +23,6 @@ DEPENDENCIES:
   - BMPlayer
   - GDPerformanceView-Swift (~> 1.2.0)
   - HandyJSON (~> 1.7.1)
-  - PageMenu (~> 2.0.0)
   - Refresher (~> 0.6.1)
   - SDWebImage (~> 3.8)
   - SnapKit (~> 3.2.0)
@@ -31,13 +31,12 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   BMPlayer: 5ba9e3f3d61ccc5a24ebd9cdc24901dcf28c98bc
   GDPerformanceView-Swift: 5f12f13dcdca4cb87f91ef91ba6b50981421c57f
-  HandyJSON: 54b6ce942795f7b2e61b82fe73cf25d9f139d125
-  NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
-  PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
+  HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
+  NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   Refresher: 7c6f09ef3428aa921cb477611fb26bf29a9e5492
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: c0a19ab8a4d3f4a353fb84f811f1c00608af4efb
+PODFILE CHECKSUM: 91e893dc920c1e9c37314b546186670d79d51cf2
 
 COCOAPODS: 1.2.0

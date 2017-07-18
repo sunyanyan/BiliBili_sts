@@ -37,11 +37,16 @@ class TSPlayVC: UIViewController {
     lazy var playView: TSPlayerView = {
         let pv = TSPlayerView()
         pv.delegate = self
+        let w = self.view.tsW
+        pv.frame = CGRect.init(x: 0, y: 0, width: w, height: w * 9.0 / 16.0)
         return pv
     }()
     
     lazy var playExtensionView: TSPlayerExtraInfoView = {
-        let v = TSPlayerExtraInfoView()
+        let v = TSPlayerExtraInfoView()        
+        let y = self.view.tsW * 9.0 / 16.0
+        let h = self.view.tsH - y
+        v.frame = CGRect.init(x: 0, y: y, width: self.view.tsH, height: h)
         return v
     }()
     
@@ -70,7 +75,7 @@ extension TSPlayVC{
         }
         view.addSubview(playExtensionView)
         playExtensionView.snp.makeConstraints { (make ) in
-            make.top.equalTo(playExtensionView.snp.bottom)
+            make.top.equalTo(playView.snp.bottom)
             make.left.right.bottom.equalTo(view)
             
         }

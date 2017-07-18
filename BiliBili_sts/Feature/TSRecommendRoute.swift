@@ -13,6 +13,8 @@ import UIKit
 
 extension TSRecommendVC{
     
+    
+    
     private static var homeVCtransitioningDelegateAssociationKey:UInt8 = 0
     var homeVCtransitioningDelegate:UIViewControllerTransitioningDelegate?{
         get{
@@ -28,7 +30,7 @@ extension TSRecommendVC{
     /// - Parameter url: <#url description#>
     func presentWebVC(url:String) {
         
-        let homeVc:TSHomeVC? = self.parent?.view.superview?.next as? TSHomeVC
+        let homeVc:TSHomeVC? = self.homeVC()
         if homeVc == nil {
             TSLog(message: "homeVc is nil  ")
             return
@@ -45,7 +47,7 @@ extension TSRecommendVC{
     }
     
     func presentPlayVC(aid:String){
-        let homeVc:TSHomeVC? = self.parent?.view.superview?.next as? TSHomeVC
+        let homeVc:TSHomeVC? = self.homeVC()
         if homeVc == nil {
             TSLog(message: "homeVc is nil  ")
             return
@@ -59,6 +61,12 @@ extension TSRecommendVC{
         nav.transitioningDelegate = delegate
         homeVc!.present(nav, animated: true, completion: nil)
 
+    }
+    
+    func homeVC()->TSHomeVC?{
+        //当前ViewController相对于Home的位置
+        let homeVC:TSHomeVC? = self.parent as? TSHomeVC
+        return homeVC
     }
 }
 

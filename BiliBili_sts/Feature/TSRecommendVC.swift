@@ -32,11 +32,7 @@ class TSRecommendVC: UIViewController {
     }
     
     //MARK: - property
-//    lazy var preloadViewModel: TSPreloadViewModel = {
-//        let present = TSPreloadViewModel()
-//        return present
-//    }()
-    
+ 
     lazy var mainCollectionView: UICollectionView = {
         
         let flowLayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -44,7 +40,7 @@ class TSRecommendVC: UIViewController {
         flowLayout.minimumLineSpacing = tsCollectionViewItemSpace // 单元格最小行间距
 
         
-        let frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: tsScreenHeight - tsTabbarHeight - tsStatusBarHeight - tsNavBarHeight)
+        let frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: tsScreenHeight - tsTabbarHeight - tsStatusBarHeight - tsSlideMenuViewHeight)
         let cv:UICollectionView = UICollectionView.init(frame: frame, collectionViewLayout: flowLayout)
         cv.delegate = self
         cv.dataSource = self

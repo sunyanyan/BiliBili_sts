@@ -9,6 +9,6 @@
 #ifndef BiliBili_sts_Bridging_Header_h
 #define BiliBili_sts_Bridging_Header_h
 
-#import "iOSPalette.h"
+//#import "iOSPalette.h"
 
 #endif /* BiliBili_sts_Bridging_Header_h */

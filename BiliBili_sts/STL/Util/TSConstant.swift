@@ -15,6 +15,7 @@ let tsScreenHeight = UIScreen.main.bounds.height
 let tsTabbarHeight:CGFloat = 49.0
 let tsStatusBarHeight:CGFloat = 20.0
 let tsNavBarHeight:CGFloat = 44.0
+let tsSlideMenuViewHeight:CGFloat = 30.0
 
 let tsPageMenuHeight:CGFloat = 30.0
 
