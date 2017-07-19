@@ -26,6 +26,7 @@ class TSPlayerIntroductionView:UIView{
     func setupUI(){
         backgroundColor = UIColor.green
         addSubview(infoView)
+        bringSubview(toFront: infoView)
         addConstraints()
     }
     func addConstraints(){

@@ -18,29 +18,20 @@ class TSPlayerCommentView: UIView  {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //MARK:- property
-    lazy var someBtn: UIButton = {
-        let btn = UIButton.init(type: UIButtonType.system)
-        btn.setImage(UIImage.init(named:"rank_entrance"), for: UIControlState.normal)
-        btn.setImage(UIImage.init(named:"rank_entrance"), for: UIControlState.highlighted)
-        btn.addTarget(self , action: #selector(someBtnClick), for: .touchUpInside)
-        return btn
-    }()
     
-    func someBtnClick(){
-        print(" someBtnClick ")
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
-    
+  
     //MARK:- setup UI & add Constraints
     func setupUI(){
-        backgroundColor = UIColor.green
-        addSubview(someBtn)
-        addConstraints()
+        let tapGes = UITapGestureRecognizer.init(target: self , action: #selector(tapClick(ges:)))
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(tapGes)
     }
-    func addConstraints(){
-        someBtn.snp.makeConstraints { (make ) in
-            make.left.right.top.equalTo(self)
-            make.height.equalTo(150)
-        }
+    func tapClick(ges:UITapGestureRecognizer){
+        let point = ges.location(in: self)
+        TSLog(message: "point is\(point)")
     }
+
 }

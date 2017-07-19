@@ -475,54 +475,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BiliBili_sts/Feature/TSPlayerView.swift"
-            timestampString = "521609294.640749"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "backBtnClick()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BiliBili_sts.TSPlayerView.backBtnClick () -&gt; ()"
-                  moduleName = "BiliBili_sts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sts/Desktop/github/BiliBili_sts/BiliBili_sts/Feature/TSPlayerView.swift"
-                  timestampString = "520832015.787924"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "19">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BiliBili_sts.TSPlayerView.backBtnClick () -&gt; ()"
-                  moduleName = "BiliBili_sts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sts/Desktop/github/BiliBili_sts/BiliBili_sts/Feature/TSPlayerView.swift"
-                  timestampString = "520832015.791044"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Pods/BMPlayer/Source/BMPlayerControlView.swift"
             timestampString = "520916793.020183"
             startingColumnNumber = "9223372036854775807"
@@ -571,22 +523,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BiliBili_sts/Feature/TSPlayerExtraInfoView.swift"
-            timestampString = "522075274.895835"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "contentScrollView"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BiliBili_sts/Feature/TSPlayVC.swift"
             timestampString = "521610202.208689"
             startingColumnNumber = "9223372036854775807"
@@ -620,11 +556,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiliBili_sts/Feature/TSPlayerIntroductionView.swift"
-            timestampString = "522075363.231543"
+            timestampString = "522125827.276404"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "someBtnClick()"
             landmarkType = "7">
          </BreakpointContent>
@@ -632,16 +568,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BiliBili_sts/Feature/TSPlayerCommentView.swift"
-            timestampString = "522075607.311849"
+            filePath = "BiliBili_sts/Feature/TSPlayerExtraInfoView.swift"
+            timestampString = "522123040.549594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "someBtnClick()"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "layoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

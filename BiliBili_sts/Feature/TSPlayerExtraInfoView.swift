@@ -21,11 +21,14 @@ class TSPlayerExtraInfoView: UIView  {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let h :CGFloat = self.tsH - self.slideMenu.tsH
+        let h :CGFloat = self.tsH - slideMenu.tsH
         let w :CGFloat = self.tsW
-        contentScrollView.contentSize = CGSize(width: w*2, height: h)
-        
+//        contentScrollView.frame = CGRect.init(x: 0, y: tsSlideMenuViewHeight, width: w, height: h)
         addConstraints()
+        for sview  in contentScrollSubViews {
+            contentScrollView.bringSubview(toFront: sview)
+        }
+        contentScrollView.contentSize = CGSize(width: w*2, height: h)
     }
     //MARK: property
     lazy var contentScrollSubViews: [UIView] = {
@@ -61,13 +64,12 @@ class TSPlayerExtraInfoView: UIView  {
     }()
     
     lazy var contentScrollView: UIScrollView = {
-        
-        let y :CGFloat = tsSlideMenuViewHeight
-        let h :CGFloat = self.tsH - tsScreenHeight
-        let w :CGFloat = self.tsW
-        let frame = CGRect.init(x: 0, y: y, width: w, height: h)
-        let v = UIScrollView.init(frame: frame)
-        v.contentSize = CGSize(width: w*2, height: h)
+
+        let v = UIScrollView()
+        v.isUserInteractionEnabled = true
+        v.translatesAutoresizingMaskIntoConstraints = false
+        let sv = UIView()
+    
         v.isPagingEnabled = true
         v.showsHorizontalScrollIndicator = false
         v.showsVerticalScrollIndicator = false
@@ -86,27 +88,30 @@ extension TSPlayerExtraInfoView{
     }
     
     func addConstraints(){
+        
         slideMenu.snp.makeConstraints { (make ) in
             make.top.equalTo(self)
             make.centerX.equalTo(self)
             make.width.equalTo(150)
             make.height.equalTo(tsSlideMenuViewHeight)
         }
+        
         contentScrollView.snp.makeConstraints { (make ) in
-            make.left.right.bottom.equalTo(self)
+            make.left.equalTo(self)
+            make.width.equalTo(self)
+            make.height.equalTo(self).offset(tsSlideMenuViewHeight)
             make.top.equalTo(slideMenu.snp.bottom)
         }
         
         let v1 = contentScrollSubViews[0]
+        
         v1.snp.makeConstraints({ (make) in
-            make.top.bottom.equalTo(contentScrollView)
-            make.width.equalTo(contentScrollView)
-            make.left.equalTo(contentScrollView)
+            make.top.left.width.height.equalTo(contentScrollView)
         })
         let v2 = contentScrollSubViews[1]
+        
         v2.snp.makeConstraints({ (make) in
-            make.top.bottom.equalTo(contentScrollView)
-            make.width.equalTo(contentScrollView)
+            make.top.width.height.equalTo(contentScrollView)
             make.left.equalTo(v1.snp.right)
         })
     }
@@ -114,6 +119,7 @@ extension TSPlayerExtraInfoView{
     func addContentScrollSubViews(){
         for sview  in contentScrollSubViews {
             contentScrollView.addSubview(sview)
+            contentScrollView.bringSubview(toFront: sview)
         }
     }
 }

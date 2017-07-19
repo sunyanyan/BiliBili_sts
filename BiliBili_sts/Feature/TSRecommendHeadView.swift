@@ -26,8 +26,13 @@ class TSRecommendHeadView: UICollectionReusableView {
         let btn = UIButton.init(type: UIButtonType.custom)
         btn.setImage(#imageLiteral(resourceName: "rank_entrance"), for: UIControlState.normal)
         btn.imageView?.contentMode = .scaleAspectFill
+        btn.addTarget(self , action: #selector(rankBtnClick), for: .touchUpInside)
         return btn
     }()
+    
+    func rankBtnClick(){
+        print("rankBtnClick")
+    }
     
     lazy var tagBtn: UIButton = {
         let btn = UIButton.init(type: UIButtonType.custom)
