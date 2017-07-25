@@ -25,5 +25,4 @@ extension UIImageView {
         gifImage.animationRepeatCount = 0
         return gifImage
     }
-    
 }
