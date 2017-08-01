@@ -26,6 +26,10 @@ class TSFlodTextView:UIView{
         
         textContent = text
     }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupConstraints()
+    }
     //MARK:- property
     var isMutiLineStatus = false{
         willSet(newValue) {
@@ -48,7 +52,7 @@ class TSFlodTextView:UIView{
     lazy var singleLbl: UILabel = {
         let lbl = UILabel()
         lbl.textAlignment = .left
-        lbl.textColor = UIColor.black
+        lbl.textColor = UIColor.lightGray
         lbl.font = .systemFont(ofSize: 10)
         lbl.text = self.textContent
         
@@ -63,6 +67,7 @@ class TSFlodTextView:UIView{
     lazy var mutiTextView: UITextView = {
         let v  = UITextView()
         v.isHidden = true
+        v.textColor = UIColor.lightGray
         v.textAlignment = .left
         v.font = .systemFont(ofSize: 10)
         v.text = self.textContent
@@ -76,9 +81,13 @@ class TSFlodTextView:UIView{
         addSubview(singleLbl)
         addSubview(mutiTextView)
         addSubview(arrowBtn)
-        addConstraints()
+        
     }
-    func addConstraints(){
+    func setupConstraints(){
+    
+        let viewWidth = self.tsW
+        if viewWidth == 0 {return}
+    
         singleLbl.snp.makeConstraints { (make ) in
             make.left.top.bottom.equalTo(self)
             make.right.equalTo(self).offset(-30)

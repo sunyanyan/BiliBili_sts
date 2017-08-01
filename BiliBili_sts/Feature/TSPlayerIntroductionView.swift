@@ -17,63 +17,87 @@ class TSPlayerIntroductionView:UIView{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupConstraints()
+    }
+    
     //MARK: - property
     lazy var infoView : TSPIInfoView = {
         let v = TSPIInfoView()
-        v.delegate = self
+        v.updateFrameDelegate = self
         return v
     }()
     
     lazy var authorAndTagsView: TSPIAuthorAndTagsView = {
         let v = TSPIAuthorAndTagsView()
+        v.updateFrameDelegate = self
         return v
     }()
+    
+    lazy var videoReleadtedView:TSVideoReleadView = {
+        let v = TSVideoReleadView()
+        return v
+    }()
+    weak var updateFrameDelegate:TSUpdateFrameDelegate?
+    
     //MARK:- setup UI & add Constraints
     func setupUI(){
         backgroundColor = UIColor.hexString(hex: "FAFAFA")
         addSubview(infoView)
         bringSubview(toFront: infoView)
-        addConstraints()
+        addSubview(authorAndTagsView)
+        bringSubview(toFront: authorAndTagsView)
+        addSubview(videoReleadtedView)
+        bringSubview(toFront: videoReleadtedView)
+        
     }
-    func addConstraints(){
-        infoView.snp.makeConstraints { (make ) in
+    func setupConstraints(){
+    
+        let viewWidth = self.tsW
+        if viewWidth == 0 {return}
+    
+        infoView.snp.updateConstraints { (make ) in
             make.left.right.equalTo(self)
             make.top.equalTo(self).offset(10)
-            make.height.equalTo(101)
+            make.height.equalTo(infoView.requiredViewHeight)
         }
-        authorAndTagsView.snp.makeConstraints { (make ) in
+        authorAndTagsView.snp.updateConstraints { (make ) in
             make.top.equalTo(infoView.snp.bottom).offset(8)
             make.left.right.equalTo(self)
-            make.height.equalTo(150)
+            make.height.equalTo(authorAndTagsView.requiredViewHeight)
             
         }
+        videoReleadtedView.snp.makeConstraints { (make ) in
+            make.top.equalTo(authorAndTagsView.snp.bottom).offset(8)
+            make.left.right.equalTo(self)
+            make.height.equalTo(1000)
+        }
+    }
+    
+    /// 当前视图合适的高度
+    ///
+    /// - Returns: <#return value description#>
+    func requiredViewHeight()->CGFloat{
+        let height = infoView.requiredViewHeight + authorAndTagsView.requiredViewHeight + videoReleadtedView.requiredViewHeight
+        return  height
     }
 
     
 }
 
-extension TSPlayerIntroductionView:TSPIInfoViewDelegate{
-    func infoViewShouldUpdateFrame(isMutiLineStatus:Bool,addHeight:CGFloat) {
-        if isMutiLineStatus {
-            infoView.snp.updateConstraints({ (make) in
-                make.left.right.equalTo(self)
-                make.top.equalTo(self).offset(10)
-                make.height.equalTo(101+addHeight)
-            })
-        }
-        else{
-            infoView.snp.updateConstraints({ (make) in
-                make.left.right.equalTo(self)
-                make.top.equalTo(self).offset(10)
-                make.height.equalTo(101)
-            })
+extension TSPlayerIntroductionView:TSUpdateFrameDelegate{
+    func tsUpdateFrameHeight(targetView: UIView, newHeight: CGFloat) {
+        if let del  = updateFrameDelegate {
+            del.tsUpdateFrameHeight(targetView: self, newHeight: self.requiredViewHeight())
         }
         setNeedsLayout()
     }
 }
 
-/// up主头像 + 关注按钮 + 标签栏
-class TSPIAuthorAndTagsView:UIView{
+/// 展示视频相关列表
+class TSVideoReleadView:UIView{
     //MARK: - life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -82,87 +106,51 @@ class TSPIAuthorAndTagsView:UIView{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         setupConstraints()
     }
-    //MARK: - property
-    lazy var upHeadImageView:UIImageView = {
-        let iv = UIImageView()
-        return iv
-    }()
-    lazy var upNameLbl: UILabel = {
-        let lbl = UILabel()
-        lbl.textAlignment = .left
-        lbl.textColor = UIColor.black
-        lbl.font = .systemFont(ofSize: 10)
-        return lbl
-    }()
-    lazy var upTimeLbl: UILabel = {
-        let lbl = UILabel()
-        lbl.textAlignment = .left
-        lbl.textColor = UIColor.black
-        lbl.font = .systemFont(ofSize: 8)
-        return lbl
-    }()
-    lazy var followBtn: UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
-        btn.setTitle("关注", for: .normal)
-        btn.layer.borderWidth = 1
-        btn.layer.borderColor = UIColor.hexString(hex: "ECB1C0").cgColor
-        btn.layer.cornerRadius = 5
-        return btn
-    }()
-    lazy var titleLbl: UILabel = {
-        let lbl = UILabel()
-        lbl.textAlignment = .left
-        lbl.textColor = UIColor.black
-        lbl.font = .systemFont(ofSize: 12)
-        lbl.text = "标签相关"
-        return lbl
-    }()
-    lazy var editBtn: UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
-        btn.setTitle("编辑", for: .normal)
-        btn.setTitleColor(UIColor.lightGray, for: .normal)
-        return btn
-    }()
-    
-    lazy var arrowBtn: UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
-        btn.setImage(UIImage.init(named:"arrow_down"), for: UIControlState.normal)
-        return btn
-    }()
-    lazy var tagListView: TSTagsListView = {
-        let v = TSTagsListView()
+    //MARK:-property
+    lazy var contentTableView: UITableView = {
+        let v = UITableView.init(frame: CGRect.zero, style: UITableViewStyle.plain)
+        v.delegate = self
+        v.dataSource = self
         return v
     }()
+    var requiredViewHeight:CGFloat = 44.0 * 10
 }
 
-extension TSPIAuthorAndTagsView{
-    //MARK:- setup UI & add Constraints
-    func setupUI(){
-        addSubview(upHeadImageView)
-        addSubview(upNameLbl)
-        addSubview(upTimeLbl)
-        
+extension TSVideoReleadView{
+    //MARK: - setup UI
+    func setupUI () {
+        contentTableView.isScrollEnabled = false
+        self.backgroundColor = UIColor.red
+        addSubview(contentTableView)
     }
     func setupConstraints(){
+        let viewWidth = self.tsW
+        if viewWidth == 0 {return}
+        
+        contentTableView.snp.makeConstraints { (make ) in
+            make.left.top.equalTo(self)
+            make.width.height.equalTo(self)
+        }
     }
 }
 
-class TSTagsListView:UIView{
-    //MARK: - life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = UIColor.blue
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+extension TSVideoReleadView:UITableViewDataSource{
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 10;
+    }
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cellId = "cellId"
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
+        if cell == nil {
+            cell = UITableViewCell.init(style: .default, reuseIdentifier: cellId)
+        }
+        cell?.textLabel?.text = "这是一条cell"
+        return cell!
     }
 }
+extension TSVideoReleadView:UITableViewDelegate{}

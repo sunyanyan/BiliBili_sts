@@ -51,7 +51,7 @@
 
 ## 文件模板
 
-### viewcontroller
+### viewcontrollerrrr
 
 >life cycle & property
 

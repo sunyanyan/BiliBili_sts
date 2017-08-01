@@ -540,12 +540,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiliBili_sts/Feature/TSPlayerIntroductionView.swift"
-            timestampString = "522570922.888432"
+            timestampString = "522829323.782363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "setupUI()"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "authorAndTagsView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/Feature/TSPlayerIntroductionView.swift"
+            timestampString = "522830550.006055"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "init(frame:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/Feature/TSPlayerIntroductionView.swift"
+            timestampString = "523183102.688557"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -556,12 +588,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiliBili_sts/Feature/TSPlayerExtraInfoView.swift"
-            timestampString = "522123040.549594"
+            timestampString = "523183873.427002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "layoutSubviews()"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "tsUpdateFrameHeight(targetView:newHeight:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/Feature/TSPlayerExtraInfoView.swift"
+            timestampString = "523185887.668237"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

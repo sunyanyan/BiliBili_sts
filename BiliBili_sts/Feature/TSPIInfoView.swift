@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-protocol TSPIInfoViewDelegate:NSObjectProtocol {
-    func infoViewShouldUpdateFrame(isMutiLineStatus:Bool, addHeight:CGFloat)
-}
-
 //MARK:- 简介 + 分享 投币 收藏 缓存 按钮
 class TSPIInfoView: UIView {
     //MARK: - life cycle
@@ -26,11 +22,11 @@ class TSPIInfoView: UIView {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        addConstraints()
+        setupConstraints()
         
     }
     //MARK: - property
-    weak var delegate:TSPIInfoViewDelegate?
+    weak var updateFrameDelegate:TSUpdateFrameDelegate?
     
     lazy var titleLbl: UILabel = {
         let lbl = UILabel()
@@ -60,7 +56,7 @@ class TSPIInfoView: UIView {
         let frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: 30)
         let text = "简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介"
         let textView = TSFlodTextView(frame:frame, text:text)
-        textView.arrowBtn.addTarget(self , action: #selector(detailTextViewBtnClick), for: .touchUpInside)
+        textView.arrowBtn.addTarget(self , action: #selector(detailTextViewArrowBtnClick), for: .touchUpInside)
         return textView
     }()
     
@@ -105,6 +101,7 @@ class TSPIInfoView: UIView {
         return v
     }()
     var detailTextViewHeight = 30
+    var requiredViewHeight:CGFloat = 101.0
     //MARK:- setup UI & add Constraints
     func setupUI(){
         self.backgroundColor = UIColor.white
@@ -119,7 +116,11 @@ class TSPIInfoView: UIView {
         addSubview(saveView)
         
     }
-    func addConstraints() {
+    func setupConstraints() {
+    
+        let viewWidth = self.tsW
+        if viewWidth == 0 {return}
+    
         titleLbl.snp.makeConstraints { (make ) in
             make.left.right.top.equalTo(self)
             make.height.equalTo(30)
@@ -184,7 +185,7 @@ class TSPIInfoView: UIView {
     func saveViewBtnClick() {
         print("some thing happened")
     }
-    func detailTextViewBtnClick(){
+    func detailTextViewArrowBtnClick(){
         let newStatus = !detailTextView.isMutiLineStatus
         detailTextView.isMutiLineStatus = newStatus
         
@@ -194,13 +195,15 @@ class TSPIInfoView: UIView {
         
         if(newStatus){
             detailTextViewHeight = Int(30.0 + addheight)
+            requiredViewHeight = 101.0 + addheight
         }
         else{
             detailTextViewHeight = 30
+            requiredViewHeight = 101.0
         }
         
-        if let del  = delegate {
-            del.infoViewShouldUpdateFrame(isMutiLineStatus:status,addHeight: addheight)
+        if let del  = updateFrameDelegate {
+            del.tsUpdateFrameHeight(targetView: self, newHeight: requiredViewHeight)
         }
         setNeedsLayout()
     }

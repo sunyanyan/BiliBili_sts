@@ -54,6 +54,9 @@
 		38D4D2111F15CC7D00FAB4C2 /* TSSlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D2101F15CC7D00FAB4C2 /* TSSlideMenuView.swift */; };
 		38D4D23F1F1623A500FAB4C2 /* String+tsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D23E1F1623A500FAB4C2 /* String+tsExtension.swift */; };
 		38D4D2411F16255600FAB4C2 /* UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D2401F16255600FAB4C2 /* UITapGestureRecognizer.swift */; };
+		38D5980F1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5980E1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift */; };
+		38D598111F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D598101F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift */; };
+		38D598131F289BD400DEBBC8 /* TSTagsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D598121F289BD400DEBBC8 /* TSTagsListView.swift */; };
 		38FA1E6B1F232CA400B07144 /* UIImage+tsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA1E6A1F232CA400B07144 /* UIImage+tsExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +111,9 @@
 		38D4D2101F15CC7D00FAB4C2 /* TSSlideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSlideMenuView.swift; sourceTree = "<group>"; };
 		38D4D23E1F1623A500FAB4C2 /* String+tsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+tsExtension.swift"; sourceTree = "<group>"; };
 		38D4D2401F16255600FAB4C2 /* UITapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITapGestureRecognizer.swift; sourceTree = "<group>"; };
+		38D5980E1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSUpdateFrameDelegate.swift; sourceTree = "<group>"; };
+		38D598101F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPIAuthorAndTagsView.swift; sourceTree = "<group>"; };
+		38D598121F289BD400DEBBC8 /* TSTagsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSTagsListView.swift; sourceTree = "<group>"; };
 		38FA1E6A1F232CA400B07144 /* UIImage+tsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+tsExtension.swift"; sourceTree = "<group>"; };
 		3CEC01E06CA9D0D7897D4BC2 /* Pods-BiliBili_sts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiliBili_sts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiliBili_sts/Pods-BiliBili_sts.debug.xcconfig"; sourceTree = "<group>"; };
 		4C0C57D564EA96A4AEF03B6E /* Pods-BiliBili_sts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiliBili_sts.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiliBili_sts/Pods-BiliBili_sts.release.xcconfig"; sourceTree = "<group>"; };
@@ -319,6 +325,8 @@
 				389057881F259D1F00A49B2A /* TSButtonLabelView.swift */,
 				389566C11F27177500891383 /* TSFlodTextView.swift */,
 				389566C31F2717BC00891383 /* TSPIInfoView.swift */,
+				38D598101F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift */,
+				38D598121F289BD400DEBBC8 /* TSTagsListView.swift */,
 			);
 			name = "简介";
 			sourceTree = "<group>";
@@ -334,9 +342,10 @@
 		389E82C61F14712D000501DE /* 播放器额外信息 */ = {
 			isa = PBXGroup;
 			children = (
-				3890578A1F25C83A00A49B2A /* 简介 */,
 				38377B841F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift */,
-				389E82C91F147172000501DE /* TSPlayerCommentView.swift */,
+				38D5980E1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift */,
+				3890578A1F25C83A00A49B2A /* 简介 */,
+				38D598141F289C9B00DEBBC8 /* 评论 */,
 			);
 			name = "播放器额外信息";
 			sourceTree = "<group>";
@@ -367,6 +376,14 @@
 				382D84471EF8FC4800B79555 /* TSPlayPresent.swift */,
 			);
 			name = "播放";
+			sourceTree = "<group>";
+		};
+		38D598141F289C9B00DEBBC8 /* 评论 */ = {
+			isa = PBXGroup;
+			children = (
+				389E82C91F147172000501DE /* TSPlayerCommentView.swift */,
+			);
+			name = "评论";
 			sourceTree = "<group>";
 		};
 		5284D387006077370AB893CF /* Pods */ = {
@@ -536,12 +553,14 @@
 				3859858F1ED2DF1D0048B8B1 /* TSLaunchVC.swift in Sources */,
 				38706F4B1EC9383F008C6499 /* UIColor+tsExtension.swift in Sources */,
 				3859858B1ED2DF1D0048B8B1 /* TSDingModel.swift in Sources */,
+				38D5980F1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift in Sources */,
 				38BF266F1EE037A900E2225D /* TSSwipeTransitionDelegate.swift in Sources */,
 				3869DC2E1ED57463007ECA81 /* TSWebShowCell.swift in Sources */,
 				38D4D2111F15CC7D00FAB4C2 /* TSSlideMenuView.swift in Sources */,
 				38474F901ED6E3470040F4E4 /* TSCommon.swift in Sources */,
 				38474F8E1ED6B51A0040F4E4 /* TSBaseModel.swift in Sources */,
 				385985921ED2DF1D0048B8B1 /* TSRecommendVC.swift in Sources */,
+				38D598131F289BD400DEBBC8 /* TSTagsListView.swift in Sources */,
 				38706F2F1EC937AB008C6499 /* AppDelegate.swift in Sources */,
 				389566C41F2717BC00891383 /* TSPIInfoView.swift in Sources */,
 				38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */,
@@ -552,6 +571,7 @@
 				387422791ED416070031326C /* UIImageView+tsExtension.swift in Sources */,
 				38AC97E21ECC02630051436E /* TSLog.swift in Sources */,
 				38706F4D1EC9383F008C6499 /* TSConstant.swift in Sources */,
+				38D598111F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift in Sources */,
 				38D4D23F1F1623A500FAB4C2 /* String+tsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

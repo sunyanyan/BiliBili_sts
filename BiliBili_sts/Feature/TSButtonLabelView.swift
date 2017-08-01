@@ -17,6 +17,11 @@ class TSButtonLabelView:UIView{
         setupUI()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupConstraints()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -39,9 +44,13 @@ class TSButtonLabelView:UIView{
     func setupUI () {
         addSubview(btn)
         addSubview(detailLbl)
-        addConstraints()
+        
     }
-    func addConstraints() {
+    func setupConstraints() {
+    
+        let viewWidth = self.tsW
+        if viewWidth == 0 {return}
+    
         btn.snp.makeConstraints { (make ) in
             make.left.top.bottom.equalTo(self)
             make.width.equalTo(self).multipliedBy(0.5)

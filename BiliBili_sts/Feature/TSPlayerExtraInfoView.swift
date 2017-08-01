@@ -20,21 +20,14 @@ class TSPlayerExtraInfoView: UIView  {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        let h :CGFloat = self.tsH - slideMenu.tsH
-        let w :CGFloat = self.tsW
-//        contentScrollView.frame = CGRect.init(x: 0, y: tsSlideMenuViewHeight, width: w, height: h)
-        addConstraints()
-        for sview  in contentScrollSubViews {
-            contentScrollView.bringSubview(toFront: sview)
-        }
-        contentScrollView.contentSize = CGSize(width: w*2, height: h)
+        setupConstraints()
     }
     //MARK: property
     lazy var contentScrollSubViews: [UIView] = {
         var views = [UIView]()
         
         let item1 = TSPlayerIntroductionView()
+        item1.updateFrameDelegate = self
         views.append(item1)
         
         let item2 = TSPlayerCommentView()
@@ -68,11 +61,11 @@ class TSPlayerExtraInfoView: UIView  {
         let v = UIScrollView()
         v.isUserInteractionEnabled = true
         v.translatesAutoresizingMaskIntoConstraints = false
-        let sv = UIView()
-    
-        v.isPagingEnabled = true
+ 
+//        v.isPagingEnabled = true
         v.showsHorizontalScrollIndicator = false
         v.showsVerticalScrollIndicator = false
+        v.delegate = self
         return v
     }()
     
@@ -87,7 +80,17 @@ extension TSPlayerExtraInfoView{
         addContentScrollSubViews()
     }
     
-    func addConstraints(){
+    func addContentScrollSubViews(){
+        for sview  in contentScrollSubViews {
+            contentScrollView.addSubview(sview)
+            contentScrollView.bringSubview(toFront: sview)
+        }
+    }
+    
+    func setupConstraints(){
+        
+        let viewWidth = self.tsW
+        if viewWidth == 0 {return}
         
         slideMenu.snp.makeConstraints { (make ) in
             make.top.equalTo(self)
@@ -95,32 +98,53 @@ extension TSPlayerExtraInfoView{
             make.width.equalTo(150)
             make.height.equalTo(tsSlideMenuViewHeight)
         }
-        
+        let contentScrollViewHeight = self.tsH - tsSlideMenuViewHeight
         contentScrollView.snp.makeConstraints { (make ) in
             make.left.equalTo(self)
             make.width.equalTo(self)
-            make.height.equalTo(self).offset(tsSlideMenuViewHeight)
+            make.height.equalTo(contentScrollViewHeight)
             make.top.equalTo(slideMenu.snp.bottom)
         }
         
-        let v1 = contentScrollSubViews[0]
-        
+        let v1 = contentScrollSubViews[0] as! TSPlayerIntroductionView
         v1.snp.makeConstraints({ (make) in
             make.top.left.width.height.equalTo(contentScrollView)
         })
         let v2 = contentScrollSubViews[1]
-        
         v2.snp.makeConstraints({ (make) in
             make.top.width.height.equalTo(contentScrollView)
             make.left.equalTo(v1.snp.right)
         })
+        
+        contentScrollView.contentSize = CGSize(width: viewWidth * 2, height: contentScrollViewHeight)
     }
     
-    func addContentScrollSubViews(){
-        for sview  in contentScrollSubViews {
-            contentScrollView.addSubview(sview)
-            contentScrollView.bringSubview(toFront: sview)
-        }
+
+}
+
+extension TSPlayerExtraInfoView:TSUpdateFrameDelegate{
+    func tsUpdateFrameHeight(targetView: UIView, newHeight: CGFloat) {
+//        let oldContentSize = contentScrollView.frame
+//        contentScrollView.contentSize = CGSize.init(width: 0, height: newHeight)
+    }
+}
+
+
+// MARK: - 滚动动画
+extension TSPlayerExtraInfoView :UIScrollViewDelegate{
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        let scrollViewContentOffsetY = scrollView.contentOffset.y
+        let scrollViewContentOffsetX = scrollView.contentOffset.x
+//        TSLog(message: "scrollViewContentOffsetY \(scrollViewContentOffsetY) \n scrollViewContentOffsetX \(scrollViewContentOffsetX) ")
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //scrollview向上滚动时 缩小playerView的高度
+        //scrollview向下滚动时 恢复playerView的高度
+        let scrollViewContentOffsetY = scrollView.contentOffset.y
+        let scrollViewContentOffsetX = scrollView.contentOffset.x
+//        TSLog(message: "scrollViewContentOffsetY \(scrollViewContentOffsetY) \n scrollViewContentOffsetX \(scrollViewContentOffsetX) ")
     }
 }
 
