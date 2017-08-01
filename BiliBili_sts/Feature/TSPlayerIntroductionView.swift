@@ -58,19 +58,23 @@ class TSPlayerIntroductionView:UIScrollView{
         if viewWidth == 0 {return}
     
         infoView.snp.updateConstraints { (make ) in
-            make.left.right.equalTo(self)
+            make.left.equalTo(self)
             make.top.equalTo(self).offset(10)
+            make.width.equalTo(self)
             make.height.equalTo(infoView.requiredViewHeight)
+            
         }
         authorAndTagsView.snp.updateConstraints { (make ) in
             make.top.equalTo(infoView.snp.bottom).offset(8)
-            make.left.right.equalTo(self)
+            make.left.equalTo(self)
+            make.width.equalTo(self)
             make.height.equalTo(authorAndTagsView.requiredViewHeight)
             
         }
         videoReleadtedView.snp.updateConstraints { (make ) in
             make.top.equalTo(authorAndTagsView.snp.bottom).offset(8)
-            make.left.right.equalTo(self)
+            make.left.equalTo(self)
+            make.width.equalTo(self)
             make.height.equalTo(videoReleadtedView.requiredViewHeight)
         }
         
@@ -81,7 +85,9 @@ class TSPlayerIntroductionView:UIScrollView{
     ///
     /// - Returns: <#return value description#>
     func requiredViewHeight()->CGFloat{
-        let height = infoView.requiredViewHeight + authorAndTagsView.requiredViewHeight + videoReleadtedView.requiredViewHeight
+        var height = infoView.requiredViewHeight + authorAndTagsView.requiredViewHeight + videoReleadtedView.requiredViewHeight
+        let padding:CGFloat = 10 + 8 + 8
+        height = height + padding
         return  height
     }
 
