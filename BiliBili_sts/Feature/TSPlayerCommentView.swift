@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TSPlayerCommentView: UIView  {
+class TSPlayerCommentView: UIScrollView  {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -28,6 +28,9 @@ class TSPlayerCommentView: UIView  {
         let tapGes = UITapGestureRecognizer.init(target: self , action: #selector(tapClick(ges:)))
         self.isUserInteractionEnabled = true
         self.addGestureRecognizer(tapGes)
+        
+        self.backgroundColor = UIColor.purple
+        self.contentSize = CGSize.init(width: 0, height: 100)
     }
     func tapClick(ges:UITapGestureRecognizer){
         let point = ges.location(in: self)

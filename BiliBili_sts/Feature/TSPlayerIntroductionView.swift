@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TSPlayerIntroductionView:UIView{
+class TSPlayerIntroductionView:UIScrollView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -46,11 +46,10 @@ class TSPlayerIntroductionView:UIView{
     func setupUI(){
         backgroundColor = UIColor.hexString(hex: "FAFAFA")
         addSubview(infoView)
-        bringSubview(toFront: infoView)
         addSubview(authorAndTagsView)
-        bringSubview(toFront: authorAndTagsView)
         addSubview(videoReleadtedView)
-        bringSubview(toFront: videoReleadtedView)
+        
+        self.contentSize = CGSize.init(width: 0, height: self.requiredViewHeight())
         
     }
     func setupConstraints(){
@@ -69,11 +68,13 @@ class TSPlayerIntroductionView:UIView{
             make.height.equalTo(authorAndTagsView.requiredViewHeight)
             
         }
-        videoReleadtedView.snp.makeConstraints { (make ) in
+        videoReleadtedView.snp.updateConstraints { (make ) in
             make.top.equalTo(authorAndTagsView.snp.bottom).offset(8)
             make.left.right.equalTo(self)
-            make.height.equalTo(1000)
+            make.height.equalTo(videoReleadtedView.requiredViewHeight)
         }
+        
+        self.contentSize = CGSize.init(width: 0, height: self.requiredViewHeight())
     }
     
     /// 当前视图合适的高度
