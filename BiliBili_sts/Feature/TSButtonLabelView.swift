@@ -53,11 +53,12 @@ class TSButtonLabelView:UIView{
     
         btn.snp.makeConstraints { (make ) in
             make.left.top.bottom.equalTo(self)
-            make.width.equalTo(self).multipliedBy(0.5)
+            make.width.equalTo(self.snp.height)
         }
         detailLbl.snp.makeConstraints { (make ) in
             make.right.top.bottom.equalTo(self)
-            make.width.equalTo(self).multipliedBy(0.5)
+//            make.width.equalTo(self).multipliedBy(0.5)
+            make.left.equalTo(btn.snp.right).offset(4)
             
         }
     }

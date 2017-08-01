@@ -39,7 +39,7 @@ class TSPIInfoView: UIView {
     lazy var playCountView: TSButtonLabelView = {
         let v = TSButtonLabelView()
         v.setupImage(image: UIImage.init(named: "play_cout_grey")!, title: "15.2万")
-        v.btn.imageEdgeInsets = UIEdgeInsetsMake(0, 18, 0, 0)
+//        v.btn.imageEdgeInsets = UIEdgeInsetsMake(0, 18, 0, 0)
         v.detailLbl.textColor = UIColor.lightGray
         return v
     }()
@@ -47,7 +47,7 @@ class TSPIInfoView: UIView {
     lazy var reviewCountView: TSButtonLabelView = {
         let v = TSButtonLabelView()
         v.setupImage(image: UIImage.init(named: "review_count_grey")!, title: "15.2万")
-        v.btn.imageEdgeInsets = UIEdgeInsetsMake(0, 18, 0, 0)
+//        v.btn.imageEdgeInsets = UIEdgeInsetsMake(0, 18, 0, 0)
         v.detailLbl.textColor = UIColor.lightGray
         return v
     }()
@@ -70,14 +70,14 @@ class TSPIInfoView: UIView {
         let v = TSButtonLabelView()
         v.setupImage(image: UIImage.init(named: "share")!, title: "207")
         v.detailLbl.textColor = UIColor.hexString(hex: "2DCA7E")
-        v.btn.imageEdgeInsets = UIEdgeInsetsMake(4, 0, 0, 4)
+//        v.btn.imageEdgeInsets = UIEdgeInsetsMake(4, 0, 0, 4)
         return v
     }()
     
     lazy var coinView :TSButtonLabelView = {
         let v = TSButtonLabelView()
         v.setupImage(image: UIImage.init(named: "insert_coin")!, title: "173")
-        v.btn.imageEdgeInsets = UIEdgeInsetsMake(4, 0, 1, 4)
+//        v.btn.imageEdgeInsets = UIEdgeInsetsMake(4, 0, 1, 4)
         v.detailLbl.textColor = UIColor.hexString(hex: "000000")
         return v
     }()
@@ -86,14 +86,14 @@ class TSPIInfoView: UIView {
         let v = TSButtonLabelView()
         v.setupImage(image: UIImage.init(named: "collect")!, title: "207")
         v.detailLbl.textColor = UIColor.hexString(hex: "FB7299")
-        v.btn.imageEdgeInsets = UIEdgeInsetsMake(4, 0, 0, 4)
+//        v.btn.imageEdgeInsets = UIEdgeInsetsMake(4, 0, 0, 4)
         return v
     }()
     
     lazy var saveView :TSButtonLabelView = {
         let v = TSButtonLabelView()
         v.setupImage(image: UIImage.init(named: "download")!, title: "缓存")
-        v.btn.imageEdgeInsets = UIEdgeInsetsMake(4, 0, 0, 4)
+//        v.btn.imageEdgeInsets = UIEdgeInsetsMake(4, 0, 0, 4)
         v.detailLbl.textColor = UIColor.hexString(hex: "11A1D6")
         v.btn.addTarget(self , action: #selector(saveViewBtnClick), for: UIControlEvents.touchUpInside)
         v.isUserInteractionEnabled = true
@@ -126,13 +126,13 @@ class TSPIInfoView: UIView {
             make.height.equalTo(30)
         }
         playCountView.snp.makeConstraints { (make ) in
-            make.left.equalTo(self.snp.left).offset(-17)
+            make.left.equalTo(self).offset(4)
             make.top.equalTo(titleLbl.snp.bottom)
-            make.width.equalTo(80)
+            make.width.equalTo(60)
             make.height.equalTo(15)
         }
         reviewCountView.snp.makeConstraints { (make ) in
-            make.left.equalTo(playCountView.snp.right).offset(-10)
+            make.left.equalTo(playCountView.snp.right).offset(4)
             make.top.equalTo(playCountView.snp.top)
             make.width.equalTo(playCountView.snp.width)
             make.height.equalTo(playCountView.snp.height)
