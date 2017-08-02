@@ -24,6 +24,11 @@ class TSPlayerIntroductionView:UIScrollView{
     }
     
     //MARK: - property
+    var aid:String = ""{
+        didSet{
+            videoReleadtedView.videoAid = aid
+        }
+    }
     lazy var infoView : TSPIInfoView = {
         let v = TSPIInfoView()
         v.updateFrameDelegate = self
@@ -38,6 +43,7 @@ class TSPlayerIntroductionView:UIScrollView{
     
     lazy var videoReleadtedView:TSVideoReleadView = {
         let v = TSVideoReleadView()
+        v.updateFrameDelegate = self
         return v
     }()
     weak var updateFrameDelegate:TSUpdateFrameDelegate?
@@ -75,7 +81,7 @@ class TSPlayerIntroductionView:UIScrollView{
             make.top.equalTo(authorAndTagsView.snp.bottom).offset(8)
             make.left.equalTo(self)
             make.width.equalTo(self)
-            make.height.equalTo(videoReleadtedView.requiredViewHeight)
+            make.height.equalTo(videoReleadtedView.requiredViewHeight())
         }
         
         self.contentSize = CGSize.init(width: 0, height: self.requiredViewHeight())
@@ -85,7 +91,7 @@ class TSPlayerIntroductionView:UIScrollView{
     ///
     /// - Returns: <#return value description#>
     func requiredViewHeight()->CGFloat{
-        var height = infoView.requiredViewHeight + authorAndTagsView.requiredViewHeight + videoReleadtedView.requiredViewHeight
+        var height = infoView.requiredViewHeight + authorAndTagsView.requiredViewHeight + videoReleadtedView.requiredViewHeight()
         let padding:CGFloat = 10 + 8 + 8
         height = height + padding
         return  height

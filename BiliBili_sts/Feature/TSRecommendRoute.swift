@@ -46,6 +46,9 @@ extension TSRecommendVC{
         homeVc!.present(nav, animated: true, completion: nil)
     }
     
+    /// 跳转到播放页
+    ///
+    /// - Parameter aid: <#aid description#>
     func presentPlayVC(aid:String){
         let homeVc:TSHomeVC? = self.homeVC()
         if homeVc == nil {

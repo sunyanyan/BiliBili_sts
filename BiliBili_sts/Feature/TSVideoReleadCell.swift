@@ -11,6 +11,7 @@ import UIKit
 
 
 class TSVideoReleadCell:UITableViewCell{
+    static let tsVideoReleadCellKey = "TSVideoReleadCell"
     //MARK: - life cycle
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,26 +38,26 @@ class TSVideoReleadCell:UITableViewCell{
         if viewWidth == 0 {return}
         
         videoThumIV.snp.makeConstraints { (make ) in
-            make.left.equalTo(self).offset(4)
-            make.top.equalTo(self).offset(4)
+            make.left.equalTo(self).offset(7)
+            make.top.equalTo(self).offset(7)
             make.width.equalTo(self).multipliedBy(0.4)
-            make.bottom.equalTo(self).offset(-4)
+            make.bottom.equalTo(self).offset(-7)
         }
         
         videoTitleLbl.snp.makeConstraints { (make ) in
             make.left.equalTo(videoThumIV.snp.right).offset(4)
-            make.top.equalTo(videoThumIV.snp.top)
+            make.top.equalTo(self).offset(4)
             make.right.equalTo(self).offset(4)
             make.height.equalTo(videoThumIV).multipliedBy(0.5)
         }
         
         videoAuthorView.snp.makeConstraints { (make ) in
-            make.top.equalTo(videoTitleLbl.snp.bottom)
+            make.top.equalTo(videoTitleLbl.snp.bottom).offset(2)
             make.left.right.equalTo(videoTitleLbl)
             make.height.equalTo(videoThumIV).multipliedBy(0.25)
         }
         playCountView.snp.makeConstraints { (make ) in
-            make.top.equalTo(videoAuthorView.snp.bottom)
+            make.top.equalTo(videoAuthorView.snp.bottom).offset(2)
             make.left.equalTo(videoAuthorView)
             make.width.equalTo(60)
             make.height.equalTo(videoAuthorView)
@@ -66,9 +67,24 @@ class TSVideoReleadCell:UITableViewCell{
             make.left.equalTo(playCountView.snp.right)
         }
     }
+    func setupModel(model:TSPlayedVideoRelatedContentModel){
+        videoTitleLbl.text = model.title
+        
+        if let urlString = model.pic {
+            let nsUrl = URL.init(string: urlString.tsFullUrlString())
+            let plcaeholderImage = UIImage.init(named: "default")
+            videoThumIV.sd_setImage(with: nsUrl, placeholderImage: plcaeholderImage)
+        }
+        videoAuthorView.detailLbl.text = model.owner?.name
+        playCountView.detailLbl.text = model.stat?.view
+        reviewCountView.detailLbl.text = model.stat?.danmaku
+        
+    }
     //MARK:- property
     lazy var videoThumIV: UIImageView = {
         let iv = UIImageView()
+        iv.layer.cornerRadius = 5
+        iv.layer.masksToBounds = true
         iv.image = UIImage.init(named: "default")
         return iv
     }()
@@ -85,6 +101,7 @@ class TSVideoReleadCell:UITableViewCell{
         let v = TSButtonLabelView()
         v.setupImage(image: UIImage.init(named: "upInfo")!, title: "影视后期圈")
 //        v.btn.imageEdgeInsets = UIEdgeInsetsMake(0, 24, 0, 0)
+        v.detailLbl.textColor = UIColor.lightGray
         return v
     }()
     lazy var playCountView: TSButtonLabelView = {

@@ -29,9 +29,28 @@ class TSVideoReleadView:UIView{
         let v = UITableView.init(frame: CGRect.zero, style: UITableViewStyle.plain)
         v.delegate = self
         v.dataSource = self
+        v.separatorStyle = .none
         return v
     }()
-    var requiredViewHeight:CGFloat = 80 * 10
+    
+    var videoAid:String=""{
+        didSet{
+            videoRelatedPresent.aid = videoAid
+            reload()
+        }
+    }
+    lazy var videoRelatedPresent: TSVideoReleadViewPresent = {
+        let p = TSVideoReleadViewPresent.init(aid: self.videoAid)
+        p.weakVideoReleadView = self 
+        return p
+    }()
+    func requiredViewHeight()->CGFloat{
+        let cellNum:CGFloat = CGFloat.init(self.videoRelatedPresent.numberOfRowsInSection())
+        let cellHeight = self.videoRelatedPresent.cellHeight()
+        let height = cellNum * cellHeight
+        return height
+    }
+    weak var updateFrameDelegate:TSUpdateFrameDelegate?
 }
 
 extension TSVideoReleadView{
@@ -50,24 +69,30 @@ extension TSVideoReleadView{
             make.width.height.equalTo(self)
         }
     }
+    
+    func reload(){
+        videoRelatedPresent.requestData {
+            self.contentTableView.reloadData()
+            
+            if let del  = self.updateFrameDelegate  {
+                del.tsUpdateFrameHeight(targetView: self , newHeight: 0)
+            }
+            self.setNeedsLayout()
+        }
+    }
 }
 
 extension TSVideoReleadView:UITableViewDataSource{
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 10;
+        return self.videoRelatedPresent.numberOfRowsInSection();
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cellId = "cellId"
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
-        if cell == nil {
-            cell = TSVideoReleadCell.init(style: .default, reuseIdentifier: cellId)
-        }
-        return cell!
+        return self.videoRelatedPresent.cellForRowAt(indexPath: indexPath, tableView: tableView)
     }
 }
 extension TSVideoReleadView:UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return self.videoRelatedPresent.cellHeight()
     }
 }

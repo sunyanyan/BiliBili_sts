@@ -83,6 +83,15 @@ extension TSCommon {
         
         return nil
     }
+    
+    class func modelAt(indexPath:IndexPath, oneSectionModels:[Any]) ->Any?{
+        let models = [oneSectionModels]
+        if isVaild(indexPath: indexPath, models: models){
+            return models[indexPath.section][indexPath.row]
+        }
+        
+        return nil
+    }
 }
 
 // MARK: - UIViewContrller

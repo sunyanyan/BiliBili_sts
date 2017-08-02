@@ -47,6 +47,7 @@ class TSPlayVC: UIViewController {
         let y = self.view.tsW * 9.0 / 16.0
         let h = self.view.tsH - y
         v.frame = CGRect.init(x: 0, y: y, width: self.view.tsH, height: h)
+        v.aid  = self.aid
         return v
     }()
     

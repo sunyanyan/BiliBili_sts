@@ -12,6 +12,7 @@ import Foundation
 let tshttp = "http:"
 let tsBilibiliHost = "http://m.bilibili.com"
 let tsBilibiliApiHost = "http://api.bilibili.com"
+let tsBilibiliCommentHost = "http://comment.bilibili.com"
 let tsHeaders: [String : String] = [
     "Accept-Encoding":"gzip, deflate, sdch",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
@@ -34,4 +35,10 @@ func tsPlayUrl(aid:String)->String{
     let tsPlayUrlSuffix = "&page=1&platform=html5&quality=1&vtype=mp4&type=jsonp"
     let url = tsPlayUrlPrefix + aid + tsPlayUrlSuffix
     return url
+}
+
+func tsPlayedVideoRelatedUrl(aid:String ) -> String  {
+    let urlPrefix = tsBilibiliCommentHost + "/recommendnew,"
+    let url = urlPrefix + aid
+    return url 
 }

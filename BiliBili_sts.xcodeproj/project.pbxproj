@@ -48,6 +48,8 @@
 		389E82C81F147150000501DE /* TSPlayerIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E82C71F147150000501DE /* TSPlayerIntroductionView.swift */; };
 		389E82CA1F147172000501DE /* TSPlayerCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E82C91F147172000501DE /* TSPlayerCommentView.swift */; };
 		38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A57B781ED91D9F0096FD51 /* TSWebVC.swift */; };
+		38AA89D01F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA89CF1F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift */; };
+		38AA89D41F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA89D31F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift */; };
 		38AC97E21ECC02630051436E /* TSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC97E11ECC02630051436E /* TSLog.swift */; };
 		38BB09891EF7C92A009264E7 /* quickLook.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38BB09881EF7C92A009264E7 /* quickLook.gif */; };
 		38BF266E1EE037A900E2225D /* TSRecommendRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */; };
@@ -106,6 +108,8 @@
 		389E82C71F147150000501DE /* TSPlayerIntroductionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayerIntroductionView.swift; sourceTree = "<group>"; };
 		389E82C91F147172000501DE /* TSPlayerCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayerCommentView.swift; sourceTree = "<group>"; };
 		38A57B781ED91D9F0096FD51 /* TSWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebVC.swift; sourceTree = "<group>"; };
+		38AA89CF1F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayedVideoRelatedModel.swift; sourceTree = "<group>"; };
+		38AA89D31F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSVideoReleadViewPresent.swift; sourceTree = "<group>"; };
 		38AC97E11ECC02630051436E /* TSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLog.swift; sourceTree = "<group>"; };
 		38BB09881EF7C92A009264E7 /* quickLook.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = quickLook.gif; sourceTree = "<group>"; };
 		38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendRoute.swift; sourceTree = "<group>"; };
@@ -331,6 +335,24 @@
 			name = "视频相关";
 			sourceTree = "<group>";
 		};
+		387B6DEB1F3080B4006B18E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				389E82C61F14712D000501DE /* 播放器额外信息 */,
+				389E82C51F14711A000501DE /* 播放器 */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		387B6DEC1F30811B006B18E4 /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				382D84471EF8FC4800B79555 /* TSPlayPresent.swift */,
+				38AA89D31F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift */,
+			);
+			name = Present;
+			sourceTree = "<group>";
+		};
 		388C2FEA1ECAB9A4000766D6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,11 +366,10 @@
 		3890578A1F25C83A00A49B2A /* 简介 */ = {
 			isa = PBXGroup;
 			children = (
-				387B6DE61F3064E2006B18E4 /* 视频相关 */,
 				389E82C71F147150000501DE /* TSPlayerIntroductionView.swift */,
-				389566C31F2717BC00891383 /* TSPIInfoView.swift */,
-				38D598101F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift */,
-				38D598121F289BD400DEBBC8 /* TSTagsListView.swift */,
+				38AA89D21F31A8A200B9EA29 /* 视频信息 */,
+				38AA89D11F31A87100B9EA29 /* 其他信息 */,
+				387B6DE61F3064E2006B18E4 /* 视频相关 */,
 			);
 			name = "简介";
 			sourceTree = "<group>";
@@ -365,7 +386,6 @@
 			isa = PBXGroup;
 			children = (
 				38377B841F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift */,
-				38D5980E1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift */,
 				3890578A1F25C83A00A49B2A /* 简介 */,
 				38D598141F289C9B00DEBBC8 /* 评论 */,
 			);
@@ -380,6 +400,31 @@
 			name = "网页";
 			sourceTree = "<group>";
 		};
+		38AA89CE1F3170B900B9EA29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38AA89CF1F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		38AA89D11F31A87100B9EA29 /* 其他信息 */ = {
+			isa = PBXGroup;
+			children = (
+				38D598101F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift */,
+				38D598121F289BD400DEBBC8 /* TSTagsListView.swift */,
+			);
+			name = "其他信息";
+			sourceTree = "<group>";
+		};
+		38AA89D21F31A8A200B9EA29 /* 视频信息 */ = {
+			isa = PBXGroup;
+			children = (
+				389566C31F2717BC00891383 /* TSPIInfoView.swift */,
+			);
+			name = "视频信息";
+			sourceTree = "<group>";
+		};
 		38BF266B1EE0372E00E2225D /* Route */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,10 +437,11 @@
 		38BF26701EE0385400E2225D /* 播放 */ = {
 			isa = PBXGroup;
 			children = (
-				389E82C61F14712D000501DE /* 播放器额外信息 */,
-				389E82C51F14711A000501DE /* 播放器 */,
+				38AA89CE1F3170B900B9EA29 /* Model */,
+				387B6DEC1F30811B006B18E4 /* Present */,
+				387B6DEB1F3080B4006B18E4 /* View */,
+				38D5980E1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift */,
 				38BF26711EE1631900E2225D /* TSPlayVC.swift */,
-				382D84471EF8FC4800B79555 /* TSPlayPresent.swift */,
 			);
 			name = "播放";
 			sourceTree = "<group>";
@@ -553,6 +599,7 @@
 				3859858E1ED2DF1D0048B8B1 /* TSHomeVC.swift in Sources */,
 				389E82CA1F147172000501DE /* TSPlayerCommentView.swift in Sources */,
 				38BF26721EE1631900E2225D /* TSPlayVC.swift in Sources */,
+				38AA89D41F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift in Sources */,
 				38706F4C1EC9383F008C6499 /* UIView+tsFrame.swift in Sources */,
 				3896966F1ED7CE57001AA026 /* TSRecommendHeadView.swift in Sources */,
 				3874227D1ED452AB0031326C /* TSWebShowModel.swift in Sources */,
@@ -591,6 +638,7 @@
 				389566C21F27177500891383 /* TSFlodTextView.swift in Sources */,
 				389E82C81F147150000501DE /* TSPlayerIntroductionView.swift in Sources */,
 				385985901ED2DF1D0048B8B1 /* TSMainTabarVC.swift in Sources */,
+				38AA89D01F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift in Sources */,
 				382D844C1EF9153300B79555 /* TSPlayerView.swift in Sources */,
 				387422791ED416070031326C /* UIImageView+tsExtension.swift in Sources */,
 				38AC97E21ECC02630051436E /* TSLog.swift in Sources */,

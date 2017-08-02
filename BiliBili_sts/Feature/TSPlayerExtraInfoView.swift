@@ -23,18 +23,19 @@ class TSPlayerExtraInfoView: UIView  {
         setupConstraints()
     }
     //MARK: property
-    lazy var contentScrollSubViews: [UIView] = {
-        var views = [UIView]()
-        
-        let item1 = TSPlayerIntroductionView()
-        item1.updateFrameDelegate = self
-        views.append(item1)
-        
-        let item2 = TSPlayerCommentView()
-        views.append(item2)
-        
-        return views
+    lazy var playerIntroductionView: TSPlayerIntroductionView = {
+        let playerIntroductionView = TSPlayerIntroductionView()
+        playerIntroductionView.updateFrameDelegate = self
+        playerIntroductionView.aid = self.aid
+        return playerIntroductionView
     }()
+    
+    lazy var playerCommentView: TSPlayerCommentView = {
+        let playerCommentView = TSPlayerCommentView()
+ 
+        return playerCommentView
+    }()
+
     
     lazy var slideMenu: TSSlideMenuView = {
         // 1.frame
@@ -68,6 +69,11 @@ class TSPlayerExtraInfoView: UIView  {
         v.delegate = self
         return v
     }()
+    var aid:String = ""{
+        didSet{
+            playerIntroductionView.aid = aid 
+        }
+    }
     
 }
 //MARK:- TSPlayerExtraInfoView setup UI & add Constraints
@@ -81,10 +87,10 @@ extension TSPlayerExtraInfoView{
     }
     
     func addContentScrollSubViews(){
-        for sview  in contentScrollSubViews {
-            contentScrollView.addSubview(sview)
-            contentScrollView.bringSubview(toFront: sview)
-        }
+        contentScrollView.addSubview(playerIntroductionView)
+        contentScrollView.bringSubview(toFront: playerIntroductionView)
+        contentScrollView.addSubview(playerCommentView)
+        contentScrollView.bringSubview(toFront: playerCommentView)
     }
     
     func setupConstraints(){
@@ -106,14 +112,14 @@ extension TSPlayerExtraInfoView{
             make.top.equalTo(slideMenu.snp.bottom)
         }
         
-        let v1 = contentScrollSubViews[0] as! TSPlayerIntroductionView
-        v1.snp.makeConstraints({ (make) in
+        
+        playerIntroductionView.snp.makeConstraints({ (make) in
             make.top.left.width.height.equalTo(contentScrollView)
         })
-        let v2 = contentScrollSubViews[1]
-        v2.snp.makeConstraints({ (make) in
+        
+        playerCommentView.snp.makeConstraints({ (make) in
             make.top.width.height.equalTo(contentScrollView)
-            make.left.equalTo(v1.snp.right)
+            make.left.equalTo(playerIntroductionView.snp.right)
         })
         
         contentScrollView.contentSize = CGSize(width: viewWidth * 2, height: contentScrollViewHeight)
@@ -134,16 +140,16 @@ extension TSPlayerExtraInfoView:TSUpdateFrameDelegate{
 extension TSPlayerExtraInfoView :UIScrollViewDelegate{
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        let scrollViewContentOffsetY = scrollView.contentOffset.y
-        let scrollViewContentOffsetX = scrollView.contentOffset.x
+//        let scrollViewContentOffsetY = scrollView.contentOffset.y
+//        let scrollViewContentOffsetX = scrollView.contentOffset.x
 //        TSLog(message: "scrollViewContentOffsetY \(scrollViewContentOffsetY) \n scrollViewContentOffsetX \(scrollViewContentOffsetX) ")
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //scrollview向上滚动时 缩小playerView的高度
         //scrollview向下滚动时 恢复playerView的高度
-        let scrollViewContentOffsetY = scrollView.contentOffset.y
-        let scrollViewContentOffsetX = scrollView.contentOffset.x
+//        let scrollViewContentOffsetY = scrollView.contentOffset.y
+//        let scrollViewContentOffsetX = scrollView.contentOffset.x
 //        TSLog(message: "scrollViewContentOffsetY \(scrollViewContentOffsetY) \n scrollViewContentOffsetX \(scrollViewContentOffsetX) ")
     }
 }

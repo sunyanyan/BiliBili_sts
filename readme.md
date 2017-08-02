@@ -35,6 +35,11 @@
 * 弹幕: http://comment.bilibili.com/18869362.xml
     * 18869362 为cid
     * cid 也由playurl请求中返回
+    
+#### 视频相关信息
+
+* http://comment.bilibili.com/recommendnew,12743458
+    *  12743458 为当前视频 aid
 
 ##  第三方
 

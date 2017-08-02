@@ -23,4 +23,18 @@ extension String{
         let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
         return boundingBox.width
     }
+    
+    func tsFullUrlString()->String{
+        let urlStr = "http:" + self 
+        return urlStr
+    }
+    
+    static func tsIsEmpty(string:String?) -> Bool {
+        if let str  = string {
+            if str.lengthOfBytes(using: .utf8) > 0 {
+                return false 
+            }
+        }
+        return true
+    }
 }
