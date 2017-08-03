@@ -225,7 +225,7 @@ extension TSRecommendPresent{
 //点击轮播图
 extension TSRecommendPresent : TSWebShowCellDelegate{
     func didSelectAtIndex(index:Int ,model:TSWebShowContentModel, imgUrl:String?){
-        TSLog(message: " index \(index) model \(model) imgUrl \(String(describing: imgUrl))")
+//        TSLog(message: " index \(index) model \(model) imgUrl \(String(describing: imgUrl))")
         
 
         let url:String? = model.url

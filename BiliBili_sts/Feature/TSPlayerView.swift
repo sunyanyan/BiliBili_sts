@@ -211,9 +211,16 @@ class TSCustomBMPlayerControlView:BMPlayerControlView{
         return btn
     }()
     func backBtnClick(){
-        if let block = backBtnClickBlock {
-            block()
+    
+        if !isFullScreen {
+            if let block = backBtnClickBlock {
+                block()
+            }
         }
+    
+        onButtonPressed(backButton)
+        
+
     }
     public  var backBtnClickBlock:(()->())?
     
@@ -221,9 +228,10 @@ class TSCustomBMPlayerControlView:BMPlayerControlView{
     override func customizeUIComponents() {
         //修改backBtn的图片
         self.backButton.setImage(UIImage.init(named: "video_info_back"), for: .normal)
+        self.backButton.removeTarget(self , action: #selector(onButtonPressed(_:)), for: .touchUpInside)
         self.backButton.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
+        
         //添加bilibilli的播放按钮
-//        addSubview(bPlayBtn)
         mainMaskView.addSubview(bPlayBtn)
         bPlayBtn.snp.makeConstraints { (make ) in
             make.right.equalTo(mainMaskView).offset(-8)
@@ -249,6 +257,12 @@ class TSCustomBMPlayerControlView:BMPlayerControlView{
         let alpha:CGFloat = isShow ? 1.0: 0.0;
         UIView.animate(withDuration: 0.3) { 
             self.bPlayBtn.alpha = alpha;
+        }
+    }
+    
+    fileprivate var isFullScreen:Bool {
+        get {
+            return UIApplication.shared.statusBarOrientation.isLandscape
         }
     }
 }

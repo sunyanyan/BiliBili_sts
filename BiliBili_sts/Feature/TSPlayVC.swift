@@ -13,7 +13,7 @@ import AVFoundation
 
 
 
-class TSPlayVC: UIViewController {
+class TSPlayVC: TSViewController {
     
     //MARK: - life cycle
     override func viewDidLoad() {

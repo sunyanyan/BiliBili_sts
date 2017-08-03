@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TSRecommendVC: UIViewController {
+class TSRecommendVC: TSViewController {
     
     //MARK: - life cycle
     override func viewDidLoad() {

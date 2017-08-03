@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TSLaunchVC: UIViewController{
+class TSLaunchVC: TSViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()

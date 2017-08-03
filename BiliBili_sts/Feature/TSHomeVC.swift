@@ -9,7 +9,7 @@
 import UIKit
 //import PageMenu
 
-class TSHomeVC:UIViewController{
+class TSHomeVC:TSViewController{
     
     
     override func viewDidLoad() {

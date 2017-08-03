@@ -13,13 +13,13 @@ import UIKit
 class TSSwipeTransitionDelegate: NSObject,UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning?{
         
-        TSLog(message: "")
+//        TSLog(message: "")
         return TSSwipePresentTransition()
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?{
         
-        TSLog(message: "")
+//        TSLog(message: "")
         return TSSwipeDismissTransition()
     }
 }

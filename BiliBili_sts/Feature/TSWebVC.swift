@@ -16,7 +16,7 @@ import WebKit
 
 //TODO: 点击网页中链接
 
-class TSWebVC :UIViewController{
+class TSWebVC :TSViewController{
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,22 +85,22 @@ class TSWebVC :UIViewController{
 extension TSWebVC:WKNavigationDelegate{
     //页面开始加载
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        TSLog(message: "")
+//        TSLog(message: "")
     }
     //获取到网页内容后返回
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        TSLog(message: "")
+//        TSLog(message: "")
     }
     //页面加载完成
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        TSLog(message: "")
+//        TSLog(message: "")
         
         setupTitle(webView: webView)
         hideWebViewTitle(webView: webView)
     }
     //页面加载失败
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        TSLog(message: "error : \(error)")
+//        TSLog(message: "error : \(error)")
     }
 }
 

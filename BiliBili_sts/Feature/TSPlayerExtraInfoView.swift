@@ -30,6 +30,7 @@ class TSPlayerExtraInfoView: UIView  {
         return playerIntroductionView
     }()
     
+    
     lazy var playerCommentView: TSPlayerCommentView = {
         let playerCommentView = TSPlayerCommentView()
  
@@ -66,7 +67,6 @@ class TSPlayerExtraInfoView: UIView  {
 //        v.isPagingEnabled = true
         v.showsHorizontalScrollIndicator = false
         v.showsVerticalScrollIndicator = false
-        v.delegate = self
         return v
     }()
     var aid:String = ""{
@@ -140,17 +140,17 @@ extension TSPlayerExtraInfoView:TSUpdateFrameDelegate{
 extension TSPlayerExtraInfoView :UIScrollViewDelegate{
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-//        let scrollViewContentOffsetY = scrollView.contentOffset.y
-//        let scrollViewContentOffsetX = scrollView.contentOffset.x
-//        TSLog(message: "scrollViewContentOffsetY \(scrollViewContentOffsetY) \n scrollViewContentOffsetX \(scrollViewContentOffsetX) ")
+        let scrollViewContentOffsetY = scrollView.contentOffset.y
+        let scrollViewContentOffsetX = scrollView.contentOffset.x
+        TSLog(message: "scrollViewContentOffsetY \(scrollViewContentOffsetY) \n scrollViewContentOffsetX \(scrollViewContentOffsetX) ")
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //scrollview向上滚动时 缩小playerView的高度
         //scrollview向下滚动时 恢复playerView的高度
-//        let scrollViewContentOffsetY = scrollView.contentOffset.y
-//        let scrollViewContentOffsetX = scrollView.contentOffset.x
-//        TSLog(message: "scrollViewContentOffsetY \(scrollViewContentOffsetY) \n scrollViewContentOffsetX \(scrollViewContentOffsetX) ")
+        let scrollViewContentOffsetY = scrollView.contentOffset.y
+        let scrollViewContentOffsetX = scrollView.contentOffset.x
+        TSLog(message: "scrollViewContentOffsetY \(scrollViewContentOffsetY) \n scrollViewContentOffsetX \(scrollViewContentOffsetX) ")
     }
 }
 

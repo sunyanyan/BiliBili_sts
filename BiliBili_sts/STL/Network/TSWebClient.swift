@@ -16,7 +16,7 @@ class TSWebClient{
                    finishedBlock: @escaping (_ resultData: Data)->(),
                    errorBlock: @escaping (_ error: Error)->()) -> DataRequest{
         
-        NSLog(" url is \(urlString) ")
+//        NSLog(" url is \(urlString) ")
         
 //        let header = tsHeaders
         
