@@ -1,46 +1,8 @@
 import UIKit
 import PlaygroundSupport
 
-let str = "<meta property=\"og:type\" content=\"video\"/><meta property=\"og:title\" content=\"【王者荣耀】我还是很喜欢你\"/><meta property=\"og:image\" content=\"http://i0.hdslb.com/bfs/archive/8169bf3ce8a695b91a1ac294625afadb83998689.jpg\"/><meta property=\"og:url\" content=\"http://m.bilibili.com/video/av10835406.html\"/>"
 
 
-
-func getLblWidth(labelStr:String,font:UIFont,height:CGFloat) -> CGFloat {
-    
-    let statusLabelText: NSString = NSString.init(string: labelStr)
-    
-    let size = CGSize.init(width: 900 , height: height)
-    
-    let dic = [NSFontAttributeName:font]
-    
-    let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic, context: nil).size
-    
-    return strSize.width
-    
-}
-
-func getLblHeigh(labelStr:String,font:UIFont,width:CGFloat) -> CGFloat {
-    
-    let statusLabelText: NSString = NSString.init(string: labelStr)
-    
-    let size = CGSize.init(width: width , height: 900)
-    
-    let dic = [NSFontAttributeName:font]
-    
-    let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic, context: nil).size
-    
-    return strSize.height
-    
-}
-
-//
-//let range1 = str.range(of: "og:image\" content=\"")
-//let range2 = str.range(of: "\"/><meta property=\"og:url\"")
-//let range = Range<String.Index>.init(uncheckedBounds: (lower: (range1?.upperBound)!, upper: (range2?.lowerBound)!))
-//let subStr = str.substring(with: range)
-
-
-//
 //class vc :UIViewController{
 //    
 //    lazy var shadowView: UIView = {
@@ -61,11 +23,18 @@ func getLblHeigh(labelStr:String,font:UIFont,width:CGFloat) -> CGFloat {
 //        super.viewDidLoad()
 //        view.backgroundColor = UIColor.white
 //        view.addSubview(shadowView)
+//        
+//        let view1 = UIView.init()
+//        view1.frame = CGRect.init(x: 0, y: 0, width: 100, height: 100)
+//        view1.backgroundColor = UIColor.green
+////        view1.radiusWith(10, backgroundImage: UIImage.init(named: "testDing.jpg"))
+//        view.addSubview(view1)
+//        
 //    }
 //}
 //let someVC = vc()
-
-
+//
+//
 //PlaygroundPage.current.liveView = someVC
 
 

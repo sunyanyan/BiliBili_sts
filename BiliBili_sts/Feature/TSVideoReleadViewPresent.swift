@@ -62,5 +62,8 @@ extension TSVideoReleadViewPresent{
     func cellHeight() -> CGFloat {
         return 80
     }
+    func didSelect(indexPath:IndexPath,tableView:UITableView){
+        TSLog(message: "")
+    }
     
 }

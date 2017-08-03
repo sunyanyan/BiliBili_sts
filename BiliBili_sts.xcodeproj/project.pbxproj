@@ -50,6 +50,7 @@
 		38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A57B781ED91D9F0096FD51 /* TSWebVC.swift */; };
 		38AA89D01F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA89CF1F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift */; };
 		38AA89D41F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA89D31F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift */; };
+		38AA89D61F32C87A00B9EA29 /* JMRoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA89D51F32C87A00B9EA29 /* JMRoundedCorner.swift */; };
 		38AC97E21ECC02630051436E /* TSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC97E11ECC02630051436E /* TSLog.swift */; };
 		38BB09891EF7C92A009264E7 /* quickLook.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38BB09881EF7C92A009264E7 /* quickLook.gif */; };
 		38BF266E1EE037A900E2225D /* TSRecommendRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */; };
@@ -110,6 +111,7 @@
 		38A57B781ED91D9F0096FD51 /* TSWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebVC.swift; sourceTree = "<group>"; };
 		38AA89CF1F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayedVideoRelatedModel.swift; sourceTree = "<group>"; };
 		38AA89D31F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSVideoReleadViewPresent.swift; sourceTree = "<group>"; };
+		38AA89D51F32C87A00B9EA29 /* JMRoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMRoundedCorner.swift; sourceTree = "<group>"; };
 		38AC97E11ECC02630051436E /* TSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLog.swift; sourceTree = "<group>"; };
 		38BB09881EF7C92A009264E7 /* quickLook.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = quickLook.gif; sourceTree = "<group>"; };
 		38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendRoute.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		3869DC281ED51C45007ECA81 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				38AA89D51F32C87A00B9EA29 /* JMRoundedCorner.swift */,
 				3869DC291ED51CD1007ECA81 /* TSCarouselView.swift */,
 				38D4D2101F15CC7D00FAB4C2 /* TSSlideMenuView.swift */,
 			);
@@ -625,6 +628,7 @@
 				3859858B1ED2DF1D0048B8B1 /* TSDingModel.swift in Sources */,
 				38D5980F1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift in Sources */,
 				38BF266F1EE037A900E2225D /* TSSwipeTransitionDelegate.swift in Sources */,
+				38AA89D61F32C87A00B9EA29 /* JMRoundedCorner.swift in Sources */,
 				3869DC2E1ED57463007ECA81 /* TSWebShowCell.swift in Sources */,
 				38D4D2111F15CC7D00FAB4C2 /* TSSlideMenuView.swift in Sources */,
 				38474F901ED6E3470040F4E4 /* TSCommon.swift in Sources */,

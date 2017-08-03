@@ -68,4 +68,5 @@ class TSLaunchVC: UIViewController{
         iv.image = #imageLiteral(resourceName: "splash_bg")
         return iv
     }()
+
 }

@@ -95,4 +95,7 @@ extension TSVideoReleadView:UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.videoRelatedPresent.cellHeight()
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        return self.videoRelatedPresent.didSelect(indexPath: indexPath, tableView: tableView)
+    }
 }

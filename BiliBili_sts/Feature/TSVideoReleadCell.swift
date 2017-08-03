@@ -37,12 +37,21 @@ class TSVideoReleadCell:UITableViewCell{
         let viewWidth = self.tsW
         if viewWidth == 0 {return}
         
+        let videoThumIVWidth = viewWidth * 0.4
+        let videoThumIVHeight = self.tsH - 7 - 7
+        
         videoThumIV.snp.makeConstraints { (make ) in
             make.left.equalTo(self).offset(7)
             make.top.equalTo(self).offset(7)
-            make.width.equalTo(self).multipliedBy(0.4)
-            make.bottom.equalTo(self).offset(-7)
+            make.width.equalTo(videoThumIVWidth)
+            make.height.equalTo(videoThumIVHeight)
         }
+        //这使用autolayout没有生效 还是使用手动生成吧
+//        videoThumIV.mask?.snp.makeConstraints({ (make ) in
+//            make.left.top.equalTo(0)
+//            make.width.height.equalTo(videoThumIV)
+//        })
+//        videoThumIV.mask?.frame = CGRect.init(x: 0, y: 0, width: videoThumIVWidth, height: videoThumIVHeight)
         
         videoTitleLbl.snp.makeConstraints { (make ) in
             make.left.equalTo(videoThumIV.snp.right).offset(4)
@@ -54,7 +63,7 @@ class TSVideoReleadCell:UITableViewCell{
         videoAuthorView.snp.makeConstraints { (make ) in
             make.top.equalTo(videoTitleLbl.snp.bottom).offset(2)
             make.left.right.equalTo(videoTitleLbl)
-            make.height.equalTo(videoThumIV).multipliedBy(0.25)
+            make.height.equalTo(videoThumIV).multipliedBy(0.24)
         }
         playCountView.snp.makeConstraints { (make ) in
             make.top.equalTo(videoAuthorView.snp.bottom).offset(2)
@@ -81,11 +90,20 @@ class TSVideoReleadCell:UITableViewCell{
         
     }
     //MARK:- property
+
     lazy var videoThumIV: UIImageView = {
         let iv = UIImageView()
+        iv.image = UIImage.init(named: "default")
+
+        //数量不多 圆角就用最简单的 下降的fps不明显
         iv.layer.cornerRadius = 5
         iv.layer.masksToBounds = true
-        iv.image = UIImage.init(named: "default")
+        
+//        let cornerImageView = UIImageView.init(image: UIImage.init(named: "imageCorner"))
+//        cornerImageView.frame = CGRect.init(x: 0, y: 0, width: 60, height: 60)
+//        iv.mask = cornerImageView
+        
+        
         return iv
     }()
     lazy var videoTitleLbl: UILabel = {

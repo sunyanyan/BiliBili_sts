@@ -725,5 +725,85 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/Feature/TSVideoReleadViewPresent.swift"
+            timestampString = "523422114.775278"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "didSelect(indexPath:tableView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/Feature/TSVideoReleadViewPresent.swift"
+            timestampString = "523422269.243691"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "cellForRowAt(indexPath:tableView:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BiliBili_sts.TSVideoReleadViewPresent.cellForRowAt (indexPath : Foundation.IndexPath, tableView : __ObjC.UITableView) -&gt; __ObjC.UITableViewCell"
+                  moduleName = "BiliBili_sts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sts/Desktop/github/BiliBili_sts/BiliBili_sts/Feature/TSVideoReleadViewPresent.swift"
+                  timestampString = "523422396.125234"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1007">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BiliBili_sts.TSVideoReleadViewPresent.cellForRowAt (indexPath : Foundation.IndexPath, tableView : __ObjC.UITableView) -&gt; __ObjC.UITableViewCell"
+                  moduleName = "BiliBili_sts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sts/Desktop/github/BiliBili_sts/BiliBili_sts/Feature/TSVideoReleadViewPresent.swift"
+                  timestampString = "523422396.126931"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1014">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/Feature/TSLaunchVC.swift"
+            timestampString = "523436122.735599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
