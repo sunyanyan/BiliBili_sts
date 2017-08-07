@@ -24,11 +24,14 @@ class TSPlayerView:UIView{
         setupUI()
         
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupConstraints()
+        
+    }
     //MARK: - property
 //    public var backBtnClickBlock:(()->())?
     weak var delegate:TSPlayerViewDelegate?
@@ -99,6 +102,8 @@ class TSPlayerView:UIView{
         return p
     }()
     
+    weak var updateFrameDelegate:TSUpdateFrameDelegate?
+    
 }
 //MARK:- TSPlayerView setup UI & add Constraints
 extension TSPlayerView{
@@ -114,11 +119,15 @@ extension TSPlayerView{
         maskPreView.addSubview(startBtn)
         maskPreView.addSubview(titleLabel)
         maskPreView.addSubview(backBtn)
-        
-        addConstraints()
+
     }
     
-    func addConstraints(){
+    func setupConstraints(){
+    
+        TSLog(message: "  ")
+        let viewWidth = self.tsW
+        if viewWidth == 0 {return}
+    
         bmPlayer.snp.makeConstraints { (make) in
             make.edges.equalTo(UIEdgeInsets.zero)
         }
@@ -193,6 +202,13 @@ extension TSPlayerView{
     }
     //返回按钮点击
     func backBtnClick(){
+    
+        if let del  = updateFrameDelegate {
+            if let action  = del.tsUpdateHeight {
+                action(self,0)
+            }
+        }
+    
         if let d  = delegate {
             d.tsPlayerViewBackBtnClick()
         }

@@ -17,10 +17,14 @@ class TSPlayerIntroductionView:UIScrollView{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         setupConstraints()
+        
+    }
+    override func updateConstraints() {
+        super.updateConstraints()
+        TSLog(message: "")
     }
     
     //MARK: - property
@@ -103,8 +107,9 @@ class TSPlayerIntroductionView:UIScrollView{
 extension TSPlayerIntroductionView:TSUpdateFrameDelegate{
     func tsUpdateFrameHeight(targetView: UIView, newHeight: CGFloat) {
         if let del  = updateFrameDelegate {
-            del.tsUpdateFrameHeight(targetView: self, newHeight: self.requiredViewHeight())
-        }
+            if let action = del.tsUpdateFrameHeight {
+                action(self,requiredViewHeight())
+            }        }
         setNeedsLayout()
     }
 }

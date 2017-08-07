@@ -19,26 +19,32 @@ class TSPlayVC: TSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        reload()        
+        reload()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        TSLog(message: "")
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        TSLog(message: "")
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        TSLog(message: "")
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        TSLog(message: "")
     }
+
     //MARK: - property
     lazy var playView: TSPlayerView = {
         let pv = TSPlayerView()
         pv.delegate = self
         let w = self.view.tsW
         pv.frame = CGRect.init(x: 0, y: 0, width: w, height: w * 9.0 / 16.0)
+        pv.updateFrameDelegate = self
         return pv
     }()
     
@@ -48,6 +54,7 @@ class TSPlayVC: TSViewController {
         let h = self.view.tsH - y
         v.frame = CGRect.init(x: 0, y: y, width: self.view.tsH, height: h)
         v.aid  = self.aid
+        v.updateFrameDelegate = self
         return v
     }()
     
@@ -58,6 +65,7 @@ class TSPlayVC: TSViewController {
         let p = TSPlayPresent.init(aid: self.aid)
         return p
     }()
+    let playViewHeight:CGFloat = tsScreenWidth * 9.0 / 16.0
 }
 
 // MARK: - Event
@@ -104,5 +112,25 @@ extension TSPlayVC{
 extension TSPlayVC:TSPlayerViewDelegate{
     func tsPlayerViewBackBtnClick() {
         self.backBtnClick()
+    }
+}
+
+extension TSPlayVC:TSUpdateFrameDelegate{
+    func tsUpdateHeight(targetView: UIView, addHeight: CGFloat) {
+        if playView.maskPreView.isHidden {
+            return
+        }
+        let litmitAddHeight = playViewHeight - 65
+        if addHeight >= 0 && addHeight <= litmitAddHeight {
+            let height = playViewHeight - addHeight
+            //类似bilibili播放页 那个播放按钮移动的效果就不做了
+            playView.frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: height)
+            playExtensionView.frame = CGRect.init(x: 0, y: height, width: tsScreenWidth, height: tsScreenHeight - height)
+        }
+        else if addHeight < 0 {
+            let height = playViewHeight
+            playView.frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: height)
+            playExtensionView.frame = CGRect.init(x: 0, y: height, width: tsScreenWidth, height: tsScreenHeight - height)
+        }
     }
 }

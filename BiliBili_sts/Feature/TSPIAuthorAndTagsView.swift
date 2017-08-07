@@ -111,7 +111,9 @@ extension TSPIAuthorAndTagsView{
         requiredViewHeight = 118.0 + tagListViewHeight - 38.0
         
         if let del  = updateFrameDelegate {
-            del.tsUpdateFrameHeight(targetView: self, newHeight: requiredViewHeight)
+            if let action = del.tsUpdateFrameHeight {
+                action(self,requiredViewHeight)
+            }
         }
         setNeedsLayout()
     }

@@ -18,15 +18,17 @@ class TSPlayerExtraInfoView: UIView  {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         setupConstraints()
+        
     }
     //MARK: property
     lazy var playerIntroductionView: TSPlayerIntroductionView = {
         let playerIntroductionView = TSPlayerIntroductionView()
-        playerIntroductionView.updateFrameDelegate = self
         playerIntroductionView.aid = self.aid
+        playerIntroductionView.delegate = self
         return playerIntroductionView
     }()
     
@@ -75,6 +77,8 @@ class TSPlayerExtraInfoView: UIView  {
         }
     }
     
+    weak var updateFrameDelegate:TSUpdateFrameDelegate?
+    
 }
 //MARK:- TSPlayerExtraInfoView setup UI & add Constraints
 extension TSPlayerExtraInfoView{
@@ -94,7 +98,7 @@ extension TSPlayerExtraInfoView{
     }
     
     func setupConstraints(){
-        
+        TSLog(message: "  ")
         let viewWidth = self.tsW
         if viewWidth == 0 {return}
         
@@ -105,7 +109,7 @@ extension TSPlayerExtraInfoView{
             make.height.equalTo(tsSlideMenuViewHeight)
         }
         let contentScrollViewHeight = self.tsH - tsSlideMenuViewHeight
-        contentScrollView.snp.makeConstraints { (make ) in
+        contentScrollView.snp.updateConstraints { (make ) in
             make.left.equalTo(self)
             make.width.equalTo(self)
             make.height.equalTo(contentScrollViewHeight)
@@ -113,11 +117,11 @@ extension TSPlayerExtraInfoView{
         }
         
         
-        playerIntroductionView.snp.makeConstraints({ (make) in
+        playerIntroductionView.snp.updateConstraints({ (make) in
             make.top.left.width.height.equalTo(contentScrollView)
         })
         
-        playerCommentView.snp.makeConstraints({ (make) in
+        playerCommentView.snp.updateConstraints({ (make) in
             make.top.width.height.equalTo(contentScrollView)
             make.left.equalTo(playerIntroductionView.snp.right)
         })
@@ -128,29 +132,21 @@ extension TSPlayerExtraInfoView{
 
 }
 
-extension TSPlayerExtraInfoView:TSUpdateFrameDelegate{
-    func tsUpdateFrameHeight(targetView: UIView, newHeight: CGFloat) {
-//        let oldContentSize = contentScrollView.frame
-//        contentScrollView.contentSize = CGSize.init(width: 0, height: newHeight)
-    }
-}
-
-
 // MARK: - 滚动动画
 extension TSPlayerExtraInfoView :UIScrollViewDelegate{
-
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        let scrollViewContentOffsetY = scrollView.contentOffset.y
-        let scrollViewContentOffsetX = scrollView.contentOffset.x
-        TSLog(message: "scrollViewContentOffsetY \(scrollViewContentOffsetY) \n scrollViewContentOffsetX \(scrollViewContentOffsetX) ")
-    }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //scrollview向上滚动时 缩小playerView的高度
         //scrollview向下滚动时 恢复playerView的高度
         let scrollViewContentOffsetY = scrollView.contentOffset.y
         let scrollViewContentOffsetX = scrollView.contentOffset.x
-        TSLog(message: "scrollViewContentOffsetY \(scrollViewContentOffsetY) \n scrollViewContentOffsetX \(scrollViewContentOffsetX) ")
+
+        if let  del  = updateFrameDelegate {
+            if let action = del.tsUpdateHeight {
+                action(self , scrollViewContentOffsetY)
+            }
+            setNeedsLayout()
+        }
     }
 }
 

@@ -41,6 +41,11 @@
 * http://comment.bilibili.com/recommendnew,12743458
     *  12743458 为当前视频 aid
 
+#### 评论信息
+
+* http://api.bilibili.com/x/v2/reply?callback=jQuery17202468624533958459_1502094946409&jsonp=jsonp&type=1&sort=2&oid=12853735&pn=1&nohot=1&_=1502094946717
+    * 
+
 ##  第三方
 
 * [Alamofire](https://github.com/Alamofire/Alamofire) 网络请求

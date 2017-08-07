@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
-protocol TSUpdateFrameDelegate:NSObjectProtocol {
-    func tsUpdateFrameHeight(targetView:UIView, newHeight:CGFloat)
+@objc protocol TSUpdateFrameDelegate {
+    @objc optional func tsUpdateFrameHeight(targetView:UIView, newHeight:CGFloat)
+    @objc optional func tsUpdateHeight(targetView:UIView, addHeight:CGFloat)
 }

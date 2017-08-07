@@ -79,7 +79,7 @@ extension TSTagsListView{
                 requiredViewheight = y + constantHeight + topPadding
             }
             
-            btn.snp.makeConstraints({ (make ) in
+            btn.snp.updateConstraints({ (make ) in
                 make.left.equalTo(self).offset(x)
                 make.top.equalTo(self).offset(y)
                 make.width.equalTo(btnWidth)

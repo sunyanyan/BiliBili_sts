@@ -75,7 +75,9 @@ extension TSVideoReleadView{
             self.contentTableView.reloadData()
             
             if let del  = self.updateFrameDelegate  {
-                del.tsUpdateFrameHeight(targetView: self , newHeight: 0)
+                if let action = del.tsUpdateFrameHeight {
+                    action(self,0)
+                }
             }
             self.setNeedsLayout()
         }

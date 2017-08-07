@@ -25,6 +25,11 @@ class TSPIInfoView: UIView {
         setupConstraints()
         
     }
+    
+    override func updateConstraints() {
+        setupConstraints()
+        super.updateConstraints()
+    }
     //MARK: - property
     weak var updateFrameDelegate:TSUpdateFrameDelegate?
     
@@ -104,6 +109,7 @@ class TSPIInfoView: UIView {
     var requiredViewHeight:CGFloat = 101.0
     //MARK:- setup UI & add Constraints
     func setupUI(){
+        
         self.backgroundColor = UIColor.white
         addSubview(titleLbl)
         addSubview(playCountView)
@@ -203,7 +209,9 @@ class TSPIInfoView: UIView {
         }
         
         if let del  = updateFrameDelegate {
-            del.tsUpdateFrameHeight(targetView: self, newHeight: requiredViewHeight)
+            if let action = del.tsUpdateFrameHeight {
+                action(self,requiredViewHeight)
+            }
         }
         setNeedsLayout()
     }
