@@ -43,7 +43,6 @@ class TSPlayerView:UIView{
     
     lazy var startBtn: UIButton = {
         let btn = UIButton.init(type: UIButtonType.custom)
-        btn.imageView?.contentMode = .scaleAspectFill
         btn.setImage(UIImage.init(named:"player_start"), for: UIControlState.normal)
         btn.setImage(UIImage.init(named:"player_start"), for: UIControlState.highlighted)
         btn.addTarget(self , action: #selector(maskPreViewStartBtnClick), for: UIControlEvents.touchUpInside)
@@ -113,6 +112,7 @@ extension TSPlayerView{
         
         addSubview(bmPlayer)
         addSubview(maskPreView)
+        
         maskPreView.addSubview(thumbnailImageView)
         maskPreView.addSubview(effectView)
         maskPreView.addSubview(moreBtn)
@@ -124,7 +124,6 @@ extension TSPlayerView{
     
     func setupConstraints(){
     
-        TSLog(message: "  ")
         let viewWidth = self.tsW
         if viewWidth == 0 {return}
     
@@ -145,25 +144,29 @@ extension TSPlayerView{
         
         moreBtn.snp.makeConstraints { (make) in
             make.right.equalTo(maskPreView.snp.right).offset(-8)
-            make.top.equalTo(maskPreView.snp.top).offset(8)
+            make.top.equalTo(15)
             make.width.height.equalTo(40)
         }
-        
-        startBtn.snp.makeConstraints { (make) in
-            make.bottom.equalTo(maskPreView.snp.bottom).offset(-15)
-            make.right.equalTo(maskPreView.snp.right).offset(-15)
-            make.width.height.equalTo(50)
+        let h = self.tsH / 180 * 50
+        let x = self.tsH / 180 * self.tsW - h - 15
+        let y = self.tsH - h - 15
+        startBtn.snp.updateConstraints { (make) in
+//            make.bottom.equalTo(maskPreView.snp.bottom).offset(-15)
+            make.top.equalTo(y)
+//            make.right.equalTo(maskPreView.snp.right).offset(-15)
+            make.left.equalTo(x)
+            make.width.height.equalTo(h)
         }
         
         titleLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(maskPreView.snp.centerX)
-            make.top.equalTo(maskPreView.snp.top).offset(8)
+            make.top.equalTo(15)
             make.width.equalTo(maskPreView.snp.width).multipliedBy(0.8)
             make.height.equalTo(40)
         }
         backBtn.snp.makeConstraints { (make ) in
             make.top.equalTo(15)
-            make.width.height.equalTo(50)
+            make.width.height.equalTo(40)
             make.left.equalTo(maskPreView.snp.left)
         }
     }

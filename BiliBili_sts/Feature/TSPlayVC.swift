@@ -121,16 +121,23 @@ extension TSPlayVC:TSUpdateFrameDelegate{
             return
         }
         let litmitAddHeight = playViewHeight - 65
+        //刚好定为 [0,litmitAddHeight] 时快速滚动会出现动画不正常
+        if addHeight < -0.5 * litmitAddHeight || addHeight > 1.5 * litmitAddHeight {
+            return
+        }
+        var height = playViewHeight
+        
         if addHeight >= 0 && addHeight <= litmitAddHeight {
-            let height = playViewHeight - addHeight
-            //类似bilibili播放页 那个播放按钮移动的效果就不做了
-            playView.frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: height)
-            playExtensionView.frame = CGRect.init(x: 0, y: height, width: tsScreenWidth, height: tsScreenHeight - height)
+            height = playViewHeight - addHeight
         }
         else if addHeight < 0 {
-            let height = playViewHeight
-            playView.frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: height)
-            playExtensionView.frame = CGRect.init(x: 0, y: height, width: tsScreenWidth, height: tsScreenHeight - height)
+            height = playViewHeight
         }
+        else{
+            height = playViewHeight - litmitAddHeight
+        }
+        
+        playView.frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: height)
+        playExtensionView.frame = CGRect.init(x: 0, y: height, width: tsScreenWidth, height: tsScreenHeight - height)
     }
 }

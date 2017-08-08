@@ -22,10 +22,10 @@ class TSPlayerIntroductionView:UIScrollView{
         setupConstraints()
         
     }
-    override func updateConstraints() {
-        super.updateConstraints()
-        TSLog(message: "")
-    }
+//    override func updateConstraints() {
+//        super.updateConstraints()
+////        TSLog(message: "")
+//    }
     
     //MARK: - property
     var aid:String = ""{

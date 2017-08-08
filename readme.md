@@ -30,7 +30,7 @@
 * 视频：http://tx.acgvideo.com/9/55/18869362-1.mp4?txTime=1498036248&platform=html5&txSecret=118d82eb2e76a4a3d9f92e7e27d9deb8&oi=3078728740&rate=110000
     * 视频链接来自于：
         * http://api.bilibili.com/playurl?callback=callbackfunction&aid=11413190&page=1&platform=html5&quality=1&vtype=mp4&type=jsonp&token=4ad38e0fb723286165c5e492335a21d1
-        * playurl链接由其他js脚本拼接而成，(其中token参数没有也没关系)那么知道aid就可以获得拼接后的链接了。
+        * playurl链接由其他js脚本(http://s1.hdslb.com/bfs/static/mult/videoPage-1407103658.js)拼接而成，(其中token参数没有也没关系)那么知道aid就可以获得拼接后的链接了。
         * playurl链接需要cookies
 * 弹幕: http://comment.bilibili.com/18869362.xml
     * 18869362 为cid
