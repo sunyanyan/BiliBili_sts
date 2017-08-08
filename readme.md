@@ -44,7 +44,8 @@
 #### 评论信息
 
 * http://api.bilibili.com/x/v2/reply?callback=jQuery17202468624533958459_1502094946409&jsonp=jsonp&type=1&sort=2&oid=12853735&pn=1&nohot=1&_=1502094946717
-    * 
+    * callback 和 最后的 “_” 不需要
+    * oid 为视频的 aid
 
 ##  第三方
 
