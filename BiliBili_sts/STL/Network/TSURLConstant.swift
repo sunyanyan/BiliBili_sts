@@ -42,3 +42,10 @@ func tsPlayedVideoRelatedUrl(aid:String ) -> String  {
     let url = urlPrefix + aid
     return url 
 }
+
+func tsPlayedVideoCommentUrl(aid:String ) -> String  {
+    let urlPrefix = tsBilibiliApiHost + "/x/v2/reply?jsonp=jsonp&type=1&sort=2&oid="
+    let urlSuffix = "&pn=1&nohot=1"
+    let url = urlPrefix + aid + urlSuffix
+    return url
+}

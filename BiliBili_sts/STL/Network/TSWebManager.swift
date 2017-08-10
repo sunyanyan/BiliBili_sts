@@ -115,6 +115,26 @@ class TSWebManager {
         })
         
     }
+    
+    /// 播放页 评论内容
+    ///
+    /// - Parameters:
+    ///   - aid: 视频页面的aid
+    ///   - block: playerCommentModel:playerCommentModel
+    class func requestPlayedVideoCommentData(aid:String,block:@escaping(_ resultDic:Dictionary<String,Any>)->())  {
+        var resultDic = Dictionary<String,Any>.init()
+        let url = tsPlayedVideoCommentUrl(aid: aid)
+        _ = TSWebClient.get(urlString: url, params: nil , finishedBlock: { (data ) in
+            let jsonString = String.init(data: data , encoding: .utf8)
+            let playerCommentModel = TSPlayerCommentModel.tsDeserialize(from: jsonString)
+            resultDic["playerCommentModel"] = playerCommentModel
+            block(resultDic)
+        }, errorBlock: { (Error) in
+            block(resultDic)
+        })
+        
+    }
+    
 }
 
 //extension TSWebManager{

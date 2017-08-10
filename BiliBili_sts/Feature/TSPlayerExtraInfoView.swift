@@ -73,7 +73,8 @@ class TSPlayerExtraInfoView: UIView  {
     }()
     var aid:String = ""{
         didSet{
-            playerIntroductionView.aid = aid 
+            playerIntroductionView.aid = aid
+            playerCommentView.aid = aid 
         }
     }
     
@@ -135,17 +136,17 @@ extension TSPlayerExtraInfoView{
 // MARK: - 滚动动画
 extension TSPlayerExtraInfoView :UIScrollViewDelegate{
 
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let scrollViewContentOffsetY = scrollView.contentOffset.y
-        TSLog(message: " scrollViewContentOffsetY: \(scrollViewContentOffsetY) ")
-    }
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        let scrollViewContentOffsetY = scrollView.contentOffset.y
+////        TSLog(message: " scrollViewContentOffsetY: \(scrollViewContentOffsetY) ")
+//    }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //scrollview向上滚动时 缩小playerView的高度
         //scrollview向下滚动时 恢复playerView的高度
         let scrollViewContentOffsetY = scrollView.contentOffset.y
         let scrollViewContentOffsetX = scrollView.contentOffset.x
-        TSLog(message: " scrollViewContentOffsetY: \(scrollViewContentOffsetY) ")
+//        TSLog(message: " scrollViewContentOffsetY: \(scrollViewContentOffsetY) ")
         
         if let  del  = updateFrameDelegate {
             if let action = del.tsUpdateHeight {
