@@ -10,7 +10,7 @@ import Foundation
 
 class TSWebManager {
     
-    /// 请求 各个区的数据 和 滚动推荐数据
+    /// 推荐页 请求 各个区的数据 和 滚动推荐数据
     ///
     /// - Parameter block: 
     ///         resultDic["dingModel"]:TSDingModel? + 
@@ -49,6 +49,26 @@ class TSWebManager {
         group.notify(queue: DispatchQueue.main) {
             block(resultDic)
         }
+        
+    }
+    
+    /// 直播页 数据
+    ///
+    /// - Parameter block:
+    ///         resultDic["liveModel"]:TSLiveModel? +
+    class func requestLiveData(block:@escaping((_ resultDic:Dictionary<String, Any>)->())){
+        
+        var resultDic = Dictionary<String,Any>.init()
+        let url = tsLiveUrl
+        
+        _ = TSWebClient.get(urlString: url, params: nil , finishedBlock: { (data ) in
+            let jsonString = String.init(data: data , encoding: .utf8)
+            let liveModel = TSLiveModel.tsDeserialize(from: jsonString)
+            resultDic["liveModel"] = liveModel
+            block(resultDic)
+        }, errorBlock: { (Error) in
+            block(resultDic)
+        })
         
     }
     

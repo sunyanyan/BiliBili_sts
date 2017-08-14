@@ -23,6 +23,7 @@ let tsIndexUrl = tsBilibiliHost + "/index.html"
 let tsDingUrl = tsBilibiliHost + "/index/ding.html"
 let tsWebShowUrl = tsBilibiliApiHost + "/x/web-show/res/loc?jsonp=jsonp&pf=7&id=1695"
 let tsWebInterfaceDynamicUrl = tsBilibiliApiHost + "/x/web-interface/dynamic/index?jsonp=jsonp"
+let tsLiveUrl = "http://api.live.bilibili.com/AppIndex/home?device=phone&platform=ios&scale=3&build=10000"
 
 func tsVideoUrl(aid:String) -> String {
     let tsVideoUrlPrefix = tsBilibiliHost + "/video/av"

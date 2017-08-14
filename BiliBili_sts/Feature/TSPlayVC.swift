@@ -117,6 +117,7 @@ extension TSPlayVC:TSPlayerViewDelegate{
 
 extension TSPlayVC:TSUpdateFrameDelegate{
     func tsUpdateHeight(targetView: UIView, addHeight: CGFloat) {
+//        TSLog(message: "addHeight :\(addHeight)  ")
         if playView.maskPreView.isHidden {
             return
         }
@@ -136,7 +137,7 @@ extension TSPlayVC:TSUpdateFrameDelegate{
         else{
             height = playViewHeight - litmitAddHeight
         }
-        
+//        TSLog(message: "height \(height)")
         playView.frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: height)
         playExtensionView.frame = CGRect.init(x: 0, y: height, width: tsScreenWidth, height: tsScreenHeight - height)
     }

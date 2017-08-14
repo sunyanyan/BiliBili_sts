@@ -58,6 +58,9 @@
 		38BF266E1EE037A900E2225D /* TSRecommendRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */; };
 		38BF266F1EE037A900E2225D /* TSSwipeTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */; };
 		38BF26721EE1631900E2225D /* TSPlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF26711EE1631900E2225D /* TSPlayVC.swift */; };
+		38C0A1841F4183B900F35179 /* TSLiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0A1831F4183B900F35179 /* TSLiveVC.swift */; };
+		38C0A1861F4184D600F35179 /* TSLivePresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0A1851F4184D600F35179 /* TSLivePresent.swift */; };
+		38C0A1881F41936900F35179 /* TSLiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0A1871F41936900F35179 /* TSLiveModel.swift */; };
 		38D4D2111F15CC7D00FAB4C2 /* TSSlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D2101F15CC7D00FAB4C2 /* TSSlideMenuView.swift */; };
 		38D4D23F1F1623A500FAB4C2 /* String+tsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D23E1F1623A500FAB4C2 /* String+tsExtension.swift */; };
 		38D4D2411F16255600FAB4C2 /* UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D2401F16255600FAB4C2 /* UITapGestureRecognizer.swift */; };
@@ -121,6 +124,9 @@
 		38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendRoute.swift; sourceTree = "<group>"; };
 		38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSwipeTransitionDelegate.swift; sourceTree = "<group>"; };
 		38BF26711EE1631900E2225D /* TSPlayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayVC.swift; sourceTree = "<group>"; };
+		38C0A1831F4183B900F35179 /* TSLiveVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveVC.swift; sourceTree = "<group>"; };
+		38C0A1851F4184D600F35179 /* TSLivePresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLivePresent.swift; sourceTree = "<group>"; };
+		38C0A1871F41936900F35179 /* TSLiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveModel.swift; sourceTree = "<group>"; };
 		38C32DDF1F14F2FF00479743 /* BiliBili_sts-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BiliBili_sts-Bridging-Header.h"; sourceTree = "<group>"; };
 		38D4D2101F15CC7D00FAB4C2 /* TSSlideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSlideMenuView.swift; sourceTree = "<group>"; };
 		38D4D23E1F1623A500FAB4C2 /* String+tsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+tsExtension.swift"; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 		385985971ED2E5790048B8B1 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				38C0A1821F41838E00F35179 /* 直播 */,
 				385985981ED2E5870048B8B1 /* 推荐 */,
 				385985841ED2DF1D0048B8B1 /* TSHomeVC.swift */,
 			);
@@ -454,6 +461,16 @@
 			name = "播放";
 			sourceTree = "<group>";
 		};
+		38C0A1821F41838E00F35179 /* 直播 */ = {
+			isa = PBXGroup;
+			children = (
+				38C0A1831F4183B900F35179 /* TSLiveVC.swift */,
+				38C0A1851F4184D600F35179 /* TSLivePresent.swift */,
+				38C0A1871F41936900F35179 /* TSLiveModel.swift */,
+			);
+			name = "直播";
+			sourceTree = "<group>";
+		};
 		38D598141F289C9B00DEBBC8 /* 评论 */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +635,7 @@
 				3897D7751F3BFC4700F472B0 /* TSCommentTableView.swift in Sources */,
 				387422771ED3DD060031326C /* TSRefresh.swift in Sources */,
 				3859858A1ED2DF1D0048B8B1 /* TSDingContentCell.swift in Sources */,
+				38C0A1881F41936900F35179 /* TSLiveModel.swift in Sources */,
 				3869DC2C1ED56F0C007ECA81 /* readme.md in Sources */,
 				38377B851F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift in Sources */,
 				38FA1E6B1F232CA400B07144 /* UIImage+tsExtension.swift in Sources */,
@@ -629,6 +647,7 @@
 				3897D7771F3BFEBA00F472B0 /* TSPlayerCommentModel.swift in Sources */,
 				382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */,
 				387B6DE81F306501006B18E4 /* TSVideoReleadView.swift in Sources */,
+				38C0A1861F4184D600F35179 /* TSLivePresent.swift in Sources */,
 				388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */,
 				382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */,
 				3859858F1ED2DF1D0048B8B1 /* TSLaunchVC.swift in Sources */,
@@ -654,6 +673,7 @@
 				382D844C1EF9153300B79555 /* TSPlayerView.swift in Sources */,
 				387422791ED416070031326C /* UIImageView+tsExtension.swift in Sources */,
 				38AC97E21ECC02630051436E /* TSLog.swift in Sources */,
+				38C0A1841F4183B900F35179 /* TSLiveVC.swift in Sources */,
 				38706F4D1EC9383F008C6499 /* TSConstant.swift in Sources */,
 				38D598111F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift in Sources */,
 				38D4D23F1F1623A500FAB4C2 /* String+tsExtension.swift in Sources */,

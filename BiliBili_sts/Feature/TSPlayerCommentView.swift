@@ -65,7 +65,7 @@ extension TSCommentTableViewPresent {
             let commentAid = self.aid!
             TSWebManager.requestPlayedVideoCommentData(aid: commentAid, block: { (resultDic) in
                 if let playerCommentModel = resultDic["playerCommentModel"] as? TSPlayerCommentModel {
-                        self.handlePlayerCommentModel(playerCommentModel: playerCommentModel)                    
+                        self.handlePlayerCommentModel(playerCommentModel: playerCommentModel)
                 }
                 block()
             })
@@ -78,8 +78,15 @@ extension TSCommentTableViewPresent {
     func handlePlayerCommentModel(playerCommentModel:TSPlayerCommentModel )  {
         if let replies = playerCommentModel.data?.replies {
             self.replyModels = replies
+            //计算高度
+            cellHeights = [CGFloat]()
+            for model  in replies {
+                let height = TSCommentTableCell.requiredHeight(model: model)
+                cellHeights.append(height)
+                
+            }
         }
-        //计算高度
+        
         
     }
 }
@@ -105,6 +112,10 @@ extension TSCommentTableViewPresent{
     }
     
     func cellHeight(indexPath:IndexPath,tableView:UITableView) -> CGFloat {
+    
+        if let height = TSCommon.modelAt(indexPath: indexPath, oneSectionModels: cellHeights) as? CGFloat{
+            return height
+        }
         return 76
     }
 }
