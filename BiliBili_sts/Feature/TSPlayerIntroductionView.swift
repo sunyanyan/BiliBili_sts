@@ -22,10 +22,10 @@ class TSPlayerIntroductionView:UIScrollView{
         setupConstraints()
         
     }
-//    override func updateConstraints() {
-//        super.updateConstraints()
-////        TSLog(message: "")
-//    }
+    //    override func updateConstraints() {
+    //        super.updateConstraints()
+    ////        TSLog(message: "")
+    //    }
     
     //MARK: - property
     var aid:String = ""{
@@ -63,10 +63,10 @@ class TSPlayerIntroductionView:UIScrollView{
         
     }
     func setupConstraints(){
-    
+        
         let viewWidth = self.tsW
         if viewWidth == 0 {return}
-    
+        
         infoView.snp.updateConstraints { (make ) in
             make.left.equalTo(self)
             make.top.equalTo(self).offset(10)
@@ -100,7 +100,7 @@ class TSPlayerIntroductionView:UIScrollView{
         height = height + padding
         return  height
     }
-
+    
     
 }
 

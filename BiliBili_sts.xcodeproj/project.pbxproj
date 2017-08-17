@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		142501BE76450E8652BB1D3D /* Pods_BiliBili_sts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0B006D83B1148C1222A0F4 /* Pods_BiliBili_sts.framework */; };
+		382365C61F4589AB008F4AE2 /* TSCommentTableViewPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382365C51F4589AB008F4AE2 /* TSCommentTableViewPresent.swift */; };
 		382D84461EF8B47800B79555 /* TSWebInterfaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */; };
 		382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84471EF8FC4800B79555 /* TSPlayPresent.swift */; };
 		382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84491EF9015700B79555 /* TSURLConstant.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		382365C51F4589AB008F4AE2 /* TSCommentTableViewPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCommentTableViewPresent.swift; sourceTree = "<group>"; };
 		382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebInterfaceModel.swift; sourceTree = "<group>"; };
 		382D84471EF8FC4800B79555 /* TSPlayPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayPresent.swift; sourceTree = "<group>"; };
 		382D84491EF9015700B79555 /* TSURLConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSURLConstant.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		3868D5131ECEE480006CB40A /* testDing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testDing.jpg; sourceTree = "<group>"; };
 		3869DC291ED51CD1007ECA81 /* TSCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCarouselView.swift; sourceTree = "<group>"; };
 		3869DC2B1ED56F0C007ECA81 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
-		3869DC2D1ED57463007ECA81 /* TSWebShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebShowCell.swift; sourceTree = "<group>"; };
+		3869DC2D1ED57463007ECA81 /* TSWebShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSWebShowCell.swift; path = Feature/TSWebShowCell.swift; sourceTree = "<group>"; };
 		38706F2B1EC937AB008C6499 /* BiliBili_sts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiliBili_sts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38706F2E1EC937AB008C6499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38706F331EC937AB008C6499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				385985801ED2DF1D0048B8B1 /* TSDingContentCell.swift */,
-				3869DC2D1ED57463007ECA81 /* TSWebShowCell.swift */,
 				3896966E1ED7CE57001AA026 /* TSRecommendHeadView.swift */,
 			);
 			name = View;
@@ -336,6 +337,7 @@
 			children = (
 				389057881F259D1F00A49B2A /* TSButtonLabelView.swift */,
 				389566C11F27177500891383 /* TSFlodTextView.swift */,
+				3869DC2D1ED57463007ECA81 /* TSWebShowCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -363,6 +365,7 @@
 			children = (
 				382D84471EF8FC4800B79555 /* TSPlayPresent.swift */,
 				38AA89D31F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift */,
+				382365C51F4589AB008F4AE2 /* TSCommentTableViewPresent.swift */,
 			);
 			name = Present;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				38474F8E1ED6B51A0040F4E4 /* TSBaseModel.swift in Sources */,
 				385985921ED2DF1D0048B8B1 /* TSRecommendVC.swift in Sources */,
 				38D598131F289BD400DEBBC8 /* TSTagsListView.swift in Sources */,
+				382365C61F4589AB008F4AE2 /* TSCommentTableViewPresent.swift in Sources */,
 				38706F2F1EC937AB008C6499 /* AppDelegate.swift in Sources */,
 				389566C41F2717BC00891383 /* TSPIInfoView.swift in Sources */,
 				387B6DEA1F30652F006B18E4 /* TSVideoReleadCell.swift in Sources */,

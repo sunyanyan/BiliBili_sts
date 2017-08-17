@@ -43,7 +43,7 @@ class TSPlayVC: TSViewController {
         let pv = TSPlayerView()
         pv.delegate = self
         let w = self.view.tsW
-        pv.frame = CGRect.init(x: 0, y: 0, width: w, height: w * 9.0 / 16.0)
+//        pv.frame = CGRect.init(x: 0, y: 0, width: w, height: w * 9.0 / 16.0)
         pv.updateFrameDelegate = self
         return pv
     }()
@@ -52,7 +52,7 @@ class TSPlayVC: TSViewController {
         let v = TSPlayerExtraInfoView()        
         let y = self.view.tsW * 9.0 / 16.0
         let h = self.view.tsH - y
-        v.frame = CGRect.init(x: 0, y: y, width: self.view.tsH, height: h)
+//        v.frame = CGRect.init(x: 0, y: y, width: self.view.tsH, height: h)
         v.aid  = self.aid
         v.updateFrameDelegate = self
         return v
@@ -117,7 +117,7 @@ extension TSPlayVC:TSPlayerViewDelegate{
 
 extension TSPlayVC:TSUpdateFrameDelegate{
     func tsUpdateHeight(targetView: UIView, addHeight: CGFloat) {
-//        TSLog(message: "addHeight :\(addHeight)  ")
+        TSLog(message: "下部滚动高度 :\(addHeight)  ")
         if playView.maskPreView.isHidden {
             return
         }
@@ -137,7 +137,7 @@ extension TSPlayVC:TSUpdateFrameDelegate{
         else{
             height = playViewHeight - litmitAddHeight
         }
-//        TSLog(message: "height \(height)")
+        TSLog(message: "播放器高度 \(height)")
         playView.frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: height)
         playExtensionView.frame = CGRect.init(x: 0, y: height, width: tsScreenWidth, height: tsScreenHeight - height)
     }

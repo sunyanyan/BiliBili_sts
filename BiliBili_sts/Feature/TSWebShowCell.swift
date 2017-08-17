@@ -10,14 +10,16 @@ import Foundation
 import UIKit
 
 @objc protocol TSWebShowCellDelegate {
-    @objc optional func didSelectAtIndex(index:Int ,model:TSWebShowContentModel, imgUrl:String?)
+//    @objc optional func didSelectAtIndex(index:Int ,model:TSWebShowContentModel, imgUrl:String?)
+    @objc optional func didSelect(index:Int ,linkUrl:String?, imgUrl:String?)
+    
 }
 
 class TSWebShowCell: UICollectionViewCell {
     
     static let TSWebShowCellKey = "TSWebShowCell"
     
-    var contentModels:[TSWebShowContentModel]?{
+    var contentModels:[TSBaseModel]?{
         didSet{
             setupModel()
         }
@@ -27,11 +29,9 @@ class TSWebShowCell: UICollectionViewCell {
     
         let v = TSCarouselView.init(frame: self.bounds, imageUrlStrs: [String](), selectedAction: { (index, imgUrl) in
             if let delegate = self.webCellSelectDelegate {
-                if let method = delegate.didSelectAtIndex {
-                    if let model = self.contentModels?[index] {
-                        method(index,model,imgUrl)
-                    }
-                    
+                if let method = delegate.didSelect {
+                    let modelStruct = self.modelUrl(index:index)
+                    method(index,modelStruct.linkUrl,modelStruct.imageUrl)
                 }
             }
         })
@@ -66,16 +66,35 @@ class TSWebShowCell: UICollectionViewCell {
 
 extension TSWebShowCell{
     func setupModel() {
-        if self.contentModels != nil {
-            
+    
+        if let contentModelsT = self.contentModels {
+        
             var urlStrs = [String]()
-            for model in self.contentModels! {
-                if let urlStr = model.pic{
-                    urlStrs.append(urlStr)
+            for index in 0..<contentModelsT.count {
+                if let imageUrl = modelUrl(index: index).imageUrl {
+                    urlStrs.append(imageUrl)
                 }
             }
             carouselView.imageUrlStrings = urlStrs
-            
+        }
+    }
+    func modelUrl(index:Int)->(imageUrl:String? , linkUrl:String?){
+        if let contentModelsT = self.contentModels {
+            let model = TSCommon.modelAt(index: index, models: contentModelsT)
+            if model is TSWebShowContentModel {
+                let modelTmp = model as! TSWebShowContentModel
+                return (modelTmp.pic,modelTmp.url)
+            }
+            else if model is TSLiveBannerModel {
+                let modelTmp = model as! TSLiveBannerModel
+                return (modelTmp.img,modelTmp.link)
+            }
+            else {
+                return (nil,nil)
+            }
+        }
+        else {
+            return (nil,nil)
         }
     }
 }

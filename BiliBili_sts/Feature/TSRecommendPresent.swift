@@ -80,7 +80,9 @@ extension TSRecommendPresent{
         }
         if model is TSDingContentModel{
             guard let videoId = (model as! TSDingContentModel ).aid else { return }
+//
             weakRecommendVC?.presentPlayVC(aid:videoId)
+            
         }
         else{
             fatalError(" model 类型异常 ")
@@ -224,13 +226,10 @@ extension TSRecommendPresent{
 // MARK: - TSRecommendPresent - TSWebShowCellDelegate
 //点击轮播图
 extension TSRecommendPresent : TSWebShowCellDelegate{
-    func didSelectAtIndex(index:Int ,model:TSWebShowContentModel, imgUrl:String?){
-//        TSLog(message: " index \(index) model \(model) imgUrl \(String(describing: imgUrl))")
-        
 
-        let url:String? = model.url
-        if (url != nil){
-            weakRecommendVC?.presentWebVC(url: url!)            
+    func didSelect(index: Int, linkUrl: String?, imgUrl: String?) {
+        if let linkUrlT = linkUrl {
+            weakRecommendVC?.presentWebVC(url: linkUrlT)
         }
     }
 }

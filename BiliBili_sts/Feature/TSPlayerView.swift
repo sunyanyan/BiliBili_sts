@@ -91,13 +91,7 @@ class TSPlayerView:UIView{
         controlView.backBtnClickBlock = {()->() in
             self.backBtnClick()
         }
-        let p = BMPlayer.init(customControlView: controlView)
-        
-        
-        //        let url = URL.init(string: "http://tx.acgvideo.com/c/60/18950093-1.mp4?txTime=1498121786&platform=html5&txSecret=8a3b5a3efd7d5041fc97b19b3012d0d6&oi=3078728740&rate=110000")
-        //        let asset = BMPlayerResource.init(url: url!, name: "AV001234", cover: nil, subtitle: nil)
-        //        p.setVideo(resource: asset)
-        
+        let p = BMPlayer.init(customControlView: controlView)        
         return p
     }()
     
@@ -126,23 +120,24 @@ extension TSPlayerView{
     
         let viewWidth = self.tsW
         if viewWidth == 0 {return}
-    
-        bmPlayer.snp.makeConstraints { (make) in
+        TSLog(message: " tsW \(self.tsW) tsH\(self.tsH)")
+        
+        bmPlayer.snp.updateConstraints { (make) in
             make.edges.equalTo(UIEdgeInsets.zero)
         }
         
-        maskPreView.snp.makeConstraints { (make) in
+        maskPreView.snp.updateConstraints { (make) in
             make.edges.equalTo(UIEdgeInsets.zero)
         }
-        thumbnailImageView.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets.zero)
-        }
-        
-        effectView.snp.makeConstraints { (make) in
+        thumbnailImageView.snp.updateConstraints { (make) in
             make.edges.equalTo(UIEdgeInsets.zero)
         }
         
-        moreBtn.snp.makeConstraints { (make) in
+        effectView.snp.updateConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsets.zero)
+        }
+        
+        moreBtn.snp.updateConstraints { (make) in
             make.right.equalTo(maskPreView.snp.right).offset(-8)
             make.top.equalTo(15)
             make.width.height.equalTo(40)
@@ -150,6 +145,7 @@ extension TSPlayerView{
         let h = self.tsH / 180 * 50
         let x = self.tsH / 180 * self.tsW - h - 15
         let y = self.tsH - h - 15
+//        TSLog(message: " x \(x) y \(y) h \(h)")
         startBtn.snp.updateConstraints { (make) in
 //            make.bottom.equalTo(maskPreView.snp.bottom).offset(-15)
             make.top.equalTo(y)
@@ -158,13 +154,13 @@ extension TSPlayerView{
             make.width.height.equalTo(h)
         }
         
-        titleLabel.snp.makeConstraints { (make) in
+        titleLabel.snp.updateConstraints { (make) in
             make.centerX.equalTo(maskPreView.snp.centerX)
             make.top.equalTo(15)
             make.width.equalTo(maskPreView.snp.width).multipliedBy(0.8)
             make.height.equalTo(40)
         }
-        backBtn.snp.makeConstraints { (make ) in
+        backBtn.snp.updateConstraints { (make ) in
             make.top.equalTo(15)
             make.width.height.equalTo(40)
             make.left.equalTo(maskPreView.snp.left)

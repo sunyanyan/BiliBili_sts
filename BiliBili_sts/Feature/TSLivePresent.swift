@@ -25,8 +25,31 @@ extension TSLivePresent{
     
     /// 刷新数据
     func requestData(finishCallBack:@escaping ()->()) {
+        
         TSWebManager.requestLiveData { (resultDic) in
-            
+            self.models = [[TSBaseModel]]()
+            if let liveModel = resultDic["liveModel"] as? TSLiveModel {
+                //滚动推荐
+                if let scrollModel = liveModel.data {
+                    
+                    var sectionModel = [TSBaseModel]()
+                    sectionModel.append(scrollModel)
+                    self.models.append(sectionModel)
+                }
+                //各个区直播
+                if let liveSectionModels = liveModel.data?.partitions {
+                    for liveSectionModel in liveSectionModels {
+                        if let liveContentModels = liveSectionModel.lives {
+                            var sectionModel = [TSBaseModel]()
+                            for liveContentModel in liveContentModels {
+                                sectionModel.append(liveContentModel)
+                            }
+                            self.models.append(sectionModel)
+                        }
+                    }
+                }
+            }
+            self.initSizeArray()
             finishCallBack()
         }
     }
@@ -37,16 +60,16 @@ extension TSLivePresent{
     ///点击cell 展示视频播放
     func didSelectAt(indexPath:IndexPath,viewcontroller:UIViewController){
         
-        guard let model = modelAt(indexPath: indexPath) else {
-            fatalError(" indexPath \(indexPath) 错误 ")
-        }
-        if model is TSDingContentModel{
-            guard let videoId = (model as! TSDingContentModel ).aid else { return }
-//            weakLiveVC?.presentPlayVC(aid:videoId)
-        }
-        else{
-            fatalError(" model 类型异常 ")
-        }
+//        guard let model = modelAt(indexPath: indexPath) else {
+//            fatalError(" indexPath \(indexPath) 错误 ")
+//        }
+//        if model is TSDingContentModel{
+//            guard let videoId = (model as! TSDingContentModel ).aid else { return }
+////            weakLiveVC?.presentPlayVC(aid:videoId)
+//        }
+//        else{
+//            fatalError(" model 类型异常 ")
+//        }
     }
 }
 
@@ -67,15 +90,15 @@ extension TSLivePresent{
             fatalError(" indexPath \(indexPath) 错误 ")
         }
         
-        if model is TSWebShowModel {
-            //TSWebShowCell 包含一个轮播图
+        if model is TSLiveDataModel {
+            //TSLiveDataModel.banner 包含一个轮播图
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSWebShowCell.TSWebShowCellKey, for: indexPath) as! TSWebShowCell
-            cell.contentModels = (model as! TSWebShowModel).data
+            cell.contentModels = (model as! TSLiveDataModel).banner
             cell.webCellSelectDelegate = self
             return cell
         }
-        else if model is TSDingContentModel{
-            //TSDingContentCell 包含一个 UICollectionView展示各个区的具体数据
+        else if model is TSLiveContentModel{
+            //TSLiveContentModel 包含一个 UICollectionView展示各个区的具体数据
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSDingContentCell.tsDingContentCellKey, for: indexPath) as! TSDingContentCell
             cell.contentModel = model as? TSDingContentModel
             return cell
@@ -186,13 +209,10 @@ extension TSLivePresent{
 // MARK: - TSRecommendPresent - TSWebShowCellDelegate
 //点击轮播图
 extension TSLivePresent : TSWebShowCellDelegate{
-    func didSelectAtIndex(index:Int ,model:TSWebShowContentModel, imgUrl:String?){
-        //        TSLog(message: " index \(index) model \(model) imgUrl \(String(describing: imgUrl))")
-        
-        
-        let url:String? = model.url
-        if (url != nil){
-//            weakLiveVC?.presentWebVC(url: url!)
+
+    func didSelect(index: Int, linkUrl: String?, imgUrl: String?) {
+        if let linkUrlT = linkUrl {
+//            weakRecommendVC?.presentWebVC(url: linkUrlT)
         }
     }
 }

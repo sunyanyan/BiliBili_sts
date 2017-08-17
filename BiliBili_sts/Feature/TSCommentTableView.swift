@@ -39,9 +39,14 @@ class TSCommentTableView: UIView {
         }
     }
     func reload(){
-        commentPresent.requestData {
+        commentPresent.requestData {[unowned self] in
             self.contentTableView.reloadData()
             
+            if let  del  = self.updateFrameDelegate {
+                if let action = del.tsUpdateHeight {
+                    action(self , 0)
+                }
+            }
 //            if let del  = self.updateFrameDelegate  {
 //                if let action = del.tsUpdateFrameHeight {
 //                    action(self,0)
@@ -55,9 +60,13 @@ class TSCommentTableView: UIView {
         let v = UITableView.init(frame: CGRect.zero, style: UITableViewStyle.plain)
         v.delegate = self
         v.dataSource = self
+        v.isScrollEnabled = false
         v.separatorStyle = .none
         return v
     }()
+    
+    weak var updateFrameDelegate:TSUpdateFrameDelegate?
+    
     var videoAid:String=""{
         didSet{
             commentPresent.aid = videoAid
@@ -68,6 +77,10 @@ class TSCommentTableView: UIView {
         let p = TSCommentTableViewPresent.init(aid: self.videoAid)
         return p
     }()
+    
+    func requiredHeight() -> CGFloat {
+        return self.commentPresent.allHeight()
+    }
 }
 
 extension TSCommentTableView:UITableViewDataSource{

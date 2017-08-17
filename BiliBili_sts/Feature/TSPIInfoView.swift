@@ -213,7 +213,6 @@ class TSPIInfoView: UIView {
                 action(self,requiredViewHeight)
             }
         }
-        setNeedsLayout()
     }
 }
 

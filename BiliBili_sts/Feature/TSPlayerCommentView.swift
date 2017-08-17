@@ -32,14 +32,21 @@ class TSPlayerCommentView: UIScrollView  {
         let viewWidth = self.tsW
         if viewWidth == 0 {return}
         
+        
+        let tableViewHeight = tableView.requiredHeight()
+        TSLog(message: " 评论框 \(tableViewHeight)")
         tableView.snp.updateConstraints { (make ) in
             make.left.top.equalTo(self)
-            make.width.height.equalTo(self)
+            make.width.equalTo(self)
+            make.height.equalTo(tableViewHeight)
         }
+        
+        self.contentSize = CGSize.init(width: 0, height: tableViewHeight)
     }
     //MARK: - property
     lazy var tableView: TSCommentTableView = {
         let v = TSCommentTableView()
+        v.updateFrameDelegate = self
         return v
     }()
     //MARK: - property
@@ -50,72 +57,9 @@ class TSPlayerCommentView: UIScrollView  {
     }
 }
 
-class TSCommentTableViewPresent{
-    init(aid:String) {
-        self.aid = aid
+extension TSPlayerCommentView :TSUpdateFrameDelegate{
+    func tsUpdateHeight(targetView: UIView, addHeight: CGFloat) {
+        setNeedsLayout()
     }
-    var aid:String?
-    var replyModels = [TSPlayerCommentReplyModel]()
-    fileprivate var cellHeights = [CGFloat]()
 }
 
-extension TSCommentTableViewPresent {
-    func requestData(block:@escaping()->()){
-        if !String.tsIsEmpty(string: self.aid){
-            let commentAid = self.aid!
-            TSWebManager.requestPlayedVideoCommentData(aid: commentAid, block: { (resultDic) in
-                if let playerCommentModel = resultDic["playerCommentModel"] as? TSPlayerCommentModel {
-                        self.handlePlayerCommentModel(playerCommentModel: playerCommentModel)
-                }
-                block()
-            })
-        }
-        else{
-            block()
-        }
-    }
-    
-    func handlePlayerCommentModel(playerCommentModel:TSPlayerCommentModel )  {
-        if let replies = playerCommentModel.data?.replies {
-            self.replyModels = replies
-            //计算高度
-            cellHeights = [CGFloat]()
-            for model  in replies {
-                let height = TSCommentTableCell.requiredHeight(model: model)
-                cellHeights.append(height)
-                
-            }
-        }
-        
-        
-    }
-}
-extension TSCommentTableViewPresent{
-    func numberOfRowsInSection()->Int{
-        return self.replyModels.count
-    }
-    func cellForRowAt(indexPath:IndexPath,tableView:UITableView) -> UITableViewCell {
-        
-        var cell = tableView.dequeueReusableCell(withIdentifier: TSVideoReleadCell.tsVideoReleadCellKey)
-        if cell == nil {
-            cell = TSCommentTableCell.init(style: .default, reuseIdentifier: TSCommentTableCell.tsCommentTableCellKey)
-        }
-        
-        if let model  = TSCommon.modelAt(indexPath: indexPath, oneSectionModels:self.replyModels) as? TSPlayerCommentReplyModel{
-            if let commentCell = cell as?  TSCommentTableCell{
-                commentCell.setupModel(model:model)
-                return commentCell
-            }
-        }
-        
-        fatalError(" model数组异常 ")
-    }
-    
-    func cellHeight(indexPath:IndexPath,tableView:UITableView) -> CGFloat {
-    
-        if let height = TSCommon.modelAt(indexPath: indexPath, oneSectionModels: cellHeights) as? CGFloat{
-            return height
-        }
-        return 76
-    }
-}

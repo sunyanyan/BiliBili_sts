@@ -79,7 +79,6 @@ extension TSVideoReleadView{
                     action(self,0)
                 }
             }
-            self.setNeedsLayout()
         }
     }
 }

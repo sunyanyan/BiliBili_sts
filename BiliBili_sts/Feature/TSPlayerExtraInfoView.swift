@@ -25,7 +25,7 @@ class TSPlayerExtraInfoView: UIView  {
         
     }
     //MARK: property
-    lazy var playerIntroductionView: TSPlayerIntroductionView = {
+    lazy var playerIntroductionView: TSPlayerIntroductionView = {[unowned self] in
         let playerIntroductionView = TSPlayerIntroductionView()
         playerIntroductionView.aid = self.aid
         playerIntroductionView.delegate = self
@@ -39,8 +39,10 @@ class TSPlayerExtraInfoView: UIView  {
         return playerCommentView
     }()
 
+
+
     
-    lazy var slideMenu: TSSlideMenuView = {
+    lazy var slideMenu: TSSlideMenuView = {[unowned self] in
         // 1.frame
         let width:CGFloat = 150
         let height:CGFloat = tsSlideMenuViewHeight
@@ -64,7 +66,7 @@ class TSPlayerExtraInfoView: UIView  {
 
         let v = UIScrollView()
         v.isUserInteractionEnabled = true
-        v.translatesAutoresizingMaskIntoConstraints = false
+//        v.translatesAutoresizingMaskIntoConstraints = false
  
 //        v.isPagingEnabled = true
         v.showsHorizontalScrollIndicator = false
@@ -102,6 +104,8 @@ extension TSPlayerExtraInfoView{
         
         let viewWidth = self.tsW
         if viewWidth == 0 {return}
+        
+        TSLog(message: " tsW \(self.tsW) tsH\(self.tsH)")
         
         slideMenu.snp.makeConstraints { (make ) in
             make.top.equalTo(self)
@@ -146,13 +150,13 @@ extension TSPlayerExtraInfoView :UIScrollViewDelegate{
         //scrollview向下滚动时 恢复playerView的高度
         let scrollViewContentOffsetY = scrollView.contentOffset.y
         let scrollViewContentOffsetX = scrollView.contentOffset.x
-//        TSLog(message: " scrollViewContentOffsetY: \(scrollViewContentOffsetY) ")
+        TSLog(message: " scrollViewContentOffsetY: \(scrollViewContentOffsetY) ")
         
         if let  del  = updateFrameDelegate {
             if let action = del.tsUpdateHeight {
                 action(self , scrollViewContentOffsetY)
             }
-            setNeedsLayout()
+//            setNeedsLayout()
         }
     }
 }

@@ -115,7 +115,6 @@ extension TSPIAuthorAndTagsView{
                 action(self,requiredViewHeight)
             }
         }
-        setNeedsLayout()
     }
     
     //MARK:- setup UI & add Constraints
