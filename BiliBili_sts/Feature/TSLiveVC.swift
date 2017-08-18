@@ -74,10 +74,10 @@ extension TSLiveVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return livePresent.cellForItemAt(collectionView:collectionView ,indexPath: indexPath)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return livePresent.headOrFooterViewOfKind(kind: kind, collectionView: collectionView, indexPath: indexPath)
-    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        return livePresent.headOrFooterViewOfKind(kind: kind, collectionView: collectionView, indexPath: indexPath)
+//    }
     
     
 }
@@ -104,9 +104,9 @@ extension TSLiveVC:UICollectionViewDelegateFlowLayout{
         return livePresent.itemInset(section: section)
     }
     //section head size
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return livePresent.headSize(section: section)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return livePresent.headSize(section: section)
+//    }
 }
 
 

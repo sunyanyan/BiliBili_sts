@@ -23,7 +23,7 @@ class TSHomeVC:TSViewController{
     lazy var controllers: [UIViewController] = {
         var vcs = [UIViewController]()
         
-        let item1 = UIViewController()
+        let item1 = TSLiveVC()
         vcs.append(item1)
         
         let item2 = TSRecommendVC()

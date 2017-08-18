@@ -99,8 +99,8 @@ extension TSLivePresent{
         }
         else if model is TSLiveContentModel{
             //TSLiveContentModel 包含一个 UICollectionView展示各个区的具体数据
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSDingContentCell.tsDingContentCellKey, for: indexPath) as! TSDingContentCell
-            cell.contentModel = model as? TSDingContentModel
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSLiveContentCell.tsLiveContentCellKey, for: indexPath) as! TSLiveContentCell
+            cell.contentModel = model as? TSLiveContentModel
             return cell
         }
         else{
@@ -108,18 +108,16 @@ extension TSLivePresent{
         }
     }
     
-    func headOrFooterViewOfKind(kind :String,collectionView:UICollectionView, indexPath:IndexPath) ->UICollectionReusableView{
-        
-        if kind == UICollectionElementKindSectionHeader {
-            let head = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: TSRecommendHeadView.tsRecommendHeadViewKey, for: indexPath)
-            
-            return head
-        }
-        else{
-            fatalError(" 不应该有 footer view ")
-        }
-        
-    }
+//    func headOrFooterViewOfKind(kind :String,collectionView:UICollectionView, indexPath:IndexPath) ->UICollectionReusableView{
+//        
+//        if kind == UICollectionElementKindSectionHeader {
+//            fatalError(" 不应该有 header view ")
+//        }
+//        else{
+//            fatalError(" 不应该有 footer view ")
+//        }
+//        
+//    }
     
     //MARK:  对models的处理
     fileprivate func modelsSectionCount()->Int{
@@ -144,12 +142,9 @@ extension TSLivePresent{
     }
     //MARK:  注册cell、view
     func registerCellIn(collectionView:UICollectionView) {
-        //        collectionView.register(TSDingCell.self, forCellWithReuseIdentifier: TSDingCell.tsDingCellKey)
-        collectionView.register(TSDingContentCell.self, forCellWithReuseIdentifier: TSDingContentCell.tsDingContentCellKey)
+
+        collectionView.register(TSLiveContentCell.self, forCellWithReuseIdentifier: TSLiveContentCell.tsLiveContentCellKey)
         collectionView.register(TSWebShowCell.self, forCellWithReuseIdentifier: TSWebShowCell.TSWebShowCellKey)
-        
-        collectionView.register(TSRecommendHeadView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: TSRecommendHeadView.tsRecommendHeadViewKey)
-        
     }
 }
 
@@ -158,21 +153,15 @@ extension TSLivePresent{
 extension TSLivePresent{
     
     func itemSize(indexPath:IndexPath) -> CGSize {
-        
         if let size = TSCommon.modelAt(indexPath: indexPath, models: self.itemSizeArray) as? CGSize{
             return size
         }
-        
         return CGSize.zero
         
     }
     
     func itemInset(section: Int) -> UIEdgeInsets{
         return UIEdgeInsetsMake(tsCollectionViewLineSpace, tsCollectionViewItemSpace, 0, tsCollectionViewItemSpace)
-    }
-    
-    func headSize(section: Int) -> CGSize {
-        return CGSize.init(width: tsScreenWidth, height: 30)
     }
     
     /// 计算item size
@@ -182,7 +171,7 @@ extension TSLivePresent{
         for sectionModels in models {
             var itemSizeSectionArray = [CGSize]()
             for model in sectionModels {
-                if model is TSWebShowModel {
+                if model is TSLiveDataModel {
                     
                     let width:CGFloat = tsScreenWidth -  2 * tsCollectionViewItemSpace
                     let height:CGFloat = width * 100 / 320
@@ -190,7 +179,7 @@ extension TSLivePresent{
                     itemSizeSectionArray.append( CGSize.init(width: width, height: height))
                     
                 }
-                else if model is TSDingContentModel{
+                else if model is TSLiveContentModel{
                     let width:CGFloat = (tsScreenWidth - 3 * tsCollectionViewItemSpace)/2
                     let height:CGFloat = (tsScreenWidth * 352 / 320 - 3 * tsCollectionViewItemSpace)/2
                     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		142501BE76450E8652BB1D3D /* Pods_BiliBili_sts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0B006D83B1148C1222A0F4 /* Pods_BiliBili_sts.framework */; };
 		382365C61F4589AB008F4AE2 /* TSCommentTableViewPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382365C51F4589AB008F4AE2 /* TSCommentTableViewPresent.swift */; };
+		382365C81F45A3A7008F4AE2 /* TSLiveContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382365C71F45A3A7008F4AE2 /* TSLiveContentCell.swift */; };
 		382D84461EF8B47800B79555 /* TSWebInterfaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */; };
 		382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84471EF8FC4800B79555 /* TSPlayPresent.swift */; };
 		382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84491EF9015700B79555 /* TSURLConstant.swift */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		382365C51F4589AB008F4AE2 /* TSCommentTableViewPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCommentTableViewPresent.swift; sourceTree = "<group>"; };
+		382365C71F45A3A7008F4AE2 /* TSLiveContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveContentCell.swift; sourceTree = "<group>"; };
 		382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebInterfaceModel.swift; sourceTree = "<group>"; };
 		382D84471EF8FC4800B79555 /* TSPlayPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayPresent.swift; sourceTree = "<group>"; };
 		382D84491EF9015700B79555 /* TSURLConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSURLConstant.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				38C0A1831F4183B900F35179 /* TSLiveVC.swift */,
 				38C0A1851F4184D600F35179 /* TSLivePresent.swift */,
 				38C0A1871F41936900F35179 /* TSLiveModel.swift */,
+				382365C71F45A3A7008F4AE2 /* TSLiveContentCell.swift */,
 			);
 			name = "直播";
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				3897D7771F3BFEBA00F472B0 /* TSPlayerCommentModel.swift in Sources */,
 				382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */,
 				387B6DE81F306501006B18E4 /* TSVideoReleadView.swift in Sources */,
+				382365C81F45A3A7008F4AE2 /* TSLiveContentCell.swift in Sources */,
 				38C0A1861F4184D600F35179 /* TSLivePresent.swift in Sources */,
 				388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */,
 				382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */,

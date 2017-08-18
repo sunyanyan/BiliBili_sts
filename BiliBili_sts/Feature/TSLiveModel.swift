@@ -60,7 +60,7 @@ class TSLiveContentModel: TSBaseModel {
     
     var title:String?
     var room_id:String?
-    var online:String?
+    var online:Int64?
     var area:String?
     var area_id:String?
     var playurl:String?
