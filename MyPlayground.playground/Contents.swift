@@ -1,6 +1,12 @@
 import UIKit
 import PlaygroundSupport
 
+//var arr1 = ["A","b","C","D"]
+//var arr2 = ["1","2","3","4"]
+//
+//for item1 in (arr1,arr2) {
+//    print(" item1:\(item1)  ")
+//}
 
 
 //class vc :UIViewController{

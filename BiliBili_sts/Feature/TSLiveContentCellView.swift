@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TSLiveContentCell: UICollectionViewCell {
+class TSLiveContentCellView: UIView {
     
     //MARK: - Property
     static let tsLiveContentCellKey = "TSLiveContentCellKey"
@@ -39,7 +39,7 @@ class TSLiveContentCell: UICollectionViewCell {
         lbl.textAlignment = .left
         lbl.textColor = UIColor.white
         lbl.text = "小米额阿萨德"
-        lbl.font = .systemFont(ofSize: 8)
+        lbl.font = .systemFont(ofSize: 10)
         return lbl
     }()
     ///直播人数
@@ -57,15 +57,24 @@ class TSLiveContentCell: UICollectionViewCell {
             setupModel()
         }
     }
-    
-    //MARK: - life cycle / init ui
+ 
+    //MARK: - life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupConstraints()
+    }
+    
+    
     func setupUI(){
+//        self.backgroundColor = UIColor.red
         addSubview(contentImage)
         addSubview(titleLabel)
         addSubview(nameLbl)
@@ -86,21 +95,18 @@ class TSLiveContentCell: UICollectionViewCell {
         nameLbl.snp.updateConstraints { (make ) in
             make.left.equalTo(contentImage.snp.left).offset(4)
             make.bottom.equalTo(contentImage.snp.bottom).offset(-4)
-            make.height.equalTo(contentImage.snp.height).multipliedBy(0.2)
+            make.height.equalTo(contentImage.snp.height).multipliedBy(0.15)
             make.width.equalTo(contentImage.snp.width).multipliedBy(0.45)
         }
         countBLV.snp.updateConstraints { (make ) in
             make.right.equalTo(contentImage.snp.right).offset(-4)
             make.bottom.equalTo(contentImage.snp.bottom).offset(-4)
-            make.height.equalTo(contentImage.snp.height).multipliedBy(0.2)
+            make.height.equalTo(contentImage.snp.height).multipliedBy(0.15)
             make.width.equalTo(contentImage.snp.width).multipliedBy(0.45)
         }
         
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+ 
     
     //MARK:- private method
     func setupModel(){

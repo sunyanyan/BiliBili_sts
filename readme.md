@@ -15,7 +15,8 @@
     * 科技区/动画区等各个区的排行：http://m.bilibili.com/index/ding.html
         * 修改为 http://api.bilibili.com/x/web-interface/dynamic/index?jsonp=jsonp
 * 直播页
-    * 滚动推荐: http://api.live.bilibili.com/AppIndex/home?device=phone&platform=ios&scale=3&build=10000
+    * 滚动推荐 以及各个区的内容 : http://api.live.bilibili.com/AppIndex/home?device=phone&platform=ios&scale=3&build=10000
+
 * 最近搜索关键词排行 ：http://www.bilibili.com/search?action=hotword&main_ver=v1
 * 3天内排行： http://www.bilibili.com/index/ranking-3day.json
 * 番剧更新：http://www.bilibili.com/api_proxy?app=bangumi&action=timeline_v2

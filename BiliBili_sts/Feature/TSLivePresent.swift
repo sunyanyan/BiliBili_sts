@@ -11,7 +11,7 @@ import UIKit
 
 class TSLivePresent {
     
-    /// 包含 [TSLiveBannerModel] / [TSLivePartitionsModel]
+    /// 包含 TSLiveBannerModel / TSLivePartitionsModel
     var models:[[TSBaseModel]] = [[TSBaseModel]]()
     
     var itemSizeArray = [[CGSize]]()
@@ -39,13 +39,9 @@ extension TSLivePresent{
                 //各个区直播
                 if let liveSectionModels = liveModel.data?.partitions {
                     for liveSectionModel in liveSectionModels {
-                        if let liveContentModels = liveSectionModel.lives {
-                            var sectionModel = [TSBaseModel]()
-                            for liveContentModel in liveContentModels {
-                                sectionModel.append(liveContentModel)
-                            }
-                            self.models.append(sectionModel)
-                        }
+                        var sectionModel = [TSBaseModel]()
+                        sectionModel.append(liveSectionModel)
+                        self.models.append(sectionModel)
                     }
                 }
             }
@@ -97,10 +93,9 @@ extension TSLivePresent{
             cell.webCellSelectDelegate = self
             return cell
         }
-        else if model is TSLiveContentModel{
-            //TSLiveContentModel 包含一个 UICollectionView展示各个区的具体数据
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSLiveContentCell.tsLiveContentCellKey, for: indexPath) as! TSLiveContentCell
-            cell.contentModel = model as? TSLiveContentModel
+        else if model is TSLivePartitionsModel{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TSLiveSectionCell.tsKey, for: indexPath) as! TSLiveSectionCell
+            cell.model = model as? TSLivePartitionsModel
             return cell
         }
         else{
@@ -143,7 +138,7 @@ extension TSLivePresent{
     //MARK:  注册cell、view
     func registerCellIn(collectionView:UICollectionView) {
 
-        collectionView.register(TSLiveContentCell.self, forCellWithReuseIdentifier: TSLiveContentCell.tsLiveContentCellKey)
+        collectionView.register(TSLiveSectionCell.self, forCellWithReuseIdentifier: TSLiveSectionCell.tsKey)
         collectionView.register(TSWebShowCell.self, forCellWithReuseIdentifier: TSWebShowCell.TSWebShowCellKey)
     }
 }
@@ -157,7 +152,6 @@ extension TSLivePresent{
             return size
         }
         return CGSize.zero
-        
     }
     
     func itemInset(section: Int) -> UIEdgeInsets{
@@ -179,9 +173,9 @@ extension TSLivePresent{
                     itemSizeSectionArray.append( CGSize.init(width: width, height: height))
                     
                 }
-                else if model is TSLiveContentModel{
-                    let width:CGFloat = (tsScreenWidth - 3 * tsCollectionViewItemSpace)/2
-                    let height:CGFloat = (tsScreenWidth * 352 / 320 - 3 * tsCollectionViewItemSpace)/2
+                else if model is TSLivePartitionsModel{
+                    let width:CGFloat = tsScreenWidth - 2 * tsCollectionViewItemSpace
+                    let height:CGFloat = tsScreenWidth * 230 / 290 - 3 * tsCollectionViewItemSpace + tsCollectionViewItemSpace + 20
                     
                     itemSizeSectionArray.append( CGSize.init(width: width, height: height))
                 }

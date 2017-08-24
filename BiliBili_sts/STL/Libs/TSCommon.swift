@@ -11,9 +11,6 @@ import UIKit
 
 //MARK: - 随机数
 class TSCommon {
-    
-    
-    
     class func randomInRange(range: Range<Int>) -> Int {
         let count = UInt32(range.upperBound - range.lowerBound)
         return  Int(arc4random_uniform(count)) + range.lowerBound
@@ -22,14 +19,12 @@ class TSCommon {
     class  func random4InRange(range: Range<Int>) -> [Int] {
         
         var random4 = [Int]()
-        
         while random4.count < 4 {
             let i = randomInRange(range: range)
             if !random4.contains(i) {
                 random4.append(i)
             }
         }
-        
         return random4
     }
     
@@ -38,17 +33,33 @@ class TSCommon {
     /// - Parameter index: <#index description#>
     /// - Returns: <#return value description#>
     class func random4ToIndex(index: Int) -> [Int] {
-        
         let range  = Range.init(uncheckedBounds: (lower: 0, upper: index))
-        
         return random4InRange(range: range)
     }
-    
-    
-    
+}
 
+extension Array {
+    
+    func tsRandom4Arr() -> [Any]? {
+        if self.count < 4 {
+            return nil
+        }
+        else if self.count == 4 {
+            return self
+        }
+        
+        let indexes = TSCommon.random4ToIndex(index: self.count)
+        var ranArr = [Any]()
+        for index in indexes {
+            if let item = TSCommon.modelAt(index: index , models: self){
+                ranArr.append(item)
+            }
+        }
+        return ranArr
+    }
     
 }
+
 //MARK: - DataSource IndexPath
 extension TSCommon {
     class func isVaild(indexPath:IndexPath , models:[[Any]])->Bool{

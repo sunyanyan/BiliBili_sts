@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		142501BE76450E8652BB1D3D /* Pods_BiliBili_sts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0B006D83B1148C1222A0F4 /* Pods_BiliBili_sts.framework */; };
 		382365C61F4589AB008F4AE2 /* TSCommentTableViewPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382365C51F4589AB008F4AE2 /* TSCommentTableViewPresent.swift */; };
-		382365C81F45A3A7008F4AE2 /* TSLiveContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382365C71F45A3A7008F4AE2 /* TSLiveContentCell.swift */; };
+		382365C81F45A3A7008F4AE2 /* TSLiveContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382365C71F45A3A7008F4AE2 /* TSLiveContentCellView.swift */; };
 		382D84461EF8B47800B79555 /* TSWebInterfaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */; };
 		382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84471EF8FC4800B79555 /* TSPlayPresent.swift */; };
 		382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84491EF9015700B79555 /* TSURLConstant.swift */; };
@@ -63,6 +63,7 @@
 		38C0A1841F4183B900F35179 /* TSLiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0A1831F4183B900F35179 /* TSLiveVC.swift */; };
 		38C0A1861F4184D600F35179 /* TSLivePresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0A1851F4184D600F35179 /* TSLivePresent.swift */; };
 		38C0A1881F41936900F35179 /* TSLiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0A1871F41936900F35179 /* TSLiveModel.swift */; };
+		38C4DA501F4C24AC00FDC74B /* TSLiveSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C4DA4F1F4C24AC00FDC74B /* TSLiveSectionCell.swift */; };
 		38D4D2111F15CC7D00FAB4C2 /* TSSlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D2101F15CC7D00FAB4C2 /* TSSlideMenuView.swift */; };
 		38D4D23F1F1623A500FAB4C2 /* String+tsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D23E1F1623A500FAB4C2 /* String+tsExtension.swift */; };
 		38D4D2411F16255600FAB4C2 /* UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D2401F16255600FAB4C2 /* UITapGestureRecognizer.swift */; };
@@ -74,7 +75,7 @@
 
 /* Begin PBXFileReference section */
 		382365C51F4589AB008F4AE2 /* TSCommentTableViewPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCommentTableViewPresent.swift; sourceTree = "<group>"; };
-		382365C71F45A3A7008F4AE2 /* TSLiveContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveContentCell.swift; sourceTree = "<group>"; };
+		382365C71F45A3A7008F4AE2 /* TSLiveContentCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveContentCellView.swift; sourceTree = "<group>"; };
 		382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebInterfaceModel.swift; sourceTree = "<group>"; };
 		382D84471EF8FC4800B79555 /* TSPlayPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayPresent.swift; sourceTree = "<group>"; };
 		382D84491EF9015700B79555 /* TSURLConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSURLConstant.swift; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		38C0A1851F4184D600F35179 /* TSLivePresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLivePresent.swift; sourceTree = "<group>"; };
 		38C0A1871F41936900F35179 /* TSLiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveModel.swift; sourceTree = "<group>"; };
 		38C32DDF1F14F2FF00479743 /* BiliBili_sts-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BiliBili_sts-Bridging-Header.h"; sourceTree = "<group>"; };
+		38C4DA4F1F4C24AC00FDC74B /* TSLiveSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveSectionCell.swift; sourceTree = "<group>"; };
 		38D4D2101F15CC7D00FAB4C2 /* TSSlideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSlideMenuView.swift; sourceTree = "<group>"; };
 		38D4D23E1F1623A500FAB4C2 /* String+tsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+tsExtension.swift"; sourceTree = "<group>"; };
 		38D4D2401F16255600FAB4C2 /* UITapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITapGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -472,7 +474,8 @@
 				38C0A1831F4183B900F35179 /* TSLiveVC.swift */,
 				38C0A1851F4184D600F35179 /* TSLivePresent.swift */,
 				38C0A1871F41936900F35179 /* TSLiveModel.swift */,
-				382365C71F45A3A7008F4AE2 /* TSLiveContentCell.swift */,
+				382365C71F45A3A7008F4AE2 /* TSLiveContentCellView.swift */,
+				38C4DA4F1F4C24AC00FDC74B /* TSLiveSectionCell.swift */,
 			);
 			name = "直播";
 			sourceTree = "<group>";
@@ -653,7 +656,7 @@
 				3897D7771F3BFEBA00F472B0 /* TSPlayerCommentModel.swift in Sources */,
 				382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */,
 				387B6DE81F306501006B18E4 /* TSVideoReleadView.swift in Sources */,
-				382365C81F45A3A7008F4AE2 /* TSLiveContentCell.swift in Sources */,
+				382365C81F45A3A7008F4AE2 /* TSLiveContentCellView.swift in Sources */,
 				38C0A1861F4184D600F35179 /* TSLivePresent.swift in Sources */,
 				388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */,
 				382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */,
@@ -678,6 +681,7 @@
 				389E82C81F147150000501DE /* TSPlayerIntroductionView.swift in Sources */,
 				385985901ED2DF1D0048B8B1 /* TSMainTabarVC.swift in Sources */,
 				38AA89D01F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift in Sources */,
+				38C4DA501F4C24AC00FDC74B /* TSLiveSectionCell.swift in Sources */,
 				382D844C1EF9153300B79555 /* TSPlayerView.swift in Sources */,
 				387422791ED416070031326C /* UIImageView+tsExtension.swift in Sources */,
 				38AC97E21ECC02630051436E /* TSLog.swift in Sources */,

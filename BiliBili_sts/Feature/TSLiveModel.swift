@@ -51,6 +51,16 @@ class TSLivePartitionModel: TSBaseModel {
     var name:String?
     var area:String?
     var count:String?
+    var sub_icon:TSLivePartitionSubIconModel?
+}
+class TSLivePartitionSubIconModel: TSBaseModel {
+    required init() {
+        super.init()
+    }
+    
+    var width:String?
+    var height:String?
+    var src:String?
 }
 
 class TSLiveContentModel: TSBaseModel {
