@@ -57,6 +57,12 @@
 		38AA89D41F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA89D31F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift */; };
 		38AA89D61F32C87A00B9EA29 /* JMRoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA89D51F32C87A00B9EA29 /* JMRoundedCorner.swift */; };
 		38AC97E21ECC02630051436E /* TSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC97E11ECC02630051436E /* TSLog.swift */; };
+		38B0D5DD1F6123FA0007633B /* TSBangumiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0D5DC1F6123FA0007633B /* TSBangumiVC.swift */; };
+		38B0D5DF1F6127120007633B /* TSBangumiPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0D5DE1F6127120007633B /* TSBangumiPresent.swift */; };
+		38B0D5E11F61279B0007633B /* TSBangumiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0D5E01F61279B0007633B /* TSBangumiModel.swift */; };
+		38B0D5E41F61386D0007633B /* TSBangumiSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0D5E31F61386D0007633B /* TSBangumiSectionCell.swift */; };
+		38B0D5E61F61396E0007633B /* TSBangumiContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0D5E51F61396E0007633B /* TSBangumiContentCellView.swift */; };
+		38B0D5EA1F6149F10007633B /* TSDefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0D5E91F6149F10007633B /* TSDefaultVC.swift */; };
 		38BB09891EF7C92A009264E7 /* quickLook.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38BB09881EF7C92A009264E7 /* quickLook.gif */; };
 		38BF266E1EE037A900E2225D /* TSRecommendRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */; };
 		38BF266F1EE037A900E2225D /* TSSwipeTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */; };
@@ -128,6 +134,12 @@
 		38AA89D31F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSVideoReleadViewPresent.swift; sourceTree = "<group>"; };
 		38AA89D51F32C87A00B9EA29 /* JMRoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMRoundedCorner.swift; sourceTree = "<group>"; };
 		38AC97E11ECC02630051436E /* TSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLog.swift; sourceTree = "<group>"; };
+		38B0D5DC1F6123FA0007633B /* TSBangumiVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBangumiVC.swift; sourceTree = "<group>"; };
+		38B0D5DE1F6127120007633B /* TSBangumiPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBangumiPresent.swift; sourceTree = "<group>"; };
+		38B0D5E01F61279B0007633B /* TSBangumiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBangumiModel.swift; sourceTree = "<group>"; };
+		38B0D5E31F61386D0007633B /* TSBangumiSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBangumiSectionCell.swift; sourceTree = "<group>"; };
+		38B0D5E51F61396E0007633B /* TSBangumiContentCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBangumiContentCellView.swift; sourceTree = "<group>"; };
+		38B0D5E91F6149F10007633B /* TSDefaultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDefaultVC.swift; sourceTree = "<group>"; };
 		38BB09881EF7C92A009264E7 /* quickLook.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = quickLook.gif; sourceTree = "<group>"; };
 		38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendRoute.swift; sourceTree = "<group>"; };
 		38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSwipeTransitionDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +197,7 @@
 		385985971ED2E5790048B8B1 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				38B0D5DB1F60FBFD0007633B /* 番剧 */,
 				385985981ED2E5870048B8B1 /* 推荐 */,
 				38C0A1821F41838E00F35179 /* 直播 */,
 				385985841ED2DF1D0048B8B1 /* TSHomeVC.swift */,
@@ -347,6 +360,7 @@
 				389057881F259D1F00A49B2A /* TSButtonLabelView.swift */,
 				389566C11F27177500891383 /* TSFlodTextView.swift */,
 				3869DC2D1ED57463007ECA81 /* TSWebShowCell.swift */,
+				38B0D5E91F6149F10007633B /* TSDefaultVC.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -450,6 +464,42 @@
 				389566C31F2717BC00891383 /* TSPIInfoView.swift */,
 			);
 			name = "视频信息";
+			sourceTree = "<group>";
+		};
+		38B0D5DB1F60FBFD0007633B /* 番剧 */ = {
+			isa = PBXGroup;
+			children = (
+				38B0D5E81F6148D70007633B /* Model */,
+				38B0D5E71F6148CC0007633B /* Present */,
+				38B0D5E21F6138340007633B /* View */,
+				38B0D5DC1F6123FA0007633B /* TSBangumiVC.swift */,
+			);
+			name = "番剧";
+			sourceTree = "<group>";
+		};
+		38B0D5E21F6138340007633B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38B0D5E31F61386D0007633B /* TSBangumiSectionCell.swift */,
+				38B0D5E51F61396E0007633B /* TSBangumiContentCellView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		38B0D5E71F6148CC0007633B /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				38B0D5DE1F6127120007633B /* TSBangumiPresent.swift */,
+			);
+			name = Present;
+			sourceTree = "<group>";
+		};
+		38B0D5E81F6148D70007633B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38B0D5E01F61279B0007633B /* TSBangumiModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		38BF266B1EE0372E00E2225D /* Route */ = {
@@ -667,6 +717,7 @@
 				38AA89D41F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift in Sources */,
 				38706F4C1EC9383F008C6499 /* UIView+tsExtension.swift in Sources */,
 				3896966F1ED7CE57001AA026 /* TSRecommendHeadView.swift in Sources */,
+				38B0D5DF1F6127120007633B /* TSBangumiPresent.swift in Sources */,
 				3874227D1ED452AB0031326C /* TSWebShowModel.swift in Sources */,
 				3859858C1ED2DF1D0048B8B1 /* TSRecommendPresent.swift in Sources */,
 				38D4D2411F16255600FAB4C2 /* UITapGestureRecognizer.swift in Sources */,
@@ -675,6 +726,7 @@
 				387422771ED3DD060031326C /* TSRefresh.swift in Sources */,
 				3859858A1ED2DF1D0048B8B1 /* TSDingContentCell.swift in Sources */,
 				38C0A1881F41936900F35179 /* TSLiveModel.swift in Sources */,
+				38B0D5E61F61396E0007633B /* TSBangumiContentCellView.swift in Sources */,
 				3869DC2C1ED56F0C007ECA81 /* readme.md in Sources */,
 				382798E01F5FDB5800935EA9 /* Common+tsExtension.swift in Sources */,
 				38377B851F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift in Sources */,
@@ -711,10 +763,14 @@
 				38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */,
 				389566C21F27177500891383 /* TSFlodTextView.swift in Sources */,
 				389E82C81F147150000501DE /* TSPlayerIntroductionView.swift in Sources */,
+				38B0D5DD1F6123FA0007633B /* TSBangumiVC.swift in Sources */,
+				38B0D5E41F61386D0007633B /* TSBangumiSectionCell.swift in Sources */,
+				38B0D5E11F61279B0007633B /* TSBangumiModel.swift in Sources */,
 				385985901ED2DF1D0048B8B1 /* TSMainTabarVC.swift in Sources */,
 				38AA89D01F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift in Sources */,
 				38C4DA501F4C24AC00FDC74B /* TSLiveSectionCell.swift in Sources */,
 				382D844C1EF9153300B79555 /* TSPlayerView.swift in Sources */,
+				38B0D5EA1F6149F10007633B /* TSDefaultVC.swift in Sources */,
 				387422791ED416070031326C /* UIImageView+tsExtension.swift in Sources */,
 				38AC97E21ECC02630051436E /* TSLog.swift in Sources */,
 				38C0A1841F4183B900F35179 /* TSLiveVC.swift in Sources */,

@@ -16,11 +16,12 @@
         * 修改为 http://api.bilibili.com/x/web-interface/dynamic/index?jsonp=jsonp
 * 直播页
     * 滚动推荐 以及各个区的内容 : http://api.live.bilibili.com/AppIndex/home?device=phone&platform=ios&scale=3&build=10000
-
-* 最近搜索关键词排行 ：http://www.bilibili.com/search?action=hotword&main_ver=v1
-* 3天内排行： http://www.bilibili.com/index/ranking-3day.json
-* 番剧更新：http://www.bilibili.com/api_proxy?app=bangumi&action=timeline_v2
-* 直播推荐: http://api.live.bilibili.com/h5/recommendRooms?callback=jQuery17209296492127193972_1494936264824&_=1494936265374
+* 番剧页
+    * 推荐： http://www.bilibili.com/index/catalogy/13-recommend.json
+    * 连载动画 ： http://www.bilibili.com/index/catalogy/33-week.json
+    * 完结动画 ： http://www.bilibili.com/index/catalogy/32-week.json
+    * 资讯 ：http://www.bilibili.com/index/catalogy/51-week.json
+    * 官方延伸 ：http://www.bilibili.com/index/catalogy/152-week.json
 
 ### 播放
 

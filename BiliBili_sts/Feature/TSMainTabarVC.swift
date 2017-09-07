@@ -22,16 +22,16 @@ class TSMainTabbarVC: TSTabBarController,UITabBarControllerDelegate {
         let item1 = TSHomeVC()
         vcs.append(item1)
         
-        let item2 = UINavigationController(rootViewController: UIViewController())
+        let item2 = UINavigationController(rootViewController: TSDefaultVC())
         vcs.append(item2)
         
-        let item3 = UINavigationController(rootViewController: UIViewController())
+        let item3 = UINavigationController(rootViewController: TSDefaultVC())
         vcs.append(item3)
         
-        let item4 = UINavigationController(rootViewController: UIViewController())
+        let item4 = UINavigationController(rootViewController: TSDefaultVC())
         vcs.append(item4)
         
-        let item5 = UINavigationController(rootViewController: UIViewController())
+        let item5 = UINavigationController(rootViewController: TSDefaultVC())
         vcs.append(item5)
         
         return vcs

@@ -33,7 +33,12 @@ class TSLiveContentCellView: UIView {
         lbl.text = "可能his孙尚香可能是百里"
         return lbl
     }()
-    ///直播主 名子
+    lazy var maskImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage.init(named: "banner_bottom")
+        return iv
+    }()
+    ///直播主 名字
     lazy var nameLbl: UILabel = {
         let lbl = UILabel()
         lbl.textAlignment = .left
@@ -76,6 +81,7 @@ class TSLiveContentCellView: UIView {
     func setupUI(){
 //        self.backgroundColor = UIColor.red
         addSubview(contentImage)
+        addSubview(maskImageView)
         addSubview(titleLabel)
         addSubview(nameLbl)
         addSubview(countBLV)
@@ -87,6 +93,9 @@ class TSLiveContentCellView: UIView {
         contentImage.snp.updateConstraints { (make ) in
             make.right.left.top.equalTo(self)
             make.height.equalTo(self).multipliedBy(0.8)
+        }
+        maskImageView.snp.updateConstraints { (make ) in
+            make.left.top.width.height.equalTo(contentImage)
         }
         titleLabel.snp.updateConstraints { (make ) in
             make.left.right.bottom.equalTo(self)

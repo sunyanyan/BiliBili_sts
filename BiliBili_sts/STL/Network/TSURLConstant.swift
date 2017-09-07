@@ -13,6 +13,8 @@ let tshttp = "http:"
 let tsBilibiliHost = "http://m.bilibili.com"
 let tsBilibiliApiHost = "http://api.bilibili.com"
 let tsBilibiliCommentHost = "http://comment.bilibili.com"
+let tsBilibiliCatalogyHost = "http://www.bilibili.com/index/catalogy"
+
 let tsHeaders: [String : String] = [
     "Accept-Encoding":"gzip, deflate, sdch",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
@@ -24,6 +26,11 @@ let tsDingUrl = tsBilibiliHost + "/index/ding.html"
 let tsWebShowUrl = tsBilibiliApiHost + "/x/web-show/res/loc?jsonp=jsonp&pf=7&id=1695"
 let tsWebInterfaceDynamicUrl = tsBilibiliApiHost + "/x/web-interface/dynamic/index?jsonp=jsonp"
 let tsLiveUrl = "http://api.live.bilibili.com/AppIndex/home?device=phone&platform=ios&scale=3&build=10000"
+let tsBangumiRecommendUrl = tsBilibiliCatalogyHost + "/13-recommend.json"
+let tsBangumi33WeakUrl = tsBilibiliCatalogyHost + "/33-week.json"
+let tsBangumi32WeakUrl = tsBilibiliCatalogyHost + "/32-week.json"
+let tsBangumi51WeakUrl = tsBilibiliCatalogyHost + "/51-week.json"
+let tsBangumi152WeakUrl = tsBilibiliCatalogyHost + "/152-week.json"
 
 func tsVideoUrl(aid:String) -> String {
     let tsVideoUrlPrefix = tsBilibiliHost + "/video/av"

@@ -1,19 +1,19 @@
 //
-//  、.swift
+//  TSBangumiVC.swift
 //  BiliBili_sts
 //
-//  Created by sts on 2017/8/14.
+//  Created by sts on 2017/9/7.
 //  Copyright © 2017年 sts. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class TSLiveVC: TSViewController {
+class TSBangumiVC: TSViewController {
     
     //MARK: - life cycle
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
         setupUI()
     }
     
@@ -43,7 +43,6 @@ class TSLiveVC: TSViewController {
         flowLayout.minimumInteritemSpacing =  tsCollectionViewLineSpace// 横排单元格最小间隔
         flowLayout.minimumLineSpacing = tsCollectionViewItemSpace // 单元格最小行间距
         
-        
         let frame = CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: tsScreenHeight - tsTabbarHeight - tsStatusBarHeight - tsSlideMenuViewHeight)
         let cv:UICollectionView = UICollectionView.init(frame: frame, collectionViewLayout: flowLayout)
         cv.delegate = self
@@ -52,80 +51,62 @@ class TSLiveVC: TSViewController {
         cv.showsHorizontalScrollIndicator = false
         cv.backgroundColor = tsBackgroundGreyColor
         
-        self.livePresent.registerCellIn(collectionView: cv)
+        self.bangumiPresent.registerCellIn(collectionView: cv)
         
         return cv
     }()
-    
-    lazy var takeVideoBtn: UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
-        btn.frame = CGRect.init(x: tsScreenWidth - 58, y: tsScreenHeight - tsTabbarHeight - tsStatusBarHeight - tsSlideMenuViewHeight - 58, width: 50, height: 50)
-        btn.setImage(UIImage.init(named:"home_bangumi_icon_13"), for: UIControlState.normal)
-        btn.backgroundColor = UIColor.white
-        
-        return btn
-    }()
-    
-    lazy var livePresent:TSLivePresent = {
-        let present = TSLivePresent()
-//        present.weakRecommendVC = self
+ 
+    lazy var bangumiPresent:TSBangumiPresent = {
+        let present = TSBangumiPresent()
+        //        present.weakRecommendVC = self
         return present
     }()
     
     
 }
 //MARK:- UICollectionViewDataSource
-extension TSLiveVC:UICollectionViewDataSource{
+extension TSBangumiVC:UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return livePresent.numOfSection()
+        return  bangumiPresent.numOfSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return livePresent.numOfItemsInSection(section: section)
+        return  bangumiPresent.numOfItemsInSection(section: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return livePresent.cellForItemAt(collectionView:collectionView ,indexPath: indexPath)
+        return  bangumiPresent.cellForItemAt(collectionView:collectionView ,indexPath: indexPath)
     }
-//    
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        return livePresent.headOrFooterViewOfKind(kind: kind, collectionView: collectionView, indexPath: indexPath)
-//    }
-    
     
 }
 
 //MARK:- UICollectionViewDelegate
-extension TSLiveVC:UICollectionViewDelegate{
+extension TSBangumiVC:UICollectionViewDelegate{
     //点击
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
-        livePresent.didSelectAt(indexPath: indexPath, viewcontroller: self)
+         bangumiPresent.didSelectAt(indexPath: indexPath, viewcontroller: self)
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension TSLiveVC:UICollectionViewDelegateFlowLayout{
+extension TSBangumiVC:UICollectionViewDelegateFlowLayout{
     // 每个item的大小
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return livePresent.itemSize(indexPath:indexPath)
+        return  bangumiPresent.itemSize(indexPath:indexPath)
     }
     //间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return livePresent.itemInset(section: section)
+        return  bangumiPresent.itemInset(section: section)
     }
-    //section head size
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return livePresent.headSize(section: section)
-//    }
 }
 
 
 // MARK: - EVENT
-extension TSLiveVC{
+extension TSBangumiVC{
     
     func setupUI(){
         view.addSubview(mainCollectionView)
@@ -134,9 +115,7 @@ extension TSLiveVC{
             self.reload()
         }
         mainCollectionView.tsStartPullToRefresh()
-        
-        view.addSubview(takeVideoBtn)
-        takeVideoBtn.addTarget(self, action: #selector(takeVideoBtnClick(sender:)), for: .touchUpInside)
+ 
     }
     
     func setupConstraints(){
@@ -146,26 +125,15 @@ extension TSLiveVC{
         mainCollectionView.snp.updateConstraints { (make ) in
             make.left.top.width.height.equalTo(contentView)
         }
-        takeVideoBtn.snp.updateConstraints { (make ) in
-            make.right.equalTo(contentView).offset(-8)
-            make.bottom.equalTo(contentView).offset(-28)
-            make.width.height.equalTo(60.0)
-        }
-        takeVideoBtn.layer.cornerRadius = 30
-        takeVideoBtn.layer.shadowColor = UIColor.black.cgColor
-        takeVideoBtn.layer.shadowOffset = CGSize.init(width: 1, height: 1)
-        takeVideoBtn.layer.shadowOpacity = 0.5
     }
     
     func reload(){
-        livePresent.requestData {
+         bangumiPresent.requestData {
             DispatchQueue.main.async {
                 self.mainCollectionView.reloadData()
                 self.mainCollectionView.tsStopPullToRefresh()
             }
         }
     }
-    func takeVideoBtnClick(sender:UIButton)  {
-        livePresent.takeVideoBtnClick(sender: sender)
-    }
+ 
 }

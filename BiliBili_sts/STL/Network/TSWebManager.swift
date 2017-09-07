@@ -155,6 +155,89 @@ class TSWebManager {
         
     }
     
+    /// 番剧页数据
+    ///
+    /// - Parameter block:
+    ///         {bangumiRecommendModels:[TSBangumiModel],bangumi32Models,bangumi33Models
+    ///         ,bangumi51Models.bangumi152Models}
+    class func requestBangumiData(block:@escaping((_ resultDic:Dictionary<String, Any>)->())){
+        
+        var resultDic = Dictionary<String,Any>.init()
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        let url = tsBangumiRecommendUrl
+        _ = TSWebClient.get(urlString: url, params: nil, finishedBlock: { (Data) in
+            let jsonString = String.init(data: Data, encoding: .utf8)
+            let bangumiModels = [TSBangumiModel].deserialize(from: jsonString, designatedPath: "recommend.list")
+            resultDic["bangumiRecommendModels"] =  bangumiModels
+            
+            group.leave()
+        }) { (Error) in
+            
+            group.leave()
+        }
+        
+        group.enter()
+        let url2 = tsBangumi32WeakUrl
+        _ = TSWebClient.get(urlString: url2, params: nil, finishedBlock: { (Data) in
+            let jsonString = String.init(data: Data, encoding: .utf8)
+            let bangumiModels = [TSBangumiModel].deserialize(from: jsonString, designatedPath: "hot.list")
+            resultDic["bangumi32Models"] =  bangumiModels
+            
+            group.leave()
+        }) { (Error) in
+            
+            group.leave()
+        }
+        
+        group.enter()
+        let url3 = tsBangumi33WeakUrl
+        _ = TSWebClient.get(urlString: url3, params: nil, finishedBlock: { (Data) in
+            let jsonString = String.init(data: Data, encoding: .utf8)
+            let bangumiModels = [TSBangumiModel].deserialize(from: jsonString, designatedPath: "hot.list")
+            resultDic["bangumi33Models"] =  bangumiModels
+            
+            group.leave()
+        }) { (Error) in
+            
+            group.leave()
+        }
+        
+        group.enter()
+        let url4 = tsBangumi51WeakUrl
+        _ = TSWebClient.get(urlString: url4, params: nil, finishedBlock: { (Data) in
+            let jsonString = String.init(data: Data, encoding: .utf8)
+            let bangumiModels = [TSBangumiModel].deserialize(from: jsonString, designatedPath: "hot.list")
+            resultDic["bangumi51Models"] =  bangumiModels
+            
+            group.leave()
+        }) { (Error) in
+            
+            group.leave()
+        }
+        
+        group.enter()
+        let url5 = tsBangumi152WeakUrl
+        _ = TSWebClient.get(urlString: url5, params: nil, finishedBlock: { (Data) in
+            let jsonString = String.init(data: Data, encoding: .utf8)
+            let bangumiModels = [TSBangumiModel].deserialize(from: jsonString, designatedPath: "hot.list")
+            resultDic["bangumi152Models"] =  bangumiModels
+            
+            group.leave()
+        }) { (Error) in
+            
+            group.leave()
+        }
+        
+        
+        group.notify(queue: DispatchQueue.main) {
+            block(resultDic)
+        }
+        
+    }
+    
 }
 
 //extension TSWebManager{

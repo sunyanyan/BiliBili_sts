@@ -220,11 +220,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiliBili_sts/Feature/TSLiveVC.swift"
-            timestampString = "526446660.05573"
+            timestampString = "526460363.938403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "takeVideoBtnClick(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -419,6 +419,182 @@
             endingLineNumber = "120"
             landmarkName = "startAnimate(btn:angle:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/Feature/TSBangumiPresent.swift"
+            timestampString = "526466258.547999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "requestData(finishCallBack:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BiliBili_sts.TSBangumiPresent.requestData (finishCallBack : () -&gt; ()) -&gt; ()"
+                  moduleName = "BiliBili_sts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sts/Desktop/github/BiliBili_sts/BiliBili_sts/Feature/TSBangumiPresent.swift"
+                  timestampString = "526468638.387275"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BiliBili_sts.TSBangumiPresent.(requestData (finishCallBack : () -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "BiliBili_sts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sts/Desktop/github/BiliBili_sts/BiliBili_sts/Feature/TSBangumiPresent.swift"
+                  timestampString = "526468638.390772"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/STL/Network/TSWebManager.swift"
+            timestampString = "526466461.326937"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "requestBangumiData(block:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/STL/Network/TSWebManager.swift"
+            timestampString = "526466463.23941"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "requestBangumiData(block:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/STL/Network/TSWebManager.swift"
+            timestampString = "526466465.38203"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "requestBangumiData(block:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/STL/Network/TSWebManager.swift"
+            timestampString = "526466466.885406"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "requestBangumiData(block:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/STL/Network/TSWebManager.swift"
+            timestampString = "526466469.449918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "requestBangumiData(block:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BiliBili_sts/Feature/TSBangumiPresent.swift"
+            timestampString = "526468785.27446"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "requestData(finishCallBack:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BiliBili_sts.TSBangumiPresent.(requestData (finishCallBack : () -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "BiliBili_sts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sts/Desktop/github/BiliBili_sts/BiliBili_sts/Feature/TSBangumiPresent.swift"
+                  timestampString = "526469052.607871"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "115">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BiliBili_sts.TSBangumiPresent.(requestData (finishCallBack : () -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "BiliBili_sts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sts/Desktop/github/BiliBili_sts/BiliBili_sts/Feature/TSBangumiPresent.swift"
+                  timestampString = "526469052.613644"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "355">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

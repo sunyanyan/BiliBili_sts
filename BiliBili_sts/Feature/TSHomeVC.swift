@@ -29,8 +29,7 @@ class TSHomeVC:TSViewController{
         let item2 = TSRecommendVC()
         vcs.append(item2)
         
-        let item3 = UIViewController()
-        item3.view.backgroundColor = UIColor.blue
+        let item3 = TSBangumiVC()
         vcs.append(item3)
         
         return vcs
