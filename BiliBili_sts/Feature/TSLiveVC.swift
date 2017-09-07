@@ -30,6 +30,26 @@ class TSLiveVC: TSViewController {
         super.viewDidDisappear(animated)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupConstraints()
+    }
+    
+    func setupConstraints(){
+        
+        let contentView:UIView! = self.view
+        
+        mainCollectionView.snp.updateConstraints { (make ) in
+            make.left.top.width.height.equalTo(contentView)
+        }
+        takeVideoBtn.snp.updateConstraints { (make ) in
+            make.right.equalTo(contentView).offset(-8)
+            make.bottom.equalTo(contentView).offset(-28)
+            make.width.height.equalTo(60.0)
+        }
+        takeVideoBtn.layer.cornerRadius = 30
+    }
+    
     //MARK: - property
     
     lazy var mainCollectionView: UICollectionView = {
@@ -50,6 +70,15 @@ class TSLiveVC: TSViewController {
         self.livePresent.registerCellIn(collectionView: cv)
         
         return cv
+    }()
+    
+    lazy var takeVideoBtn: UIButton = {
+        let btn = UIButton.init(type: UIButtonType.custom)
+        btn.frame = CGRect.init(x: tsScreenWidth - 58, y: tsScreenHeight - tsTabbarHeight - tsStatusBarHeight - tsSlideMenuViewHeight - 58, width: 50, height: 50)
+        btn.setImage(UIImage.init(named:"home_bangumi_icon_13"), for: UIControlState.normal)
+        btn.backgroundColor = UIColor.white
+        
+        return btn
     }()
     
     lazy var livePresent:TSLivePresent = {
@@ -115,13 +144,14 @@ extension TSLiveVC{
     
     func setupUI(){
         view.addSubview(mainCollectionView)
-        
         //下拉刷新
         mainCollectionView.tsAddPullToRefreshWithAction {
             self.reload()
         }
-        
         mainCollectionView.tsStartPullToRefresh()
+        
+        view.addSubview(takeVideoBtn)
+        takeVideoBtn.addTarget(self, action: #selector(takeVideoBtnClick(sender:)), for: .touchUpInside)
     }
     
     func reload(){
@@ -131,5 +161,8 @@ extension TSLiveVC{
                 self.mainCollectionView.tsStopPullToRefresh()
             }
         }
+    }
+    func takeVideoBtnClick(sender:UIButton)  {
+        livePresent.takeVideoBtnClick(sender: sender)
     }
 }

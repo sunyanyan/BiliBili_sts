@@ -38,27 +38,6 @@ class TSCommon {
     }
 }
 
-extension Array {
-    
-    func tsRandom4Arr() -> [Any]? {
-        if self.count < 4 {
-            return nil
-        }
-        else if self.count == 4 {
-            return self
-        }
-        
-        let indexes = TSCommon.random4ToIndex(index: self.count)
-        var ranArr = [Any]()
-        for index in indexes {
-            if let item = TSCommon.modelAt(index: index , models: self){
-                ranArr.append(item)
-            }
-        }
-        return ranArr
-    }
-    
-}
 
 //MARK: - DataSource IndexPath
 extension TSCommon {
@@ -181,5 +160,36 @@ extension TSCommon{
         let v = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tsScreenWidth, height: tsStatusBarHeight))
         v.backgroundColor = tsNavTintColor
         return v
+    }
+}
+//MARK: - CGFloat
+extension TSCommon{
+    class func radius(point1:CGPoint ,point2:CGPoint)-> CGFloat{
+        let xRadius =  pow(point1.x - point2.x, 2)
+        let yRadius =  pow(point1.y - point2.y, 2)
+        let radius = sqrt(xRadius + yRadius)
+        return radius
+    }
+    
+    class func bezierAngle(point:CGPoint , centerPoint:CGPoint)->CGFloat{
+        if abs(point.x - centerPoint.x) == 0 {
+            if point.y > centerPoint.y {
+                return CGFloat.pi * 1.5
+            }
+            else{
+                return CGFloat.pi * 0.5
+            }
+        }
+        let tan = abs(point.y - centerPoint.y) / abs(point.x - centerPoint.x)
+        let aTan = atan(tan)
+        if point.x > centerPoint.x &&  point.y < centerPoint.y{//第一象限
+            return CGFloat.pi * 2 - aTan
+        } else if point.x > centerPoint.x &&  point.y > centerPoint.y{//四
+            return  aTan
+        }else if point.x < centerPoint.x &&  point.y > centerPoint.y{//三
+            return CGFloat.pi - aTan
+        }else {//二
+            return CGFloat.pi   + aTan
+        }
     }
 }

@@ -34,19 +34,25 @@ class TSLaunchVC: TSViewController{
             iv.contentMode = .scaleAspectFit
             iv.image = #imageLiteral(resourceName: "splash_default")
             iv.center = CGPoint.init(x: self.view.tsCenterX, y: self.view.tsCenterY - 60)
-            iv.bounds = CGRect.init(x: 0, y: 0, width: tsScreenWidth - 60, height: tsScreenHeight - 60)
-            iv.transform = iv.transform.scaledBy(x: 0.01, y: 0.01)
+            iv.bounds = CGRect.init(x: 0, y: 0, width: (tsScreenWidth - 60) * 0.01, height: (tsScreenHeight - 60) * 0.01)
+//            iv.transform = iv.transform.scaledBy(x: 0.01, y: 0.01)
             return iv
         }()
         bg.addSubview(splashView)
-        UIView.animate(withDuration: 1, animations: {
-            splashView.transform = CGAffineTransform.identity
-        }) { (true) in
+        splashView.tsAnimateBigger {
             let deadline = DispatchTime.now() + 0.5
             DispatchQueue.main.asyncAfter(deadline: deadline, execute: {
                 completionHandler()
             })
         }
+//        UIView.animate(withDuration: 1, animations: {
+//            splashView.transform = CGAffineTransform.identity
+//        }) { (true) in
+//            let deadline = DispatchTime.now() + 0.5
+//            DispatchQueue.main.asyncAfter(deadline: deadline, execute: {
+//                completionHandler()
+//            })
+//        }
         
     }
     

@@ -56,16 +56,6 @@ extension TSLivePresent{
     ///点击cell 展示视频播放
     func didSelectAt(indexPath:IndexPath,viewcontroller:UIViewController){
         
-//        guard let model = modelAt(indexPath: indexPath) else {
-//            fatalError(" indexPath \(indexPath) 错误 ")
-//        }
-//        if model is TSDingContentModel{
-//            guard let videoId = (model as! TSDingContentModel ).aid else { return }
-////            weakLiveVC?.presentPlayVC(aid:videoId)
-//        }
-//        else{
-//            fatalError(" model 类型异常 ")
-//        }
     }
 }
 
@@ -102,17 +92,7 @@ extension TSLivePresent{
             fatalError(" model 类型异常 ")
         }
     }
-    
-//    func headOrFooterViewOfKind(kind :String,collectionView:UICollectionView, indexPath:IndexPath) ->UICollectionReusableView{
-//        
-//        if kind == UICollectionElementKindSectionHeader {
-//            fatalError(" 不应该有 header view ")
-//        }
-//        else{
-//            fatalError(" 不应该有 footer view ")
-//        }
-//        
-//    }
+
     
     //MARK:  对models的处理
     fileprivate func modelsSectionCount()->Int{
@@ -195,8 +175,18 @@ extension TSLivePresent : TSWebShowCellDelegate{
 
     func didSelect(index: Int, linkUrl: String?, imgUrl: String?) {
         if let linkUrlT = linkUrl {
-//            weakRecommendVC?.presentWebVC(url: linkUrlT)
+            
         }
+    }
+}
+
+// MARK: - takeVideoBtnClick
+extension TSLivePresent {
+    func takeVideoBtnClick(sender:UIButton)  {
+        //点击后展示 相簿 直播 小视频
+        let view = UIApplication.shared.windows.first
+        let takeVideoView = TSTakeVideoView.init(frame: UIScreen.main.bounds)
+        view?.addSubview(takeVideoView)
     }
 }
 

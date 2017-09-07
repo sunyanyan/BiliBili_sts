@@ -105,13 +105,24 @@ class TSLiveSectionCell: UICollectionViewCell {
         }
     }
     
-    func refreshBtnClick(sender:UIButton) {
-        UIView.animate(withDuration: 0.8, animations: {
-            sender.transform = sender.transform.rotated(by: 360.0)
-            sender.transform = sender.transform.scaledBy(x: 1.2, y: 1.2)
-        }) { (bool) in
-            sender.transform = CGAffineTransform.identity
+    fileprivate func setupSubCellModel(){
+        if let cellModels = model?.lives {
+            if let cell4Model = cellModels.tsRandom4Arr() {
+                for i in 0  ..< 4  {
+                    let model = TSCommon.modelAt(index: i , models: cell4Model) as? TSLiveContentModel
+                    let cellView = TSCommon.modelAt(index: i, models: subCells) as? TSLiveContentCellView
+                    guard model != nil && cellView != nil else {
+                        return
+                    }
+                    cellView?.contentModel = model
+                }
+            }
         }
+    }
+    
+    func refreshBtnClick(sender:UIButton) {
+       sender.tsAnimateStarGrace()
+       setupSubCellModel()
     }
 }
 
