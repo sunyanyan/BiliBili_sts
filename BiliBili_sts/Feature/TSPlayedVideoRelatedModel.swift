@@ -7,6 +7,7 @@
 //
 
 import Foundation
+///视频相关
 class TSPlayedVideoRelatedModel: TSBaseModel {
     required init() {
         super.init()

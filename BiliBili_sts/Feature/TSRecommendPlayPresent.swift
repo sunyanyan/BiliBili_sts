@@ -1,5 +1,5 @@
 //
-//  TSPlayPresent.swift
+//  TSRecommendPlayPresent.swift
 //  BiliBili_sts
 //
 //  Created by sts on 2017/6/20.
@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class TSPlayPresent {
+class TSRecommendPlayPresent {
     
     init(aid:String) {
         self.aid = aid
@@ -19,7 +19,7 @@ class TSPlayPresent {
     var videoUrl:String?
 }
 
-extension TSPlayPresent{
+extension TSRecommendPlayPresent{
     
     func requestData(block:@escaping ()->()){
         if let urlId = self.aid {

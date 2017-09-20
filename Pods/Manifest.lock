@@ -9,6 +9,7 @@ PODS:
     - SnapKit (~> 3.2)
   - GDPerformanceView-Swift (1.2.0)
   - HandyJSON (1.7.2)
+  - LFLiveKit (2.6)
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - BMPlayer
   - GDPerformanceView-Swift (~> 1.2.0)
   - HandyJSON (~> 1.7.1)
+  - LFLiveKit
   - Refresher (~> 0.6.1)
   - SDWebImage (~> 3.8)
   - SnapKit (~> 3.2.0)
@@ -32,11 +34,12 @@ SPEC CHECKSUMS:
   BMPlayer: 5ba9e3f3d61ccc5a24ebd9cdc24901dcf28c98bc
   GDPerformanceView-Swift: 5f12f13dcdca4cb87f91ef91ba6b50981421c57f
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
+  LFLiveKit: 2219563721f8aa0f188effc3395a06e2d53b23f2
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   Refresher: 7c6f09ef3428aa921cb477611fb26bf29a9e5492
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 91e893dc920c1e9c37314b546186670d79d51cf2
+PODFILE CHECKSUM: 36e3d383c12453d5055880d4dbcd9773ce6b0863
 
 COCOAPODS: 1.2.0

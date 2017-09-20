@@ -53,9 +53,9 @@ extension TSLivePresent{
 
 // MARK: - TSRecommendPresent UICollectionViewDelegate
 extension TSLivePresent{
-    ///点击cell 展示视频播放
+    ///点击cell 展示直播播放
     func didSelectAt(indexPath:IndexPath,viewcontroller:UIViewController){
-        
+        weakLiveVC?.presentFakeLivePlayVC()
     }
 }
 
@@ -181,12 +181,17 @@ extension TSLivePresent : TSWebShowCellDelegate{
 }
 
 // MARK: - takeVideoBtnClick
-extension TSLivePresent {
+extension TSLivePresent: TSTakeVideoViewDelegate{
     func takeVideoBtnClick(sender:UIButton)  {
         //点击后展示 相簿 直播 小视频
         let view = UIApplication.shared.windows.first
         let takeVideoView = TSTakeVideoView.init(frame: UIScreen.main.bounds)
+        takeVideoView.delegate = self
         view?.addSubview(takeVideoView)
+    }
+    
+    func liveBtnClick() {
+        weakLiveVC?.presentLiveRecordVC()
     }
 }
 

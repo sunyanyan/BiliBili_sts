@@ -56,9 +56,9 @@ extension TSRecommendVC{
             return
         }
         
-        let playvc = TSPlayVC()
-        playvc.aid = aid
-        let nav = UINavigationController.init(rootViewController: playvc)
+        let playVc = TSRecommendPlayVC()
+        playVc.aid = aid
+        let nav = UINavigationController.init(rootViewController: playVc)
         let delegate = TSSwipeTransitionDelegate()
         self.homeVCtransitioningDelegate = delegate
         nav.transitioningDelegate = delegate

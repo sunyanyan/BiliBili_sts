@@ -66,9 +66,9 @@ class TSLiveVC: TSViewController {
         return btn
     }()
     
-    lazy var livePresent:TSLivePresent = {
+    lazy var livePresent:TSLivePresent = {[unowned self] in
         let present = TSLivePresent()
-//        present.weakRecommendVC = self
+        present.weakLiveVC = self
         return present
     }()
     

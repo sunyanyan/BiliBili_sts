@@ -27,6 +27,12 @@ class TSPlayerView:UIView{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    init(customBMPlayController:BMPlayerControlView) {
+        self.customBMPlayController = customBMPlayController
+        super.init(frame:CGRect.zero)
+        setupUI()
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         setupConstraints()
@@ -35,6 +41,8 @@ class TSPlayerView:UIView{
     //MARK: - property
 //    public var backBtnClickBlock:(()->())?
     weak var delegate:TSPlayerViewDelegate?
+    
+    var customBMPlayController:BMPlayerControlView?
     
     lazy var maskPreView: UIView = {
         let v = UIView()
@@ -87,11 +95,13 @@ class TSPlayerView:UIView{
     
     //播放器
     lazy var bmPlayer : BMPlayer = {
-        let controlView = TSCustomBMPlayerControlView()
-        controlView.backBtnClickBlock = {()->() in
-            self.backBtnClick()
-        }
-        let p = BMPlayer.init(customControlView: controlView)        
+    
+//        customBmPlayComtroller = TSRecommendCustomBMPlayerControlView()
+//        customBmPlayComtroller.backBtnClickBlock = {()->() in
+//            self.backBtnClick()
+//        }
+ 
+        let p = BMPlayer.init(customControlView: self.customBMPlayController)
         return p
     }()
     
@@ -145,11 +155,9 @@ extension TSPlayerView{
         let h = self.tsH / 180 * 50
         let x = self.tsH / 180 * self.tsW - h - 15
         let y = self.tsH - h - 15
-//        TSLog(message: " x \(x) y \(y) h \(h)")
+
         startBtn.snp.updateConstraints { (make) in
-//            make.bottom.equalTo(maskPreView.snp.bottom).offset(-15)
             make.top.equalTo(y)
-//            make.right.equalTo(maskPreView.snp.right).offset(-15)
             make.left.equalTo(x)
             make.width.height.equalTo(h)
         }
@@ -186,9 +194,12 @@ extension TSPlayerView{
             self.setNeedsLayout()
         }
     }
-    func setBMPlayerVideo(url:String , aid:String) {
+    
+    
+    
+    func setBMPlayerVideo(url:String , title:String="") {
         if let nsurl = URL.init(string: url){
-            let name = "AV" + aid
+            let name = title
             let asset = BMPlayerResource.init(url: nsurl, name: name, cover: nil, subtitle: nil)
             bmPlayer.setVideo(resource: asset)
             bmPlayer.pause()
@@ -210,74 +221,6 @@ extension TSPlayerView{
     
         if let d  = delegate {
             d.tsPlayerViewBackBtnClick()
-        }
-    }
-}
-
-/// 修改原有播放器样式
-class TSCustomBMPlayerControlView:BMPlayerControlView{
-
-    lazy var bPlayBtn: UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
-        btn.setImage(UIImage.init(named:"player_start"), for: UIControlState.normal)
-        btn.setImage(UIImage.init(named:"player_pause"), for: UIControlState.selected)
-        btn.tag = BMPlayerControlView.ButtonType.play.rawValue
-        btn.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
-        return btn
-    }()
-    func backBtnClick(){
-    
-        if !isFullScreen {
-            if let block = backBtnClickBlock {
-                block()
-            }
-        }
-    
-        onButtonPressed(backButton)
-        
-
-    }
-    public  var backBtnClickBlock:(()->())?
-    
-    //MARK: override
-    override func customizeUIComponents() {
-        //修改backBtn的图片
-        self.backButton.setImage(UIImage.init(named: "video_info_back"), for: .normal)
-        self.backButton.removeTarget(self , action: #selector(onButtonPressed(_:)), for: .touchUpInside)
-        self.backButton.addTarget(self, action: #selector(backBtnClick), for: UIControlEvents.touchUpInside)
-        
-        //添加bilibilli的播放按钮
-        mainMaskView.addSubview(bPlayBtn)
-        bPlayBtn.snp.makeConstraints { (make ) in
-            make.right.equalTo(mainMaskView).offset(-8)
-            make.bottom.equalTo(bottomMaskView.snp.top)
-            make.width.height.equalTo(50)
-        }
-    }
-    override func playStateDidChange(isPlaying: Bool) {
-        super.playStateDidChange(isPlaying: isPlaying)
-        bPlayBtn.isSelected = isPlaying
-    }
-    
-    override func playerStateDidChange(state: BMPlayerState) {
-        super.playerStateDidChange(state: state)
-        
-        if state == BMPlayerState.playedToTheEnd {
-            bPlayBtn.isSelected = false
-        }
-    }
-    override func controlViewAnimation(isShow: Bool) {
-        super.controlViewAnimation(isShow: isShow)
-        
-        let alpha:CGFloat = isShow ? 1.0: 0.0;
-        UIView.animate(withDuration: 0.3) { 
-            self.bPlayBtn.alpha = alpha;
-        }
-    }
-    
-    fileprivate var isFullScreen:Bool {
-        get {
-            return UIApplication.shared.statusBarOrientation.isLandscape
         }
     }
 }

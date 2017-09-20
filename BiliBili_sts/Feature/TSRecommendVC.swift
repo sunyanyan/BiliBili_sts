@@ -53,7 +53,7 @@ class TSRecommendVC: TSViewController {
         return cv
     }()
     
-    lazy var recommendPresent:TSRecommendPresent = {
+    lazy var recommendPresent:TSRecommendPresent = {[unowned self] in
         let present = TSRecommendPresent()
         present.weakRecommendVC = self
         return present

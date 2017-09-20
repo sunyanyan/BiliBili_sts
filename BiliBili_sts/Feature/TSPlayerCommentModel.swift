@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//评论信息
 class TSPlayerCommentModel:TSBaseModel{
     required init() {
         super.init()

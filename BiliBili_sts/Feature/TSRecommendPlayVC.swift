@@ -1,5 +1,5 @@
 //
-//  TSPlayVC.swift
+//  TSRecommendPlayVC.swift
 //  BiliBili_sts
 //
 //  Created by sts on 2017/6/2.
@@ -13,7 +13,7 @@ import AVFoundation
 
 
 
-class TSPlayVC: TSViewController {
+class TSRecommendPlayVC: TSViewController {
     
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -37,22 +37,25 @@ class TSPlayVC: TSViewController {
         super.viewDidDisappear(animated)
         TSLog(message: "")
     }
-
+    
     //MARK: - property
     lazy var playView: TSPlayerView = {
-        let pv = TSPlayerView()
+        
+        let customBmPlayComtroller = TSRecommendCustomBMPlayerControlView()
+        customBmPlayComtroller.backBtnClickBlock = {()->() in
+            self.backBtnClick()
+        }
+        
+        let pv = TSPlayerView.init(customBMPlayController: customBmPlayComtroller)
         pv.delegate = self
-        let w = self.view.tsW
-//        pv.frame = CGRect.init(x: 0, y: 0, width: w, height: w * 9.0 / 16.0)
         pv.updateFrameDelegate = self
         return pv
     }()
     
     lazy var playExtensionView: TSPlayerExtraInfoView = {
-        let v = TSPlayerExtraInfoView()        
+        let v = TSPlayerExtraInfoView()
         let y = self.view.tsW * 9.0 / 16.0
         let h = self.view.tsH - y
-//        v.frame = CGRect.init(x: 0, y: y, width: self.view.tsH, height: h)
         v.aid  = self.aid
         v.updateFrameDelegate = self
         return v
@@ -61,15 +64,15 @@ class TSPlayVC: TSViewController {
     //初始化的时候赋值
     var aid:String=""
     
-    lazy var playPresent: TSPlayPresent = {
-        let p = TSPlayPresent.init(aid: self.aid)
+    lazy var recommendPlayPresent: TSRecommendPlayPresent = {
+        let p = TSRecommendPlayPresent.init(aid: self.aid)
         return p
     }()
     let playViewHeight:CGFloat = tsScreenWidth * 9.0 / 16.0
 }
 
 // MARK: - Event
-extension TSPlayVC{
+extension TSRecommendPlayVC{
     
     func setupUI() {
         self.navigationController?.navigationBar.isHidden = true
@@ -92,13 +95,14 @@ extension TSPlayVC{
     }
     
     func reload(){
-        playPresent.requestData {
-            if let url = self.playPresent.playerThumbnailUrl {
+        recommendPlayPresent.requestData {
+            if let url = self.recommendPlayPresent.playerThumbnailUrl {
                 self.playView.setupImage(url: url)
             }
             self.playView.setupTitle(aid: self.aid)
-            if let videoUrl = self.playPresent.videoUrl{
-                self.playView.setBMPlayerVideo(url: videoUrl, aid: self.aid)
+            if let videoUrl = self.recommendPlayPresent.videoUrl{
+                let title = "AV" + self.aid
+                self.playView.setBMPlayerVideo(url:videoUrl,title:title)
             }
         }
     }
@@ -109,13 +113,13 @@ extension TSPlayVC{
 }
 
 // MARK: - TSPlayerViewDelegate
-extension TSPlayVC:TSPlayerViewDelegate{
+extension TSRecommendPlayVC:TSPlayerViewDelegate{
     func tsPlayerViewBackBtnClick() {
         self.backBtnClick()
     }
 }
 
-extension TSPlayVC:TSUpdateFrameDelegate{
+extension TSRecommendPlayVC:TSUpdateFrameDelegate{
     func tsUpdateHeight(targetView: UIView, addHeight: CGFloat) {
         TSLog(message: "下部滚动高度 :\(addHeight)  ")
         if playView.maskPreView.isHidden {

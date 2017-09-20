@@ -10,5 +10,6 @@
 #define BiliBili_sts_Bridging_Header_h
 
 //#import "iOSPalette.h"
+#import <LFLiveKit/LFLiveKit.h>
 
 #endif /* BiliBili_sts_Bridging_Header_h */

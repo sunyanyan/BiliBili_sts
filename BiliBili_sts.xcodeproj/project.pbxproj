@@ -10,15 +10,15 @@
 		142501BE76450E8652BB1D3D /* Pods_BiliBili_sts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0B006D83B1148C1222A0F4 /* Pods_BiliBili_sts.framework */; };
 		382365C61F4589AB008F4AE2 /* TSCommentTableViewPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382365C51F4589AB008F4AE2 /* TSCommentTableViewPresent.swift */; };
 		382365C81F45A3A7008F4AE2 /* TSLiveContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382365C71F45A3A7008F4AE2 /* TSLiveContentCellView.swift */; };
+		3826DA461F6FBFAD00833543 /* TSLiveRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826DA451F6FBFAD00833543 /* TSLiveRecordVC.swift */; };
 		382798DE1F5FD0EF00935EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382798DD1F5FD0EF00935EA9 /* Assets.xcassets */; };
 		382798E01F5FDB5800935EA9 /* Common+tsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382798DF1F5FDB5800935EA9 /* Common+tsExtension.swift */; };
 		382D84461EF8B47800B79555 /* TSWebInterfaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */; };
-		382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84471EF8FC4800B79555 /* TSPlayPresent.swift */; };
+		382D84481EF8FC4800B79555 /* TSRecommendPlayPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84471EF8FC4800B79555 /* TSRecommendPlayPresent.swift */; };
 		382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D84491EF9015700B79555 /* TSURLConstant.swift */; };
 		382D844C1EF9153300B79555 /* TSPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382D844B1EF9153300B79555 /* TSPlayerView.swift */; };
 		38377B851F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38377B841F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift */; };
 		38474F8E1ED6B51A0040F4E4 /* TSBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38474F8D1ED6B51A0040F4E4 /* TSBaseModel.swift */; };
-		38474F901ED6E3470040F4E4 /* TSCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38474F8F1ED6E3470040F4E4 /* TSCommon.swift */; };
 		3859858A1ED2DF1D0048B8B1 /* TSDingContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985801ED2DF1D0048B8B1 /* TSDingContentCell.swift */; };
 		3859858B1ED2DF1D0048B8B1 /* TSDingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985811ED2DF1D0048B8B1 /* TSDingModel.swift */; };
 		3859858C1ED2DF1D0048B8B1 /* TSRecommendPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985821ED2DF1D0048B8B1 /* TSRecommendPresent.swift */; };
@@ -26,11 +26,9 @@
 		3859858F1ED2DF1D0048B8B1 /* TSLaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985851ED2DF1D0048B8B1 /* TSLaunchVC.swift */; };
 		385985901ED2DF1D0048B8B1 /* TSMainTabarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985861ED2DF1D0048B8B1 /* TSMainTabarVC.swift */; };
 		385985921ED2DF1D0048B8B1 /* TSRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985881ED2DF1D0048B8B1 /* TSRecommendVC.swift */; };
-		385985941ED2DF710048B8B1 /* TSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385985931ED2DF710048B8B1 /* TSBaseViewController.swift */; };
 		3868D5141ECEE480006CB40A /* testDing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3868D5131ECEE480006CB40A /* testDing.jpg */; };
 		3869DC2A1ED51CD1007ECA81 /* TSCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3869DC291ED51CD1007ECA81 /* TSCarouselView.swift */; };
 		3869DC2C1ED56F0C007ECA81 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 3869DC2B1ED56F0C007ECA81 /* readme.md */; };
-		3869DC2E1ED57463007ECA81 /* TSWebShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3869DC2D1ED57463007ECA81 /* TSWebShowCell.swift */; };
 		38706F2F1EC937AB008C6499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38706F2E1EC937AB008C6499 /* AppDelegate.swift */; };
 		38706F341EC937AB008C6499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38706F321EC937AB008C6499 /* Main.storyboard */; };
 		38706F391EC937AB008C6499 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38706F371EC937AB008C6499 /* LaunchScreen.storyboard */; };
@@ -41,11 +39,16 @@
 		387422791ED416070031326C /* UIImageView+tsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387422781ED416070031326C /* UIImageView+tsExtension.swift */; };
 		3874227B1ED421620031326C /* TSWebManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3874227A1ED421620031326C /* TSWebManager.swift */; };
 		3874227D1ED452AB0031326C /* TSWebShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3874227C1ED452AB0031326C /* TSWebShowModel.swift */; };
+		387810C91F66648C00692699 /* TSButtonLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387810C51F66648C00692699 /* TSButtonLabelView.swift */; };
+		387810CA1F66648C00692699 /* TSDefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387810C61F66648C00692699 /* TSDefaultVC.swift */; };
+		387810CB1F66648C00692699 /* TSFlodTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387810C71F66648C00692699 /* TSFlodTextView.swift */; };
+		387810CC1F66648C00692699 /* TSWebShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387810C81F66648C00692699 /* TSWebShowCell.swift */; };
+		387810CE1F6664CC00692699 /* TSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387810CD1F6664CC00692699 /* TSBaseViewController.swift */; };
+		387810D01F6664FD00692699 /* TSCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387810CF1F6664FD00692699 /* TSCommon.swift */; };
 		387B6DE81F306501006B18E4 /* TSVideoReleadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6DE71F306501006B18E4 /* TSVideoReleadView.swift */; };
 		387B6DEA1F30652F006B18E4 /* TSVideoReleadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6DE91F30652F006B18E4 /* TSVideoReleadCell.swift */; };
+		387E4E961F72497C00C37934 /* liveRecord480.gif in Resources */ = {isa = PBXBuildFile; fileRef = 387E4E951F72497C00C37934 /* liveRecord480.gif */; };
 		388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C2FEB1ECAB9CE000766D6 /* TSWebClient.swift */; };
-		389057891F259D1F00A49B2A /* TSButtonLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389057881F259D1F00A49B2A /* TSButtonLabelView.swift */; };
-		389566C21F27177500891383 /* TSFlodTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389566C11F27177500891383 /* TSFlodTextView.swift */; };
 		389566C41F2717BC00891383 /* TSPIInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389566C31F2717BC00891383 /* TSPIInfoView.swift */; };
 		3896966F1ED7CE57001AA026 /* TSRecommendHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896966E1ED7CE57001AA026 /* TSRecommendHeadView.swift */; };
 		3897D7751F3BFC4700F472B0 /* TSCommentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3897D7741F3BFC4700F472B0 /* TSCommentTableView.swift */; };
@@ -62,11 +65,9 @@
 		38B0D5E11F61279B0007633B /* TSBangumiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0D5E01F61279B0007633B /* TSBangumiModel.swift */; };
 		38B0D5E41F61386D0007633B /* TSBangumiSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0D5E31F61386D0007633B /* TSBangumiSectionCell.swift */; };
 		38B0D5E61F61396E0007633B /* TSBangumiContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0D5E51F61396E0007633B /* TSBangumiContentCellView.swift */; };
-		38B0D5EA1F6149F10007633B /* TSDefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0D5E91F6149F10007633B /* TSDefaultVC.swift */; };
 		38BB09891EF7C92A009264E7 /* quickLook.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38BB09881EF7C92A009264E7 /* quickLook.gif */; };
 		38BF266E1EE037A900E2225D /* TSRecommendRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */; };
-		38BF266F1EE037A900E2225D /* TSSwipeTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */; };
-		38BF26721EE1631900E2225D /* TSPlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF26711EE1631900E2225D /* TSPlayVC.swift */; };
+		38BF26721EE1631900E2225D /* TSRecommendPlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF26711EE1631900E2225D /* TSRecommendPlayVC.swift */; };
 		38C0A1841F4183B900F35179 /* TSLiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0A1831F4183B900F35179 /* TSLiveVC.swift */; };
 		38C0A1861F4184D600F35179 /* TSLivePresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0A1851F4184D600F35179 /* TSLivePresent.swift */; };
 		38C0A1881F41936900F35179 /* TSLiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0A1871F41936900F35179 /* TSLiveModel.swift */; };
@@ -74,9 +75,15 @@
 		38D4D2111F15CC7D00FAB4C2 /* TSSlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D2101F15CC7D00FAB4C2 /* TSSlideMenuView.swift */; };
 		38D4D23F1F1623A500FAB4C2 /* String+tsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D23E1F1623A500FAB4C2 /* String+tsExtension.swift */; };
 		38D4D2411F16255600FAB4C2 /* UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4D2401F16255600FAB4C2 /* UITapGestureRecognizer.swift */; };
-		38D5980F1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5980E1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift */; };
 		38D598111F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D598101F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift */; };
 		38D598131F289BD400DEBBC8 /* TSTagsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D598121F289BD400DEBBC8 /* TSTagsListView.swift */; };
+		38D874071F67C13D00F77051 /* TSLivePlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D874061F67C13D00F77051 /* TSLivePlayVC.swift */; };
+		38D8740A1F67C1AA00F77051 /* TSUpdateFrameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D874091F67C1AA00F77051 /* TSUpdateFrameDelegate.swift */; };
+		38D8740C1F67CAFD00F77051 /* TSRecommendCustomBMPlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8740B1F67CAFD00F77051 /* TSRecommendCustomBMPlayerControlView.swift */; };
+		38D8740E1F67CBC700F77051 /* TSLiveCustomBMPlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8740D1F67CBC700F77051 /* TSLiveCustomBMPlayerControlView.swift */; };
+		38DD738B1F6A828B00876F34 /* TSSwipeTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD738A1F6A828B00876F34 /* TSSwipeTransitionDelegate.swift */; };
+		38DD738D1F6A82C900876F34 /* TSLiveRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD738C1F6A82C900876F34 /* TSLiveRoute.swift */; };
+		38E2E2741F7105AC00A12F0E /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E2E2731F7105AC00A12F0E /* libstdc++.tbd */; };
 		38E3EEE91F4E836200371E07 /* TSTakeVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3EEE81F4E836200371E07 /* TSTakeVideoView.swift */; };
 		38FA1E6B1F232CA400B07144 /* UIImage+tsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA1E6A1F232CA400B07144 /* UIImage+tsExtension.swift */; };
 /* End PBXBuildFile section */
@@ -84,15 +91,15 @@
 /* Begin PBXFileReference section */
 		382365C51F4589AB008F4AE2 /* TSCommentTableViewPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCommentTableViewPresent.swift; sourceTree = "<group>"; };
 		382365C71F45A3A7008F4AE2 /* TSLiveContentCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveContentCellView.swift; sourceTree = "<group>"; };
+		3826DA451F6FBFAD00833543 /* TSLiveRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveRecordVC.swift; sourceTree = "<group>"; };
 		382798DD1F5FD0EF00935EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		382798DF1F5FDB5800935EA9 /* Common+tsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Common+tsExtension.swift"; sourceTree = "<group>"; };
 		382D84451EF8B47800B79555 /* TSWebInterfaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebInterfaceModel.swift; sourceTree = "<group>"; };
-		382D84471EF8FC4800B79555 /* TSPlayPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayPresent.swift; sourceTree = "<group>"; };
+		382D84471EF8FC4800B79555 /* TSRecommendPlayPresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendPlayPresent.swift; sourceTree = "<group>"; };
 		382D84491EF9015700B79555 /* TSURLConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSURLConstant.swift; sourceTree = "<group>"; };
 		382D844B1EF9153300B79555 /* TSPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayerView.swift; sourceTree = "<group>"; };
 		38377B841F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayerExtraInfoView.swift; sourceTree = "<group>"; };
 		38474F8D1ED6B51A0040F4E4 /* TSBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TSBaseModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		38474F8F1ED6E3470040F4E4 /* TSCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCommon.swift; sourceTree = "<group>"; };
 		3859857B1ED2BE280048B8B1 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		385985801ED2DF1D0048B8B1 /* TSDingContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDingContentCell.swift; sourceTree = "<group>"; };
 		385985811ED2DF1D0048B8B1 /* TSDingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDingModel.swift; sourceTree = "<group>"; };
@@ -101,11 +108,9 @@
 		385985851ED2DF1D0048B8B1 /* TSLaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLaunchVC.swift; sourceTree = "<group>"; };
 		385985861ED2DF1D0048B8B1 /* TSMainTabarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSMainTabarVC.swift; sourceTree = "<group>"; };
 		385985881ED2DF1D0048B8B1 /* TSRecommendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendVC.swift; sourceTree = "<group>"; };
-		385985931ED2DF710048B8B1 /* TSBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBaseViewController.swift; sourceTree = "<group>"; };
 		3868D5131ECEE480006CB40A /* testDing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testDing.jpg; sourceTree = "<group>"; };
 		3869DC291ED51CD1007ECA81 /* TSCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCarouselView.swift; sourceTree = "<group>"; };
 		3869DC2B1ED56F0C007ECA81 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
-		3869DC2D1ED57463007ECA81 /* TSWebShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSWebShowCell.swift; path = Feature/TSWebShowCell.swift; sourceTree = "<group>"; };
 		38706F2B1EC937AB008C6499 /* BiliBili_sts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiliBili_sts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38706F2E1EC937AB008C6499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38706F331EC937AB008C6499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,11 +123,16 @@
 		387422781ED416070031326C /* UIImageView+tsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+tsExtension.swift"; sourceTree = "<group>"; };
 		3874227A1ED421620031326C /* TSWebManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TSWebManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3874227C1ED452AB0031326C /* TSWebShowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebShowModel.swift; sourceTree = "<group>"; };
+		387810C51F66648C00692699 /* TSButtonLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSButtonLabelView.swift; sourceTree = "<group>"; };
+		387810C61F66648C00692699 /* TSDefaultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDefaultVC.swift; sourceTree = "<group>"; };
+		387810C71F66648C00692699 /* TSFlodTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSFlodTextView.swift; sourceTree = "<group>"; };
+		387810C81F66648C00692699 /* TSWebShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebShowCell.swift; sourceTree = "<group>"; };
+		387810CD1F6664CC00692699 /* TSBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBaseViewController.swift; sourceTree = "<group>"; };
+		387810CF1F6664FD00692699 /* TSCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCommon.swift; sourceTree = "<group>"; };
 		387B6DE71F306501006B18E4 /* TSVideoReleadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSVideoReleadView.swift; sourceTree = "<group>"; };
 		387B6DE91F30652F006B18E4 /* TSVideoReleadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSVideoReleadCell.swift; sourceTree = "<group>"; };
+		387E4E951F72497C00C37934 /* liveRecord480.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = liveRecord480.gif; sourceTree = "<group>"; };
 		388C2FEB1ECAB9CE000766D6 /* TSWebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebClient.swift; sourceTree = "<group>"; };
-		389057881F259D1F00A49B2A /* TSButtonLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSButtonLabelView.swift; path = Feature/TSButtonLabelView.swift; sourceTree = "<group>"; };
-		389566C11F27177500891383 /* TSFlodTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSFlodTextView.swift; path = Feature/TSFlodTextView.swift; sourceTree = "<group>"; };
 		389566C31F2717BC00891383 /* TSPIInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPIInfoView.swift; sourceTree = "<group>"; };
 		3896966E1ED7CE57001AA026 /* TSRecommendHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendHeadView.swift; sourceTree = "<group>"; };
 		3897D7741F3BFC4700F472B0 /* TSCommentTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCommentTableView.swift; sourceTree = "<group>"; };
@@ -139,11 +149,9 @@
 		38B0D5E01F61279B0007633B /* TSBangumiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBangumiModel.swift; sourceTree = "<group>"; };
 		38B0D5E31F61386D0007633B /* TSBangumiSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBangumiSectionCell.swift; sourceTree = "<group>"; };
 		38B0D5E51F61396E0007633B /* TSBangumiContentCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSBangumiContentCellView.swift; sourceTree = "<group>"; };
-		38B0D5E91F6149F10007633B /* TSDefaultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDefaultVC.swift; sourceTree = "<group>"; };
 		38BB09881EF7C92A009264E7 /* quickLook.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = quickLook.gif; sourceTree = "<group>"; };
 		38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendRoute.swift; sourceTree = "<group>"; };
-		38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSwipeTransitionDelegate.swift; sourceTree = "<group>"; };
-		38BF26711EE1631900E2225D /* TSPlayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayVC.swift; sourceTree = "<group>"; };
+		38BF26711EE1631900E2225D /* TSRecommendPlayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendPlayVC.swift; sourceTree = "<group>"; };
 		38C0A1831F4183B900F35179 /* TSLiveVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveVC.swift; sourceTree = "<group>"; };
 		38C0A1851F4184D600F35179 /* TSLivePresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLivePresent.swift; sourceTree = "<group>"; };
 		38C0A1871F41936900F35179 /* TSLiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveModel.swift; sourceTree = "<group>"; };
@@ -152,9 +160,15 @@
 		38D4D2101F15CC7D00FAB4C2 /* TSSlideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSlideMenuView.swift; sourceTree = "<group>"; };
 		38D4D23E1F1623A500FAB4C2 /* String+tsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+tsExtension.swift"; sourceTree = "<group>"; };
 		38D4D2401F16255600FAB4C2 /* UITapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITapGestureRecognizer.swift; sourceTree = "<group>"; };
-		38D5980E1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSUpdateFrameDelegate.swift; sourceTree = "<group>"; };
 		38D598101F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPIAuthorAndTagsView.swift; sourceTree = "<group>"; };
 		38D598121F289BD400DEBBC8 /* TSTagsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSTagsListView.swift; sourceTree = "<group>"; };
+		38D874061F67C13D00F77051 /* TSLivePlayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLivePlayVC.swift; sourceTree = "<group>"; };
+		38D874091F67C1AA00F77051 /* TSUpdateFrameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSUpdateFrameDelegate.swift; sourceTree = "<group>"; };
+		38D8740B1F67CAFD00F77051 /* TSRecommendCustomBMPlayerControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommendCustomBMPlayerControlView.swift; sourceTree = "<group>"; };
+		38D8740D1F67CBC700F77051 /* TSLiveCustomBMPlayerControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveCustomBMPlayerControlView.swift; sourceTree = "<group>"; };
+		38DD738A1F6A828B00876F34 /* TSSwipeTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSwipeTransitionDelegate.swift; sourceTree = "<group>"; };
+		38DD738C1F6A82C900876F34 /* TSLiveRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLiveRoute.swift; sourceTree = "<group>"; };
+		38E2E2731F7105AC00A12F0E /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		38E3EEE81F4E836200371E07 /* TSTakeVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSTakeVideoView.swift; sourceTree = "<group>"; };
 		38FA1E6A1F232CA400B07144 /* UIImage+tsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+tsExtension.swift"; sourceTree = "<group>"; };
 		3CEC01E06CA9D0D7897D4BC2 /* Pods-BiliBili_sts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiliBili_sts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiliBili_sts/Pods-BiliBili_sts.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E2E2741F7105AC00A12F0E /* libstdc++.tbd in Frameworks */,
 				142501BE76450E8652BB1D3D /* Pods_BiliBili_sts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,10 +189,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3826DA441F6FBF5C00833543 /* 直播 */ = {
+			isa = PBXGroup;
+			children = (
+				3826DA451F6FBFAD00833543 /* TSLiveRecordVC.swift */,
+			);
+			name = "直播";
+			sourceTree = "<group>";
+		};
 		3859857E1ED2DF1D0048B8B1 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				38BF26701EE0385400E2225D /* 播放 */,
+				3826DA441F6FBF5C00833543 /* 直播 */,
+				38A6F0961F67BC49008BD0F5 /* 播放 */,
 				38A57B771ED91D8C0096FD51 /* 网页 */,
 				385985971ED2E5790048B8B1 /* 首页 */,
 				385985951ED2E53D0048B8B1 /* 启动 */,
@@ -199,7 +223,7 @@
 			children = (
 				38B0D5DB1F60FBFD0007633B /* 番剧 */,
 				385985981ED2E5870048B8B1 /* 推荐 */,
-				38C0A1821F41838E00F35179 /* 直播 */,
+				38C0A1821F41838E00F35179 /* 收看直播 */,
 				385985841ED2DF1D0048B8B1 /* TSHomeVC.swift */,
 			);
 			name = "首页";
@@ -247,6 +271,7 @@
 		3868D5121ECEE3F6006CB40A /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				387E4E951F72497C00C37934 /* liveRecord480.gif */,
 				38BB09881EF7C92A009264E7 /* quickLook.gif */,
 				3868D5131ECEE480006CB40A /* testDing.jpg */,
 			);
@@ -256,10 +281,8 @@
 		3868D5151ECFFAA2006CB40A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				38474F8F1ED6E3470040F4E4 /* TSCommon.swift */,
 				3869DC281ED51C45007ECA81 /* libs */,
 				3869DC271ED51C0B007ECA81 /* wrap */,
-				385985931ED2DF710048B8B1 /* TSBaseViewController.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -307,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				382798DD1F5FD0EF00935EA9 /* Assets.xcassets */,
-				387B6DE51F3063C4006B18E4 /* View */,
 				3859857E1ED2DF1D0048B8B1 /* Feature */,
 				3868D5121ECEE3F6006CB40A /* Res */,
 				38706F401EC9383F008C6499 /* STL */,
@@ -323,6 +345,8 @@
 		38706F401EC9383F008C6499 /* STL */ = {
 			isa = PBXGroup;
 			children = (
+				38D874081F67C1AA00F77051 /* potocol */,
+				387810C41F66648C00692699 /* UI */,
 				3868D5151ECFFAA2006CB40A /* Libs */,
 				388C2FEA1ECAB9A4000766D6 /* Network */,
 				38706F411EC9383F008C6499 /* Extension */,
@@ -348,21 +372,23 @@
 		38706F441EC9383F008C6499 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				387810CF1F6664FD00692699 /* TSCommon.swift */,
 				38706F451EC9383F008C6499 /* TSConstant.swift */,
 				38AC97E11ECC02630051436E /* TSLog.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
 		};
-		387B6DE51F3063C4006B18E4 /* View */ = {
+		387810C41F66648C00692699 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				389057881F259D1F00A49B2A /* TSButtonLabelView.swift */,
-				389566C11F27177500891383 /* TSFlodTextView.swift */,
-				3869DC2D1ED57463007ECA81 /* TSWebShowCell.swift */,
-				38B0D5E91F6149F10007633B /* TSDefaultVC.swift */,
+				387810CD1F6664CC00692699 /* TSBaseViewController.swift */,
+				387810C51F66648C00692699 /* TSButtonLabelView.swift */,
+				387810C61F66648C00692699 /* TSDefaultVC.swift */,
+				387810C71F66648C00692699 /* TSFlodTextView.swift */,
+				387810C81F66648C00692699 /* TSWebShowCell.swift */,
 			);
-			name = View;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		387B6DE61F3064E2006B18E4 /* 视频相关 */ = {
@@ -378,7 +404,6 @@
 			isa = PBXGroup;
 			children = (
 				389E82C61F14712D000501DE /* 播放器额外信息 */,
-				389E82C51F14711A000501DE /* 播放器 */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -386,7 +411,7 @@
 		387B6DEC1F30811B006B18E4 /* Present */ = {
 			isa = PBXGroup;
 			children = (
-				382D84471EF8FC4800B79555 /* TSPlayPresent.swift */,
+				382D84471EF8FC4800B79555 /* TSRecommendPlayPresent.swift */,
 				38AA89D31F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift */,
 				382365C51F4589AB008F4AE2 /* TSCommentTableViewPresent.swift */,
 			);
@@ -418,6 +443,8 @@
 			isa = PBXGroup;
 			children = (
 				382D844B1EF9153300B79555 /* TSPlayerView.swift */,
+				38D8740B1F67CAFD00F77051 /* TSRecommendCustomBMPlayerControlView.swift */,
+				38D8740D1F67CBC700F77051 /* TSLiveCustomBMPlayerControlView.swift */,
 			);
 			name = "播放器";
 			sourceTree = "<group>";
@@ -438,6 +465,16 @@
 				38A57B781ED91D9F0096FD51 /* TSWebVC.swift */,
 			);
 			name = "网页";
+			sourceTree = "<group>";
+		};
+		38A6F0961F67BC49008BD0F5 /* 播放 */ = {
+			isa = PBXGroup;
+			children = (
+				38D874051F67C0CB00F77051 /* 直播-播放 */,
+				38BF26701EE0385400E2225D /* 推荐-播放 */,
+				389E82C51F14711A000501DE /* 播放器 */,
+			);
+			name = "播放";
 			sourceTree = "<group>";
 		};
 		38AA89CE1F3170B900B9EA29 /* Model */ = {
@@ -506,32 +543,31 @@
 			isa = PBXGroup;
 			children = (
 				38BF266C1EE037A900E2225D /* TSRecommendRoute.swift */,
-				38BF266D1EE037A900E2225D /* TSSwipeTransitionDelegate.swift */,
 			);
 			name = Route;
 			sourceTree = "<group>";
 		};
-		38BF26701EE0385400E2225D /* 播放 */ = {
+		38BF26701EE0385400E2225D /* 推荐-播放 */ = {
 			isa = PBXGroup;
 			children = (
 				38AA89CE1F3170B900B9EA29 /* Model */,
 				387B6DEC1F30811B006B18E4 /* Present */,
 				387B6DEB1F3080B4006B18E4 /* View */,
-				38D5980E1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift */,
-				38BF26711EE1631900E2225D /* TSPlayVC.swift */,
+				38BF26711EE1631900E2225D /* TSRecommendPlayVC.swift */,
 			);
-			name = "播放";
+			name = "推荐-播放";
 			sourceTree = "<group>";
 		};
-		38C0A1821F41838E00F35179 /* 直播 */ = {
+		38C0A1821F41838E00F35179 /* 收看直播 */ = {
 			isa = PBXGroup;
 			children = (
 				38C0A1831F4183B900F35179 /* TSLiveVC.swift */,
+				38DD73891F6A823400876F34 /* Route */,
 				38E3EEE71F4E7F2900371E07 /* View */,
 				38E3EEE61F4E7F1D00371E07 /* Model */,
 				38E3EEE51F4E7F0D00371E07 /* Present */,
 			);
-			name = "直播";
+			name = "收看直播";
 			sourceTree = "<group>";
 		};
 		38D598141F289C9B00DEBBC8 /* 评论 */ = {
@@ -541,6 +577,31 @@
 				3897D7741F3BFC4700F472B0 /* TSCommentTableView.swift */,
 			);
 			name = "评论";
+			sourceTree = "<group>";
+		};
+		38D874051F67C0CB00F77051 /* 直播-播放 */ = {
+			isa = PBXGroup;
+			children = (
+				38D874061F67C13D00F77051 /* TSLivePlayVC.swift */,
+			);
+			name = "直播-播放";
+			sourceTree = "<group>";
+		};
+		38D874081F67C1AA00F77051 /* potocol */ = {
+			isa = PBXGroup;
+			children = (
+				38DD738A1F6A828B00876F34 /* TSSwipeTransitionDelegate.swift */,
+				38D874091F67C1AA00F77051 /* TSUpdateFrameDelegate.swift */,
+			);
+			path = potocol;
+			sourceTree = "<group>";
+		};
+		38DD73891F6A823400876F34 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				38DD738C1F6A82C900876F34 /* TSLiveRoute.swift */,
+			);
+			name = Route;
 			sourceTree = "<group>";
 		};
 		38E3EEE51F4E7F0D00371E07 /* Present */ = {
@@ -581,6 +642,7 @@
 		8CD4457F3D3F75C64A109E94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38E2E2731F7105AC00A12F0E /* libstdc++.tbd */,
 				5B0B006D83B1148C1222A0F4 /* Pods_BiliBili_sts.framework */,
 			);
 			name = Frameworks;
@@ -621,6 +683,7 @@
 				TargetAttributes = {
 					38706F2A1EC937AB008C6499 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = DA57HQY477;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -648,6 +711,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				387E4E961F72497C00C37934 /* liveRecord480.gif in Resources */,
 				38706F391EC937AB008C6499 /* LaunchScreen.storyboard in Resources */,
 				38BB09891EF7C92A009264E7 /* quickLook.gif in Resources */,
 				38706F341EC937AB008C6499 /* Main.storyboard in Resources */,
@@ -712,56 +776,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				3859858E1ED2DF1D0048B8B1 /* TSHomeVC.swift in Sources */,
+				38D8740C1F67CAFD00F77051 /* TSRecommendCustomBMPlayerControlView.swift in Sources */,
 				389E82CA1F147172000501DE /* TSPlayerCommentView.swift in Sources */,
-				38BF26721EE1631900E2225D /* TSPlayVC.swift in Sources */,
+				387810CB1F66648C00692699 /* TSFlodTextView.swift in Sources */,
+				38BF26721EE1631900E2225D /* TSRecommendPlayVC.swift in Sources */,
 				38AA89D41F31C5ED00B9EA29 /* TSVideoReleadViewPresent.swift in Sources */,
 				38706F4C1EC9383F008C6499 /* UIView+tsExtension.swift in Sources */,
+				387810CE1F6664CC00692699 /* TSBaseViewController.swift in Sources */,
 				3896966F1ED7CE57001AA026 /* TSRecommendHeadView.swift in Sources */,
 				38B0D5DF1F6127120007633B /* TSBangumiPresent.swift in Sources */,
 				3874227D1ED452AB0031326C /* TSWebShowModel.swift in Sources */,
 				3859858C1ED2DF1D0048B8B1 /* TSRecommendPresent.swift in Sources */,
 				38D4D2411F16255600FAB4C2 /* UITapGestureRecognizer.swift in Sources */,
-				389057891F259D1F00A49B2A /* TSButtonLabelView.swift in Sources */,
 				3897D7751F3BFC4700F472B0 /* TSCommentTableView.swift in Sources */,
 				387422771ED3DD060031326C /* TSRefresh.swift in Sources */,
 				3859858A1ED2DF1D0048B8B1 /* TSDingContentCell.swift in Sources */,
 				38C0A1881F41936900F35179 /* TSLiveModel.swift in Sources */,
 				38B0D5E61F61396E0007633B /* TSBangumiContentCellView.swift in Sources */,
 				3869DC2C1ED56F0C007ECA81 /* readme.md in Sources */,
+				38D874071F67C13D00F77051 /* TSLivePlayVC.swift in Sources */,
 				382798E01F5FDB5800935EA9 /* Common+tsExtension.swift in Sources */,
 				38377B851F0F39EC007FD5FB /* TSPlayerExtraInfoView.swift in Sources */,
 				38FA1E6B1F232CA400B07144 /* UIImage+tsExtension.swift in Sources */,
+				387810C91F66648C00692699 /* TSButtonLabelView.swift in Sources */,
 				3869DC2A1ED51CD1007ECA81 /* TSCarouselView.swift in Sources */,
 				3874227B1ED421620031326C /* TSWebManager.swift in Sources */,
 				38E3EEE91F4E836200371E07 /* TSTakeVideoView.swift in Sources */,
 				382D84461EF8B47800B79555 /* TSWebInterfaceModel.swift in Sources */,
 				38BF266E1EE037A900E2225D /* TSRecommendRoute.swift in Sources */,
-				385985941ED2DF710048B8B1 /* TSBaseViewController.swift in Sources */,
+				38D8740E1F67CBC700F77051 /* TSLiveCustomBMPlayerControlView.swift in Sources */,
 				3897D7771F3BFEBA00F472B0 /* TSPlayerCommentModel.swift in Sources */,
-				382D84481EF8FC4800B79555 /* TSPlayPresent.swift in Sources */,
+				382D84481EF8FC4800B79555 /* TSRecommendPlayPresent.swift in Sources */,
+				38D8740A1F67C1AA00F77051 /* TSUpdateFrameDelegate.swift in Sources */,
 				387B6DE81F306501006B18E4 /* TSVideoReleadView.swift in Sources */,
 				382365C81F45A3A7008F4AE2 /* TSLiveContentCellView.swift in Sources */,
 				38C0A1861F4184D600F35179 /* TSLivePresent.swift in Sources */,
 				388C2FEC1ECAB9CE000766D6 /* TSWebClient.swift in Sources */,
+				38DD738B1F6A828B00876F34 /* TSSwipeTransitionDelegate.swift in Sources */,
 				382D844A1EF9015700B79555 /* TSURLConstant.swift in Sources */,
 				3859858F1ED2DF1D0048B8B1 /* TSLaunchVC.swift in Sources */,
 				38706F4B1EC9383F008C6499 /* UIColor+tsExtension.swift in Sources */,
 				3859858B1ED2DF1D0048B8B1 /* TSDingModel.swift in Sources */,
-				38D5980F1F287D4F00DEBBC8 /* TSUpdateFrameDelegate.swift in Sources */,
-				38BF266F1EE037A900E2225D /* TSSwipeTransitionDelegate.swift in Sources */,
+				387810D01F6664FD00692699 /* TSCommon.swift in Sources */,
 				38AA89D61F32C87A00B9EA29 /* JMRoundedCorner.swift in Sources */,
-				3869DC2E1ED57463007ECA81 /* TSWebShowCell.swift in Sources */,
+				38DD738D1F6A82C900876F34 /* TSLiveRoute.swift in Sources */,
 				38D4D2111F15CC7D00FAB4C2 /* TSSlideMenuView.swift in Sources */,
-				38474F901ED6E3470040F4E4 /* TSCommon.swift in Sources */,
 				38474F8E1ED6B51A0040F4E4 /* TSBaseModel.swift in Sources */,
 				385985921ED2DF1D0048B8B1 /* TSRecommendVC.swift in Sources */,
 				38D598131F289BD400DEBBC8 /* TSTagsListView.swift in Sources */,
 				382365C61F4589AB008F4AE2 /* TSCommentTableViewPresent.swift in Sources */,
+				3826DA461F6FBFAD00833543 /* TSLiveRecordVC.swift in Sources */,
 				38706F2F1EC937AB008C6499 /* AppDelegate.swift in Sources */,
 				389566C41F2717BC00891383 /* TSPIInfoView.swift in Sources */,
 				387B6DEA1F30652F006B18E4 /* TSVideoReleadCell.swift in Sources */,
 				38A57B791ED91D9F0096FD51 /* TSWebVC.swift in Sources */,
-				389566C21F27177500891383 /* TSFlodTextView.swift in Sources */,
+				387810CA1F66648C00692699 /* TSDefaultVC.swift in Sources */,
 				389E82C81F147150000501DE /* TSPlayerIntroductionView.swift in Sources */,
 				38B0D5DD1F6123FA0007633B /* TSBangumiVC.swift in Sources */,
 				38B0D5E41F61386D0007633B /* TSBangumiSectionCell.swift in Sources */,
@@ -770,12 +839,12 @@
 				38AA89D01F3170DD00B9EA29 /* TSPlayedVideoRelatedModel.swift in Sources */,
 				38C4DA501F4C24AC00FDC74B /* TSLiveSectionCell.swift in Sources */,
 				382D844C1EF9153300B79555 /* TSPlayerView.swift in Sources */,
-				38B0D5EA1F6149F10007633B /* TSDefaultVC.swift in Sources */,
 				387422791ED416070031326C /* UIImageView+tsExtension.swift in Sources */,
 				38AC97E21ECC02630051436E /* TSLog.swift in Sources */,
 				38C0A1841F4183B900F35179 /* TSLiveVC.swift in Sources */,
 				38706F4D1EC9383F008C6499 /* TSConstant.swift in Sources */,
 				38D598111F289BA300DEBBC8 /* TSPIAuthorAndTagsView.swift in Sources */,
+				387810CC1F66648C00692699 /* TSWebShowCell.swift in Sources */,
 				38D4D23F1F1623A500FAB4C2 /* String+tsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -900,9 +969,32 @@
 			baseConfigurationReference = 3CEC01E06CA9D0D7897D4BC2 /* Pods-BiliBili_sts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DA57HQY477;
 				INFOPLIST_FILE = BiliBili_sts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"BMPlayer\"",
+					"-framework",
+					"\"GDPerformanceView_Swift\"",
+					"-framework",
+					"\"HandyJSON\"",
+					"-framework",
+					"\"LFLiveKit\"",
+					"-framework",
+					"\"NVActivityIndicatorView\"",
+					"-framework",
+					"\"Refresher\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sts.iOSTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/BiliBili_sts/BiliBili_sts-Bridging-Header.h";
@@ -915,9 +1007,32 @@
 			baseConfigurationReference = 4C0C57D564EA96A4AEF03B6E /* Pods-BiliBili_sts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DA57HQY477;
 				INFOPLIST_FILE = BiliBili_sts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"BMPlayer\"",
+					"-framework",
+					"\"GDPerformanceView_Swift\"",
+					"-framework",
+					"\"HandyJSON\"",
+					"-framework",
+					"\"LFLiveKit\"",
+					"-framework",
+					"\"NVActivityIndicatorView\"",
+					"-framework",
+					"\"Refresher\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sts.iOSTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/BiliBili_sts/BiliBili_sts-Bridging-Header.h";

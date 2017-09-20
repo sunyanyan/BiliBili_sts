@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LFLiveKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,17 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59E31A00B7B37800DC3757FC0DE37DCC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B7F3754A046BF54D26A58C0AF0A51FCB</key>
+		<key>C7506D193EE0DE7D8698F98A27429AB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +87,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EFAE7C86FD6E80EBB3F47DB74FC97A6A</key>
+		<key>E3736290989FF9340FC06D4FD5B5F8CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F0BA7123A85D83DFB5E569E2E70107B6</key>
+		<key>ED4A70A70B48153EBA11ACF31CB51A3B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE322E6E9B98F3436A0F5D9AB1724B30</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EFAE7C86FD6E80EBB3F47DB74FC97A6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
